@@ -1,3 +1,5 @@
+// Copyright 2020 - present integereleven. All rights reserved. MIT license.
+
 export * from './capabilities/mod.ts';
 export type { PickCapSetting } from './pick_cap_setting.ts';
 export type { GetCapSetting } from './get_cap_setting.ts';

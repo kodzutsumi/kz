@@ -1,3 +1,5 @@
+// Copyright 2020 - present integereleven. All rights reserved. MIT license.
+
 import type { AsInverted, AsUnsafe } from '@kz/util/capability';
 
 import type { BaseCapConsumerSet } from './type.ts';

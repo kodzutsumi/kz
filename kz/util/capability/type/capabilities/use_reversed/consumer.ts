@@ -1,3 +1,5 @@
+// Copyright 2020 - present integereleven. All rights reserved. MIT license.
+
 import type { UseReversedKeyString } from './constant.ts';
 
 /**
@@ -9,7 +11,7 @@ import type { UseReversedKeyString } from './constant.ts';
  * `UseReversed` is for data flow and comparison direction, while {@linkcode UseInverted} is for behavior or type inversion.
  * `UseReversed` is for structural capabilities, while {@linkcode UseInverted} is for behavioral capabilities.
  * `UseReversed` is for type transformations (swap operands of comparison), while {@linkcode UseInverted} is for logic transformations (flip a bit or boolean).
- * 
+ *
  * @template AsReversed - A boolean type parameter indicating whether the broker behavior is reversed (`true`) or forward (`false`).
  *
  * @see {@linkcode AsReversed} for the `true` broker behavior of this capability consumer.

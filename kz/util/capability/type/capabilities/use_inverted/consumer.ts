@@ -1,10 +1,12 @@
+// Copyright 2020 - present integereleven. All rights reserved. MIT license.
+
 import type { UseInvertedKeyString } from './constant.ts';
 
 /**
  * A capability flag consumer indicating support for inversion behavior, or inverting or retaining initial behavior.
  *
  * Use this capability consumer to indicate that a type supports both inverting or retaining initial types, or results in an inverted or retained type based on the value of the capability setting.
- * 
+ *
  * ## Difference between `UseInverted` and {@linkcode UseReversed}
  * `UseInverted` is for behavior or type inversion, while {@linkcode UseReversed} is for data flow and comparison direction.
  * `UseInverted` is for behavioral capabilities, while {@linkcode UseReversed} is for structural capabilities.

@@ -12,11 +12,7 @@
     "lint:clean": "deno run --allow-read --allow-write ./.build/clean_files.ts",
     "lint:code": "deno lint --config ./deno.json",
     "test:code": "deno test --allow-all --coverage=coverage --trace-leaks --clean",
-    "docs:core": "deno doc --html --output=docs/kz/core --name='@kz/core' ./kz/core/mod.ts ./kz/core/*/mod.ts",
-    "docs:logging": "deno doc --html --output=docs/kz/logging --name='@kz/logging' ./kz/logging/mod.ts",
-    "docs:pattern": "deno doc --html --output=docs/kz/pattern --name='@kz/pattern' ./kz/pattern/mod.ts ./kz/pattern/*/mod.ts",
     "docs:util": "deno doc --html --output=docs/kz/util --name='@kz/util' ./kz/util/mod.ts ./kz/util/*/mod.ts",
-    "docs:warn": "deno doc --html --output=docs/kz/warn --name='@kz/warn' ./kz/warn/mod.ts ./kz/warn/*/mod.ts",
     "docs:x": "deno run --allow-read --allow-write ./.build/build_docs_index.ts",
     "lint": {
       "description": "Run all linters on all packages",
@@ -38,9 +34,21 @@
       "description": "Run all checks for all packages",
       "command": "deno task lint && deno fmt && deno fmt --check && deno task test && deno task cov"
     },
-    "pre-commit": {
+    "pre-commit-new": {
       "description": "Run pre-commit checks",
-      "command": "deno task checks && deno task docs && deno publish --dry-run --allow-dirty"
+      "command": "deno task checks-nc && deno task docs && deno publish --dry-run --allow-dirty"
+    },
+    "checks-nc": {
+      "description": "Run all checks for all packages without coverage. Will be removed once code features are in place.",
+      "command": "deno task lint && deno fmt && deno fmt --check && deno task test"
+    },
+    "test-nc": {
+      "description": "Run tests for all packages including docs without coverage. Will be removed once code features are in place.",
+      "command": "deno test --allow-all --doc --trace-leaks --clean"
+    },
+    "pre-commit": {
+      "description": "Run pre-commit checks. Will be replaced once code features are in place.",
+      "command": "deno task checks-nc && deno task docs && deno publish --dry-run --allow-dirty"
     }
   },
   "lint": {

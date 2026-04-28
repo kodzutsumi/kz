@@ -18,24 +18,23 @@ Contributions are welcome! Review a repository's README.md to get started.
 
 # Modules
 
-| Module | Links | Description |
-| ------ | ----- | ----------- |
-| `@kz/abstract`   |                   |                                                            |
-| `@kz/app`        |                   |                                                            |
-| `@kz/calc`        |                   |                                                            |
-| `@kz/collections` |                   |                                                            |
-| `@kz/console`     |                   |                                                            |
-| `@kz/core`        |                   |                                                            |
-| `@kz/data`        |                   |                                                            |
-| `@kz/io`          |                   |                                                            |
-| `@kz/logging`     |                   |                                                            |
-| `@kz/network`     |                   |                                                            |
-| `@kz/patterns`    |                   |                                                            |
-| `@kz/service`     |                   |                                                            |
-| `@kz/testing`     |                   |                                                            |
-| `@kz/util` | [JSR][jsr-util] &bull; [API & more][i11n-util] | Type utilities for type-level programming with TypeScript. |
-| `@kz/util`      |                   |                                                            |
-| `@kz/wire`        |                   |                                                            |
+| Module            | Links                                          | Description                                                |
+| ----------------- | ---------------------------------------------- | ---------------------------------------------------------- |
+| `@kz/abstract`    |                                                |                                                            |
+| `@kz/app`         |                                                |                                                            |
+| `@kz/calc`        |                                                |                                                            |
+| `@kz/collections` |                                                |                                                            |
+| `@kz/console`     |                                                |                                                            |
+| `@kz/core`        |                                                |                                                            |
+| `@kz/data`        |                                                |                                                            |
+| `@kz/io`          |                                                |                                                            |
+| `@kz/logging`     |                                                |                                                            |
+| `@kz/network`     |                                                |                                                            |
+| `@kz/patterns`    |                                                |                                                            |
+| `@kz/service`     |                                                |                                                            |
+| `@kz/testing`     |                                                |                                                            |
+| `@kz/util`        | [JSR][jsr-util] &bull; [API & more][i11n-util] |                                                            |
+| `@kz/wire`        |                                                |                                                            |
 
 ---
 
@@ -51,6 +50,5 @@ Contributions are welcome! Review a repository's README.md to get started.
 
 [jsr]: https://jsr.io/@kz "@kz JSR homepage"
 [contributing]: https://github.com/kz-io/lib/blob/main/CONTRIBUTING.md "@kz/lib contributing guidelines"
-
 [jsr-util]: https://jsr.io/@kz/util "@kz/util JSR homepage"
 [i11n-util]: https://docs.i11n.io/kodzutsumi/kz/util?version=latest "@kz/util homepage"
