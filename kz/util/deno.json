@@ -1,0 +1,7 @@
+{
+  "name": "@kz/util",
+  "version": "0.0.1",
+  "exports": {
+    "./capability": "./capability/mod.ts"
+  }
+}
