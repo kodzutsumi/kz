@@ -83,19 +83,17 @@
     "y_pre-commit": {
       "description": "Run pre-commit checks",
       "dependencies": [
-        "test",
         "checks",
         "docs",
-        "publish-test"
+        "x-publish-test"
       ]
     },
     "pre-commit": {
       "description": "TEMP! Will be replaced once code features are in place. Run pre-commit checks.",
       "dependencies": [
-        "z-test",
         "z-checks",
         "docs",
-        "publish-test"
+        "x-publish-test"
       ]
     },
     "z-test": {
