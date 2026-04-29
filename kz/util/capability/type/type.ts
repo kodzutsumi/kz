@@ -7,6 +7,7 @@ import type {
   UseElse,
   UseExcluded,
   UseInverted,
+  UseNullOption,
   UseOfType,
   UseOptional,
   UseReadonly,
@@ -25,6 +26,7 @@ export type BaseCapConsumerSet =
   | UseElse
   | UseExcluded
   | UseInverted
+  | UseNullOption
   | UseOfType
   | UseOptional
   | UseReadonly

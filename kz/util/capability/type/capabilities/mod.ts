@@ -7,6 +7,7 @@ export * from './use_depth/mod.ts';
 export * from './use_else/mod.ts';
 export * from './use_excluded/mod.ts';
 export * from './use_inverted/mod.ts';
+export * from './use_null_option/mod.ts';
 export * from './use_of_type/mod.ts';
 export * from './use_optional/mod.ts';
 export * from './use_readonly/mod.ts';
