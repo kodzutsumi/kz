@@ -80,8 +80,8 @@
       "description": "Run formatter for all packages",
       "command": "deno fmt && deno fmt --check"
     },
-    "y_pre-commit": {
-      "description": "Run pre-commit checks",
+    "y-pre-commit": {
+      "description": "FUTURE! Will replace the pre-commit once code features are in place. Run pre-commit checks",
       "dependencies": [
         "checks",
         "docs",
@@ -106,8 +106,7 @@
         "lint",
         "fmt",
         "test"
-      ],
-      "command": "deno task lint && deno fmt && deno fmt --check && deno task test"
+      ]
     },
     "x-publish-test": {
       "description": "DEPENDENCY! Run publish test.",

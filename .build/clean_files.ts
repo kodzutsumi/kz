@@ -1,6 +1,5 @@
 // Copyright 2020 - present integereleven. All rights reserved. MIT license.
 
-
 // deno-lint-ignore-file no-external-import
 
 import { walk, type WalkOptions } from 'jsr:@std/fs@^1.0.6';
