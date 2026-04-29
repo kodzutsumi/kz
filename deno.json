@@ -4,51 +4,116 @@
   ],
   "importMap": "./import_map.json",
   "tasks": {
-    "cov:analyze": "deno coverage --ignore=\"**/*.fixture.ts,.github\" coverage/",
-    "cov:gen": "deno task cov:analyze --lcov --output=cov.lcov",
-    "cov:view": "deno task cov:analyze --html",
-    "lint:copyright": "deno run --allow-read --allow-write ./.build/copyright_files.ts",
-    "lint:exports": "deno run --allow-read ./.build/export_star_check.ts",
-    "lint:clean": "deno run --allow-read --allow-write ./.build/clean_files.ts",
-    "lint:code": "deno lint --config ./deno.json",
-    "test:code": "deno test --allow-all --coverage=coverage --trace-leaks --clean",
-    "docs:util": "deno doc --html --output=docs/kz/util --name='@kz/util' ./kz/util/mod.ts ./kz/util/*/mod.ts",
-    "docs:x": "deno run --allow-read --allow-write ./.build/build_docs_index.ts",
+    "cov": {
+      "description": "Run all coverage tasks",
+      "dependencies": [
+        "x-cov:gen",
+        "x-cov:view"
+      ]
+    },
+    "x-cov:gen": {
+      "description": "DEPENDENCY! Generate lcov coverage report",
+      "command": "deno task x-cov:analyze --lcov --output=cov.lcov"
+    },
+    "x-cov:view": {
+      "description": "DEPENDENCY! View coverage report in HTML",
+      "command": "deno task x-cov:analyze --html"
+    },
+    "x-cov:analyze": {
+      "description": "DEPENDENCY! Analyze code coverage",
+      "command": "deno coverage --ignore=\"**/*.fixture.ts,.github\" coverage/"
+    },
     "lint": {
-      "description": "Run all linters on all packages",
-      "command": "deno task lint:code && deno task lint:exports && deno task lint:copyright && deno task lint:clean"
+      "description": "Run all linters",
+      "dependencies": [
+        "x-lint:code",
+        "x-lint:exports",
+        "x-lint:copyright",
+        "x-lint:clean"
+      ]
+    },
+    "x-lint:code": {
+      "description": "DEPENDENCY! Lint code",
+      "command": "deno lint --config ./deno.json"
+    },
+    "x-lint:exports": {
+      "description": "DEPENDENCY! Lint export statements",
+      "command": "deno run --allow-read ./.build/export_star_check.ts"
+    },
+    "x-lint:copyright": {
+      "description": "DEPENDENCY! Lint copyright headers",
+      "command": "deno run --allow-read --allow-write ./.build/copyright_files.ts"
+    },
+    "x-lint:clean": {
+      "description": "DEPENDENCY! Clean linting artifacts",
+      "command": "deno run --allow-read --allow-write ./.build/clean_files.ts"
     },
     "docs": {
       "description": "Generate documentation for all packages",
-      "command": "deno task \"docs:*\""
+      "dependencies": [
+        "x-docs:util",
+        "x-docs:x"
+      ]
+    },
+    "x-docs:util": {
+      "description": "DEPENDENCY! Generate documentation for util package",
+      "command": "deno doc --html --output=docs/kz/util --name='@kz/util' ./kz/util/mod.ts ./kz/util/*/mod.ts"
+    },
+    "x-docs:x": {
+      "description": "DEPENDENCY! Build docs index",
+      "command": "deno run --allow-read --allow-write ./.build/build_docs_index.ts"
     },
     "test": {
-      "description": "Run tests for all packages including docs",
+      "description": "Run tests and coverage for all packages including docs",
       "command": "deno test --allow-all --doc --coverage=coverage --trace-leaks --clean"
-    },
-    "cov": {
-      "description": "Run all coverage tasks",
-      "command": "deno task cov:gen && deno task cov:view"
     },
     "checks": {
       "description": "Run all checks for all packages",
-      "command": "deno task lint && deno fmt && deno fmt --check && deno task test && deno task cov"
+      "dependencies": [
+        "lint",
+        "fmt",
+        "test",
+        "cov"
+      ]
     },
-    "pre-commit-new": {
+    "fmt": {
+      "description": "Run formatter for all packages",
+      "command": "deno fmt && deno fmt --check"
+    },
+    "y_pre-commit": {
       "description": "Run pre-commit checks",
-      "command": "deno task checks-nc && deno task docs && deno publish --dry-run --allow-dirty"
-    },
-    "checks-nc": {
-      "description": "Run all checks for all packages without coverage. Will be removed once code features are in place.",
-      "command": "deno task lint && deno fmt && deno fmt --check && deno task test"
-    },
-    "test-nc": {
-      "description": "Run tests for all packages including docs without coverage. Will be removed once code features are in place.",
-      "command": "deno test --allow-all --doc --trace-leaks --clean"
+      "dependencies": [
+        "test",
+        "checks",
+        "docs",
+        "publish-test"
+      ]
     },
     "pre-commit": {
-      "description": "Run pre-commit checks. Will be replaced once code features are in place.",
-      "command": "deno task checks-nc && deno task docs && deno publish --dry-run --allow-dirty"
+      "description": "TEMP! Will be replaced once code features are in place. Run pre-commit checks.",
+      "dependencies": [
+        "z-test",
+        "z-checks",
+        "docs",
+        "publish-test"
+      ]
+    },
+    "z-test": {
+      "description": "TEMP! Will be removed once code features are in place. Run tests for all packages including docs without coverage.",
+      "command": "deno test --allow-all --doc --trace-leaks --clean"
+    },
+    "z-checks": {
+      "description": "TEMP! Will be removed once code features are in place. Run all checks for all packages without coverage.",
+      "dependencies": [
+        "lint",
+        "fmt",
+        "test"
+      ],
+      "command": "deno task lint && deno fmt && deno fmt --check && deno task test"
+    },
+    "x-publish-test": {
+      "description": "DEPENDENCY! Run publish test.",
+      "command": "deno publish --dry-run --allow-dirty"
     }
   },
   "lint": {
