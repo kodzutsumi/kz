@@ -10,26 +10,39 @@ import type {
   AsIncluded,
   AsInitial,
   AsInverted,
+  AsLevel,
   AsLoose,
   AsOptional,
   AsReadonly,
+  AsRecord,
   AsRequired,
   AsReversed,
   AsSafe,
   AsSetter,
+  AsShallow,
   AsStrict,
   AsSync,
   AsUnsafe,
   AsWritable,
+  DefaultOf,
+  Else,
+  OfType,
   PickCapSetting,
+  Then,
   UseAsync,
+  UseDefault,
+  UseDepth,
+  UseElse,
   UseExcluded,
   UseInverted,
+  UseOfType,
   UseOptional,
   UseReadonly,
+  UseRecord,
   UseReversed,
   UseSetter,
   UseStrict,
+  UseThen,
   UseUnsafe,
 } from '@kz/util/capability';
 
@@ -193,6 +206,122 @@ describe('PickCapSetting', () => {
       it('should be the DefaultType if missing from the CapBrokerSet', () => {
         type Actual = PickCapSetting<UseAsync<false>, UseUnsafe, false>;
         type Expected = AsSafe;
+        type Result = IsExact<Actual, Expected>;
+
+        assertType<Result>(IS_TRUE);
+      });
+    });
+  });
+
+  describe('Capability option consumer', () => {
+    describe('UseDepth', () => {
+      it('should pick the setting from CapBrokerSet', () => {
+        type Actual = PickCapSetting<UseDepth<false>, UseDepth, 10>;
+        type Expected = AsShallow;
+        type Result = IsExact<Actual, Expected>;
+
+        assertType<Result>(IS_TRUE);
+      });
+
+      it('should be the DefaultType if missing from the CapBrokerSet', () => {
+        type Actual = PickCapSetting<UseUnsafe<false>, UseDepth, 10>;
+        type Expected = AsLevel<10>;
+        type Result = IsExact<Actual, Expected>;
+
+        assertType<Result>(IS_TRUE);
+      });
+    });
+
+    describe('UseRecord', () => {
+      it('should pick the setting from CapBrokerSet', () => {
+        type Actual = PickCapSetting<UseRecord<'record'>, UseRecord, 'values'>;
+        type Expected = AsRecord;
+        type Result = IsExact<Actual, Expected>;
+
+        assertType<Result>(IS_TRUE);
+      });
+
+      it('should be the DefaultType if missing from the CapBrokerSet', () => {
+        type Actual = PickCapSetting<UseUnsafe<false>, UseRecord, 'record'>;
+        type Expected = AsRecord;
+        type Result = IsExact<Actual, Expected>;
+
+        assertType<Result>(IS_TRUE);
+      });
+    });
+  });
+
+  describe('Capability open consumer', () => {
+    describe('UseDefault', () => {
+      it('should pick the setting from CapBrokerSet', () => {
+        type Actual = PickCapSetting<
+          UseDefault<string | number>,
+          UseDefault,
+          10
+        >;
+        type Expected = DefaultOf<string | number>;
+        type Result = IsExact<Actual, Expected>;
+
+        assertType<Result>(IS_TRUE);
+      });
+
+      it('should be the DefaultType if missing from the CapBrokerSet', () => {
+        type Actual = PickCapSetting<UseUnsafe<false>, UseDefault, boolean>;
+        type Expected = DefaultOf<boolean>;
+        type Result = IsExact<Actual, Expected>;
+
+        assertType<Result>(IS_TRUE);
+      });
+    });
+
+    describe('UseElse', () => {
+      it('should pick the setting from CapBrokerSet', () => {
+        type Actual = PickCapSetting<UseElse<string | number>, UseElse, 10>;
+        type Expected = Else<string | number>;
+        type Result = IsExact<Actual, Expected>;
+
+        assertType<Result>(IS_TRUE);
+      });
+
+      it('should be the DefaultType if missing from the CapBrokerSet', () => {
+        type Actual = PickCapSetting<UseUnsafe<false>, UseElse, boolean>;
+        type Expected = Else<boolean>;
+        type Result = IsExact<Actual, Expected>;
+
+        assertType<Result>(IS_TRUE);
+      });
+    });
+
+    describe('UseOfType', () => {
+      it('should pick the setting from CapBrokerSet', () => {
+        type Actual = PickCapSetting<UseOfType<string | number>, UseOfType, 10>;
+        type Expected = OfType<string | number>;
+        type Result = IsExact<Actual, Expected>;
+
+        assertType<Result>(IS_TRUE);
+      });
+
+      it('should be the DefaultType if missing from the CapBrokerSet', () => {
+        type Actual = PickCapSetting<UseUnsafe<false>, UseOfType, boolean>;
+        type Expected = OfType<boolean>;
+        type Result = IsExact<Actual, Expected>;
+
+        assertType<Result>(IS_TRUE);
+      });
+    });
+
+    describe('UseThen', () => {
+      it('should pick the setting from CapBrokerSet', () => {
+        type Actual = PickCapSetting<UseThen<string | number>, UseThen, 10>;
+        type Expected = Then<string | number>;
+        type Result = IsExact<Actual, Expected>;
+
+        assertType<Result>(IS_TRUE);
+      });
+
+      it('should be the DefaultType if missing from the CapBrokerSet', () => {
+        type Actual = PickCapSetting<UseUnsafe<false>, UseThen, boolean>;
+        type Expected = Then<boolean>;
         type Result = IsExact<Actual, Expected>;
 
         assertType<Result>(IS_TRUE);

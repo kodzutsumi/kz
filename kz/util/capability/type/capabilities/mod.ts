@@ -13,3 +13,5 @@ export * from './use_strict/mod.ts';
 export * from './use_of_type/mod.ts';
 export * from './use_else/mod.ts';
 export * from './use_then/mod.ts';
+export * from './use_record/mod.ts';
+export * from './use_depth/mod.ts';

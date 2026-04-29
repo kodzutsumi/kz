@@ -2,25 +2,37 @@
 
 import type {
   UseAsync,
+  UseDefault,
+  UseDepth,
+  UseElse,
   UseExcluded,
   UseInverted,
+  UseOfType,
   UseOptional,
   UseReadonly,
+  UseRecord,
   UseReversed,
   UseSetter,
   UseStrict,
+  UseThen,
   UseUnsafe,
 } from './capabilities/mod.ts';
 
 export type BaseCapConsumerSet =
   | UseAsync
+  | UseDefault
+  | UseDepth
+  | UseElse
   | UseExcluded
   | UseInverted
+  | UseOfType
   | UseOptional
   | UseReadonly
+  | UseRecord
   | UseReversed
   | UseSetter
   | UseStrict
+  | UseThen
   | UseUnsafe;
 
 export type FullBaseCapConsumerSet = ToIntersect<BaseCapConsumerSet>;
