@@ -18,23 +18,23 @@ Contributions are welcome! Review a repository's README.md to get started.
 
 # Modules
 
-| Module            | Links                                          | Description                                                |
-| ----------------- | ---------------------------------------------- | ---------------------------------------------------------- |
-| `@kz/abstract`    |                                                |                                                            |
-| `@kz/app`         |                                                |                                                            |
-| `@kz/calc`        |                                                |                                                            |
-| `@kz/collections` |                                                |                                                            |
-| `@kz/console`     |                                                |                                                            |
-| `@kz/core`        |                                                |                                                            |
-| `@kz/data`        |                                                |                                                            |
-| `@kz/io`          |                                                |                                                            |
-| `@kz/logging`     |                                                |                                                            |
-| `@kz/network`     |                                                |                                                            |
-| `@kz/patterns`    |                                                |                                                            |
-| `@kz/service`     |                                                |                                                            |
-| `@kz/testing`     |                                                |                                                            |
-| `@kz/util`        | [JSR][jsr-util] &bull; [API & more][i11n-util] |                                                            |
-| `@kz/wire`        |                                                |                                                            |
+| Module            | Links                                          | Description |
+| ----------------- | ---------------------------------------------- | ----------- |
+| `@kz/abstract`    |                                                |             |
+| `@kz/app`         |                                                |             |
+| `@kz/calc`        |                                                |             |
+| `@kz/collections` |                                                |             |
+| `@kz/console`     |                                                |             |
+| `@kz/core`        |                                                |             |
+| `@kz/data`        |                                                |             |
+| `@kz/io`          |                                                |             |
+| `@kz/logging`     |                                                |             |
+| `@kz/network`     |                                                |             |
+| `@kz/patterns`    |                                                |             |
+| `@kz/service`     |                                                |             |
+| `@kz/testing`     |                                                |             |
+| `@kz/util`        | [JSR][jsr-util] &bull; [API & more][i11n-util] |             |
+| `@kz/wire`        |                                                |             |
 
 ---
 
