@@ -3,8 +3,10 @@
 import { describe, it } from '@std/testing/bdd';
 import { assertType, type IsExact } from '@std/testing/types';
 import type {
+  ConditionOf,
   GetCapSetting,
   UseAsync,
+  UseCondition,
   UseDefault,
   UseDepth,
   UseElse,
@@ -297,6 +299,34 @@ describe('GetCapSetting', () => {
       it('should be the DefaultType if missing from the CapBrokerSet', () => {
         type Actual = GetCapSetting<UseUnsafe<false>, UseThen, boolean>;
         type Expected = boolean;
+        type Result = IsExact<Actual, Expected>;
+
+        assertType<Result>(IS_TRUE);
+      });
+    });
+  });
+
+  describe('Special consumers', () => {
+    describe('ConditionOf', () => {
+      it('should pick the setting from CapBrokerSet', () => {
+        type Actual = GetCapSetting<
+          ConditionOf<string, number>,
+          UseThen,
+          10
+        >;
+        type Expected = string;
+        type Result = IsExact<Actual, Expected>;
+
+        assertType<Result>(IS_TRUE);
+      });
+
+      it('should not work with UseCondition', () => {
+        type Actual = GetCapSetting<
+          UseAsync,
+          UseCondition,
+          never
+        >;
+        type Expected = never;
         type Result = IsExact<Actual, Expected>;
 
         assertType<Result>(IS_TRUE);

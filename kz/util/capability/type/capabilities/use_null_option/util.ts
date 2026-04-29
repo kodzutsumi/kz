@@ -1,12 +1,8 @@
 // Copyright 2020 - present integereleven. All rights reserved. MIT license.
 
-import type { GetCapSetting } from '../../get_cap_setting.ts';
 import type { BaseCapConsumerSet } from '../../type.ts';
-import type { AsCondition, UseCondition } from '../use_condition/mod.ts';
-import type { UseElse } from '../use_else/mod.ts';
-import type { UseThen } from '../use_then/mod.ts';
 
-import type { AsDeep, AsLevel, AsShallow } from './broker.ts';
+import type { AsLevel, AsShallow } from './broker.ts';
 import type {
   UseDepthKey,
   UseDepthLevel,
@@ -33,11 +29,11 @@ export type DecrementDepth<CapSet extends BaseCapConsumerSet> = CapSet extends
  * @template CapSet - The capability set to check for deep support.
  * @template Settings - The capabilities to check for when determining the result.
  */
-export type IsDeep<
-  CapSet extends BaseCapConsumerSet,
-  Settings extends UseCondition = AsCondition,
-> = CapSet extends AsDeep ? GetCapSetting<Settings, UseThen, true>
-  : CapSet extends AsLevel<infer Depth>
-    ? Depth extends UseDepthLevel ? GetCapSetting<Settings, UseThen, true>
-    : GetCapSetting<Settings, UseElse, false>
-  : GetCapSetting<Settings, UseElse, false>;
+// export type IsDeep<
+//   CapSet extends BaseCapConsumerSet,
+//   Settings extends UseThen | UseElse = Then<true> & Else<false>,
+// > = CapSet extends AsDeep ? GetCapSetting<Settings, UseThen, true>
+//   : CapSet extends AsLevel<infer Depth>
+//     ? Depth extends UseDepthLevel ? GetCapSetting<Settings, UseThen, true>
+//     : GetCapSetting<Settings, UseElse, false>
+//   : GetCapSetting<Settings, UseElse, false>;

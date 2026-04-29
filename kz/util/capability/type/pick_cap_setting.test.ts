@@ -24,12 +24,14 @@ import type {
   AsSync,
   AsUnsafe,
   AsWritable,
+  ConditionOf,
   DefaultOf,
   Else,
   OfType,
   PickCapSetting,
   Then,
   UseAsync,
+  UseCondition,
   UseDefault,
   UseDepth,
   UseElse,
@@ -322,6 +324,34 @@ describe('PickCapSetting', () => {
       it('should be the DefaultType if missing from the CapBrokerSet', () => {
         type Actual = PickCapSetting<UseUnsafe<false>, UseThen, boolean>;
         type Expected = Then<boolean>;
+        type Result = IsExact<Actual, Expected>;
+
+        assertType<Result>(IS_TRUE);
+      });
+    });
+  });
+
+  describe('Special consumers', () => {
+    describe('ConditionOf', () => {
+      it('should pick the setting from CapBrokerSet', () => {
+        type Actual = PickCapSetting<
+          ConditionOf<string, number>,
+          UseThen,
+          true
+        >;
+        type Expected = Then<string>;
+        type Result = IsExact<Actual, Expected>;
+
+        assertType<Result>(IS_TRUE);
+      });
+
+      it('should not work with UseCondition', () => {
+        type Actual = PickCapSetting<
+          UseAsync,
+          UseCondition,
+          never
+        >;
+        type Expected = Then<never> | Else<never>;
         type Result = IsExact<Actual, Expected>;
 
         assertType<Result>(IS_TRUE);

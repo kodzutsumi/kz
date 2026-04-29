@@ -7,4 +7,4 @@ export {
   UseDepthKeyString,
   type UseDepthLevel,
 } from './constant.ts';
-export type { DecrementDepth /*IsDeep*/ } from './util.ts';
+export type { DecrementDepth, IsDeep } from './util.ts';

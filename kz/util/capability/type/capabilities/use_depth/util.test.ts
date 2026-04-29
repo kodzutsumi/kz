@@ -7,10 +7,7 @@ import type {
   AsLevel,
   AsShallow,
   DecrementDepth,
-  // IsDeep,
-  // UseDepth,
-  // UseDepthKeyString,
-  // UseDepthLevel,
+  IsDeep,
 } from '@kz/util/capability';
 
 const IS_TRUE = true;
@@ -98,101 +95,101 @@ describe('UseDepth - utilities', () => {
     });
   });
 
-  // describe('IsDeep', () => {
-  //   it('should be true for AsDeep', () => {
-  //     type Actual = IsDeep<AsDeep>;
-  //     type Expected = true;
-  //     type Result = IsExact<Actual, Expected>;
+  describe('IsDeep', () => {
+    it('should be true for AsDeep', () => {
+      type Actual = IsDeep<AsDeep>;
+      type Expected = true;
+      type Result = IsExact<Actual, Expected>;
 
-  //     assertType<Result>(IS_TRUE);
-  //   });
+      assertType<Result>(IS_TRUE);
+    });
 
-  //   it('should be true for AsLevel<10>', () => {
-  //     type Actual = IsDeep<AsLevel<10>>;
-  //     type Expected = true;
-  //     type Result = IsExact<Actual, Expected>;
+    it('should be true for AsLevel<10>', () => {
+      type Actual = IsDeep<AsLevel<10>>;
+      type Expected = true;
+      type Result = IsExact<Actual, Expected>;
 
-  //     assertType<Result>(IS_TRUE);
-  //   });
+      assertType<Result>(IS_TRUE);
+    });
 
-  //   it('should be true for AsLevel<9>', () => {
-  //     type Actual = IsDeep<AsLevel<9>>;
-  //     type Expected = true;
-  //     type Result = IsExact<Actual, Expected>;
+    it('should be true for AsLevel<9>', () => {
+      type Actual = IsDeep<AsLevel<9>>;
+      type Expected = true;
+      type Result = IsExact<Actual, Expected>;
 
-  //     assertType<Result>(IS_TRUE);
-  //   });
+      assertType<Result>(IS_TRUE);
+    });
 
-  //   it('should be true for AsLevel<8>', () => {
-  //     type Actual = IsDeep<AsLevel<8>>;
-  //     type Expected = true;
-  //     type Result = IsExact<Actual, Expected>;
+    it('should be true for AsLevel<8>', () => {
+      type Actual = IsDeep<AsLevel<8>>;
+      type Expected = true;
+      type Result = IsExact<Actual, Expected>;
 
-  //     assertType<Result>(IS_TRUE);
-  //   });
+      assertType<Result>(IS_TRUE);
+    });
 
-  //   it('should be true for AsLevel<7>', () => {
-  //     type Actual = IsDeep<AsLevel<7>>;
-  //     type Expected = true;
-  //     type Result = IsExact<Actual, Expected>;
+    it('should be true for AsLevel<7>', () => {
+      type Actual = IsDeep<AsLevel<7>>;
+      type Expected = true;
+      type Result = IsExact<Actual, Expected>;
 
-  //     assertType<Result>(IS_TRUE);
-  //   });
+      assertType<Result>(IS_TRUE);
+    });
 
-  //   it('should be true for AsLevel<6>', () => {
-  //     type Actual = IsDeep<AsLevel<6>>;
-  //     type Expected = true;
-  //     type Result = IsExact<Actual, Expected>;
+    it('should be true for AsLevel<6>', () => {
+      type Actual = IsDeep<AsLevel<6>>;
+      type Expected = true;
+      type Result = IsExact<Actual, Expected>;
 
-  //     assertType<Result>(IS_TRUE);
-  //   });
+      assertType<Result>(IS_TRUE);
+    });
 
-  //   it('should be true for AsLevel<5>', () => {
-  //     type Actual = IsDeep<AsLevel<5>>;
-  //     type Expected = true;
-  //     type Result = IsExact<Actual, Expected>;
+    it('should be true for AsLevel<5>', () => {
+      type Actual = IsDeep<AsLevel<5>>;
+      type Expected = true;
+      type Result = IsExact<Actual, Expected>;
 
-  //     assertType<Result>(IS_TRUE);
-  //   });
+      assertType<Result>(IS_TRUE);
+    });
 
-  //   it('should be true for AsLevel<4>', () => {
-  //     type Actual = IsDeep<AsLevel<4>>;
-  //     type Expected = true;
-  //     type Result = IsExact<Actual, Expected>;
+    it('should be true for AsLevel<4>', () => {
+      type Actual = IsDeep<AsLevel<4>>;
+      type Expected = true;
+      type Result = IsExact<Actual, Expected>;
 
-  //     assertType<Result>(IS_TRUE);
-  //   });
+      assertType<Result>(IS_TRUE);
+    });
 
-  //   it('should be true for AsLevel<3>', () => {
-  //     type Actual = IsDeep<AsLevel<3>>;
-  //     type Expected = true;
-  //     type Result = IsExact<Actual, Expected>;
+    it('should be true for AsLevel<3>', () => {
+      type Actual = IsDeep<AsLevel<3>>;
+      type Expected = true;
+      type Result = IsExact<Actual, Expected>;
 
-  //     assertType<Result>(IS_TRUE);
-  //   });
+      assertType<Result>(IS_TRUE);
+    });
 
-  //   it('should be true for AsLevel<2>', () => {
-  //     type Actual = IsDeep<AsLevel<2>>;
-  //     type Expected = true;
-  //     type Result = IsExact<Actual, Expected>;
+    it('should be true for AsLevel<2>', () => {
+      type Actual = IsDeep<AsLevel<2>>;
+      type Expected = true;
+      type Result = IsExact<Actual, Expected>;
 
-  //     assertType<Result>(IS_TRUE);
-  //   });
+      assertType<Result>(IS_TRUE);
+    });
 
-  //   it('should be true for AsLevel<1>', () => {
-  //     type Actual = IsDeep<AsLevel<1>>;
-  //     type Expected = true;
-  //     type Result = IsExact<Actual, Expected>;
+    it('should be true for AsLevel<1>', () => {
+      type Actual = IsDeep<AsLevel<1>>;
+      type Expected = true;
+      type Result = IsExact<Actual, Expected>;
 
-  //     assertType<Result>(IS_TRUE);
-  //   });
+      assertType<Result>(IS_TRUE);
+    });
 
-  //   it('should be false for AsShallow', () => {
-  //     type Actual = IsDeep<AsShallow>;
-  //     type Expected = false;
-  //     type Result = IsExact<Actual, Expected>;
+    it('should be false for AsShallow', () => {
+      type Actual = IsDeep<AsShallow>;
+      type Expected = false;
+      type Result = IsExact<Actual, Expected>;
 
-  //     assertType<Result>(IS_TRUE);
-  //   });
-  // });
+      assertType<Result>(IS_TRUE);
+    });
+  });
 });
