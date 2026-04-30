@@ -1,7 +1,7 @@
 // Copyright 2020 - present integereleven. All rights reserved. MIT license.
 
 import type { GetCapSetting } from '../../get_cap_setting.ts';
-import type { BaseCapConsumerSet } from '../../type.ts';
+import type { BaseCapSet } from '../../type.ts';
 import type { AsCondition, UseCondition } from '../use_condition/mod.ts';
 import type { UseElse } from '../use_else/mod.ts';
 import type { UseThen } from '../use_then/mod.ts';
@@ -19,7 +19,7 @@ import type { UseDepth } from './consumer.ts';
  *
  * @template CapSet - The capability set to decrement the depth level of.
  */
-export type DecrementDepth<CapSet extends BaseCapConsumerSet> = CapSet extends
+export type DecrementDepth<CapSet extends BaseCapSet> = CapSet extends
   UseDepth<infer Depth> ? Depth extends UseDepthLevel ?
       & UseDepth<Depth extends 1 ? false : UseDepthLevelGauge[Depth]>
       & Omit<CapSet, UseDepthKey>
@@ -34,7 +34,7 @@ export type DecrementDepth<CapSet extends BaseCapConsumerSet> = CapSet extends
  * @template Settings - The capabilities to check for when determining the result.
  */
 export type IsDeep<
-  CapSet extends BaseCapConsumerSet,
+  CapSet extends BaseCapSet,
   Settings extends UseCondition = AsCondition,
 > = CapSet extends AsDeep ? GetCapSetting<Settings, UseThen, true>
   : CapSet extends AsLevel<infer Depth>

@@ -3,18 +3,23 @@
 import type { UseSetterKeyString } from './constant.ts';
 
 /**
- * A capability flag consumer indicating support for accessor behavior, or setter or getter behavior.
+ * A capability consumer indicating support for setter or getter behavior.
  *
- * Use this capability consumer to indicate that a type supports both setter or getter types, or results in a setter or getter type based on the value of the capability setting.
- *
- * @template AsSetter - A boolean type parameter indicating whether the broker behavior is setter (`true`) or getter (`false`).
+ * Use this capability consumer to indicate that a type supports both setter or
+ * getter behavior, or results in a setter or getter type, based on the value
+ * of the capability setting.
  *
  * @see {@linkcode AsSetter} for the `true` broker behavior of this capability consumer.
  * @see {@linkcode AsGetter} for the `false` (implied default) broker behavior of this capability consumer.
+ * 
+ * @template AsSetter - The boolean setting for this capability consumer.
  */
 export type UseSetter<AsSetter extends boolean = boolean> = {
   /**
-   * The capability setting key for the {@linkcode UseSetter} capability, with a boolean value indicating whether the broker behavior is setter (`true`) or getter (`false`).
+   * The capability setting key for the `UseSetter` capability.
+   * 
+   * As `boolean`, it functions as a capability consumer. As a boolean literal,
+   * it functions as a capability broker indicating a desired behavior.
    */
   [UseSetterKeyString]: AsSetter;
 };

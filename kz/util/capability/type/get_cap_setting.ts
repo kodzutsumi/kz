@@ -1,21 +1,23 @@
 // Copyright 2020 - present integereleven. All rights reserved. MIT license.
 
-import type { PickCapSetting } from './pick_cap_setting.ts';
-import type { BaseCapConsumerSet } from './type.ts';
+import type { PickCap } from './pick_cap.ts';
+import type { BaseCapSet } from './type.ts';
 
 /**
- * Get the setting for a capability from a capability broker set, with a default fallback if the capability is not present in the broker set.
+ * Get the setting of a capability (`Cap`) from a capability broker set
+ * (`Settings`), with a fallback setting (`Fallback`) if the capability is not
+ * present in the broker set.
  *
- * @template CapBrokerSet - The capability broker set to get the setting from.
- * @template Capability - The capability to get the setting for.
- * @template DefaultSetting - The default setting to use if the capability is not present in the broker set.
- * @returns The setting for the capability from the broker set, or the default setting if the capability is not present in the broker set.
+ * @template Settings - The capability broker set to get the setting from.
+ * @template Cap - The capability to get the setting of from `Settings`.
+ * @template Fallback - The fallback setting to use if the capability is not present in `Settings`.
+ * @returns The capability setting from the broker set, or the capability setting with the fallback setting.
  */
 export type GetCapSetting<
-  CapBrokerSet extends BaseCapConsumerSet,
-  Capability extends BaseCapConsumerSet,
-  DefaultSetting extends Capability[keyof Capability],
-> = PickCapSetting<CapBrokerSet, Capability, DefaultSetting> extends
-  infer PickedCap ? PickedCap[keyof PickedCap] extends never ? DefaultSetting
+  Settings extends BaseCapSet,
+  Cap extends BaseCapSet,
+  Fallback extends Cap[keyof Cap],
+> = PickCap<Settings, Cap, Fallback> extends
+  infer PickedCap ? PickedCap[keyof PickedCap] extends never ? Fallback
   : PickedCap[keyof PickedCap]
-  : DefaultSetting;
+  : Fallback;

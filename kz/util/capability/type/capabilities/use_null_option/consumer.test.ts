@@ -4,7 +4,7 @@
 
 import { describe, it } from '@std/testing/bdd';
 import { assertType, type Has, type IsExact } from '@std/testing/types';
-import type { BaseCapConsumerSet, UseNullOption } from '@kz/util/capability';
+import type { BaseCapSet, UseNullOption } from '@kz/util/capability';
 
 const IS_TRUE = true;
 
@@ -18,9 +18,9 @@ describe('UseNullOption - consumer', () => {
       assertType<Result>(IS_TRUE);
     });
 
-    it('should be assignable to BaseCapConsumerSet', () => {
+    it('should be assignable to BaseCapSet', () => {
       type Actual = UseNullOption;
-      type Expected = BaseCapConsumerSet;
+      type Expected = BaseCapSet;
       type Result = Has<Actual, Expected>;
 
       assertType<Result>(IS_TRUE);

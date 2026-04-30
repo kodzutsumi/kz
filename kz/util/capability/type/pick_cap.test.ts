@@ -28,7 +28,7 @@ import type {
   DefaultOf,
   Else,
   OfType,
-  PickCapSetting,
+  PickCap,
   Then,
   UseAsync,
   UseCondition,
@@ -50,11 +50,11 @@ import type {
 
 const IS_TRUE = true;
 
-describe('PickCapSetting', () => {
+describe('PickCap', () => {
   describe('Capability flag consumer', () => {
     describe('UseAsync', () => {
       it('should pick the setting from CapBrokerSet', () => {
-        type Actual = PickCapSetting<UseAsync<true>, UseAsync, false>;
+        type Actual = PickCap<UseAsync<true>, UseAsync, false>;
         type Expected = AsAsync;
         type Result = IsExact<Actual, Expected>;
 
@@ -62,7 +62,7 @@ describe('PickCapSetting', () => {
       });
 
       it('should be the DefaultType if missing from the CapBrokerSet', () => {
-        type Actual = PickCapSetting<UseUnsafe<false>, UseAsync, false>;
+        type Actual = PickCap<UseUnsafe<false>, UseAsync, false>;
         type Expected = AsSync;
         type Result = IsExact<Actual, Expected>;
 
@@ -72,7 +72,7 @@ describe('PickCapSetting', () => {
 
     describe('UseExcluded', () => {
       it('should pick the setting from CapBrokerSet', () => {
-        type Actual = PickCapSetting<UseExcluded<true>, UseExcluded, false>;
+        type Actual = PickCap<UseExcluded<true>, UseExcluded, false>;
         type Expected = AsExcluded;
         type Result = IsExact<Actual, Expected>;
 
@@ -80,7 +80,7 @@ describe('PickCapSetting', () => {
       });
 
       it('should be the DefaultType if missing from the CapBrokerSet', () => {
-        type Actual = PickCapSetting<UseUnsafe<false>, UseExcluded, false>;
+        type Actual = PickCap<UseUnsafe<false>, UseExcluded, false>;
         type Expected = AsIncluded;
         type Result = IsExact<Actual, Expected>;
 
@@ -90,7 +90,7 @@ describe('PickCapSetting', () => {
 
     describe('UseInverted', () => {
       it('should pick the setting from CapBrokerSet', () => {
-        type Actual = PickCapSetting<UseInverted<true>, UseInverted, false>;
+        type Actual = PickCap<UseInverted<true>, UseInverted, false>;
         type Expected = AsInverted;
         type Result = IsExact<Actual, Expected>;
 
@@ -98,7 +98,7 @@ describe('PickCapSetting', () => {
       });
 
       it('should be the DefaultType if missing from the CapBrokerSet', () => {
-        type Actual = PickCapSetting<UseUnsafe<false>, UseInverted, false>;
+        type Actual = PickCap<UseUnsafe<false>, UseInverted, false>;
         type Expected = AsInitial;
         type Result = IsExact<Actual, Expected>;
 
@@ -108,7 +108,7 @@ describe('PickCapSetting', () => {
 
     describe('UseOptional', () => {
       it('should pick the setting from CapBrokerSet', () => {
-        type Actual = PickCapSetting<UseOptional<true>, UseOptional, false>;
+        type Actual = PickCap<UseOptional<true>, UseOptional, false>;
         type Expected = AsOptional;
         type Result = IsExact<Actual, Expected>;
 
@@ -116,7 +116,7 @@ describe('PickCapSetting', () => {
       });
 
       it('should be the DefaultType if missing from the CapBrokerSet', () => {
-        type Actual = PickCapSetting<UseUnsafe<false>, UseOptional, false>;
+        type Actual = PickCap<UseUnsafe<false>, UseOptional, false>;
         type Expected = AsRequired;
         type Result = IsExact<Actual, Expected>;
 
@@ -126,7 +126,7 @@ describe('PickCapSetting', () => {
 
     describe('UseReadonly', () => {
       it('should pick the setting from CapBrokerSet', () => {
-        type Actual = PickCapSetting<UseReadonly<true>, UseReadonly, false>;
+        type Actual = PickCap<UseReadonly<true>, UseReadonly, false>;
         type Expected = AsReadonly;
         type Result = IsExact<Actual, Expected>;
 
@@ -134,7 +134,7 @@ describe('PickCapSetting', () => {
       });
 
       it('should be the DefaultType if missing from the CapBrokerSet', () => {
-        type Actual = PickCapSetting<UseUnsafe<false>, UseReadonly, false>;
+        type Actual = PickCap<UseUnsafe<false>, UseReadonly, false>;
         type Expected = AsWritable;
         type Result = IsExact<Actual, Expected>;
 
@@ -144,7 +144,7 @@ describe('PickCapSetting', () => {
 
     describe('UseReversed', () => {
       it('should pick the setting from CapBrokerSet', () => {
-        type Actual = PickCapSetting<UseReversed<true>, UseReversed, false>;
+        type Actual = PickCap<UseReversed<true>, UseReversed, false>;
         type Expected = AsReversed;
         type Result = IsExact<Actual, Expected>;
 
@@ -152,7 +152,7 @@ describe('PickCapSetting', () => {
       });
 
       it('should be the DefaultType if missing from the CapBrokerSet', () => {
-        type Actual = PickCapSetting<UseUnsafe<false>, UseReversed, false>;
+        type Actual = PickCap<UseUnsafe<false>, UseReversed, false>;
         type Expected = AsForward;
         type Result = IsExact<Actual, Expected>;
 
@@ -162,7 +162,7 @@ describe('PickCapSetting', () => {
 
     describe('UseSetter', () => {
       it('should pick the setting from CapBrokerSet', () => {
-        type Actual = PickCapSetting<UseSetter<true>, UseSetter, false>;
+        type Actual = PickCap<UseSetter<true>, UseSetter, false>;
         type Expected = AsSetter;
         type Result = IsExact<Actual, Expected>;
 
@@ -170,7 +170,7 @@ describe('PickCapSetting', () => {
       });
 
       it('should be the DefaultType if missing from the CapBrokerSet', () => {
-        type Actual = PickCapSetting<UseUnsafe<false>, UseSetter, false>;
+        type Actual = PickCap<UseUnsafe<false>, UseSetter, false>;
         type Expected = AsGetter;
         type Result = IsExact<Actual, Expected>;
 
@@ -180,7 +180,7 @@ describe('PickCapSetting', () => {
 
     describe('UseStrict', () => {
       it('should pick the setting from CapBrokerSet', () => {
-        type Actual = PickCapSetting<UseStrict<true>, UseStrict, false>;
+        type Actual = PickCap<UseStrict<true>, UseStrict, false>;
         type Expected = AsStrict;
         type Result = IsExact<Actual, Expected>;
 
@@ -188,7 +188,7 @@ describe('PickCapSetting', () => {
       });
 
       it('should be the DefaultType if missing from the CapBrokerSet', () => {
-        type Actual = PickCapSetting<UseUnsafe<false>, UseStrict, false>;
+        type Actual = PickCap<UseUnsafe<false>, UseStrict, false>;
         type Expected = AsLoose;
         type Result = IsExact<Actual, Expected>;
 
@@ -198,7 +198,7 @@ describe('PickCapSetting', () => {
 
     describe('UseUnsafe', () => {
       it('should pick the setting from CapBrokerSet', () => {
-        type Actual = PickCapSetting<UseUnsafe<true>, UseUnsafe, false>;
+        type Actual = PickCap<UseUnsafe<true>, UseUnsafe, false>;
         type Expected = AsUnsafe;
         type Result = IsExact<Actual, Expected>;
 
@@ -206,7 +206,7 @@ describe('PickCapSetting', () => {
       });
 
       it('should be the DefaultType if missing from the CapBrokerSet', () => {
-        type Actual = PickCapSetting<UseAsync<false>, UseUnsafe, false>;
+        type Actual = PickCap<UseAsync<false>, UseUnsafe, false>;
         type Expected = AsSafe;
         type Result = IsExact<Actual, Expected>;
 
@@ -218,7 +218,7 @@ describe('PickCapSetting', () => {
   describe('Capability option consumer', () => {
     describe('UseDepth', () => {
       it('should pick the setting from CapBrokerSet', () => {
-        type Actual = PickCapSetting<UseDepth<false>, UseDepth, 10>;
+        type Actual = PickCap<UseDepth<false>, UseDepth, 10>;
         type Expected = AsShallow;
         type Result = IsExact<Actual, Expected>;
 
@@ -226,7 +226,7 @@ describe('PickCapSetting', () => {
       });
 
       it('should be the DefaultType if missing from the CapBrokerSet', () => {
-        type Actual = PickCapSetting<UseUnsafe<false>, UseDepth, 10>;
+        type Actual = PickCap<UseUnsafe<false>, UseDepth, 10>;
         type Expected = AsLevel<10>;
         type Result = IsExact<Actual, Expected>;
 
@@ -236,7 +236,7 @@ describe('PickCapSetting', () => {
 
     describe('UseRecord', () => {
       it('should pick the setting from CapBrokerSet', () => {
-        type Actual = PickCapSetting<UseRecord<'record'>, UseRecord, 'values'>;
+        type Actual = PickCap<UseRecord<'record'>, UseRecord, 'values'>;
         type Expected = AsRecord;
         type Result = IsExact<Actual, Expected>;
 
@@ -244,7 +244,7 @@ describe('PickCapSetting', () => {
       });
 
       it('should be the DefaultType if missing from the CapBrokerSet', () => {
-        type Actual = PickCapSetting<UseUnsafe<false>, UseRecord, 'record'>;
+        type Actual = PickCap<UseUnsafe<false>, UseRecord, 'record'>;
         type Expected = AsRecord;
         type Result = IsExact<Actual, Expected>;
 
@@ -256,7 +256,7 @@ describe('PickCapSetting', () => {
   describe('Capability open consumer', () => {
     describe('UseDefault', () => {
       it('should pick the setting from CapBrokerSet', () => {
-        type Actual = PickCapSetting<
+        type Actual = PickCap<
           UseDefault<string | number>,
           UseDefault,
           10
@@ -268,7 +268,7 @@ describe('PickCapSetting', () => {
       });
 
       it('should be the DefaultType if missing from the CapBrokerSet', () => {
-        type Actual = PickCapSetting<UseUnsafe<false>, UseDefault, boolean>;
+        type Actual = PickCap<UseUnsafe<false>, UseDefault, boolean>;
         type Expected = DefaultOf<boolean>;
         type Result = IsExact<Actual, Expected>;
 
@@ -278,7 +278,7 @@ describe('PickCapSetting', () => {
 
     describe('UseElse', () => {
       it('should pick the setting from CapBrokerSet', () => {
-        type Actual = PickCapSetting<UseElse<string | number>, UseElse, 10>;
+        type Actual = PickCap<UseElse<string | number>, UseElse, 10>;
         type Expected = Else<string | number>;
         type Result = IsExact<Actual, Expected>;
 
@@ -286,7 +286,7 @@ describe('PickCapSetting', () => {
       });
 
       it('should be the DefaultType if missing from the CapBrokerSet', () => {
-        type Actual = PickCapSetting<UseUnsafe<false>, UseElse, boolean>;
+        type Actual = PickCap<UseUnsafe<false>, UseElse, boolean>;
         type Expected = Else<boolean>;
         type Result = IsExact<Actual, Expected>;
 
@@ -296,7 +296,7 @@ describe('PickCapSetting', () => {
 
     describe('UseOfType', () => {
       it('should pick the setting from CapBrokerSet', () => {
-        type Actual = PickCapSetting<UseOfType<string | number>, UseOfType, 10>;
+        type Actual = PickCap<UseOfType<string | number>, UseOfType, 10>;
         type Expected = OfType<string | number>;
         type Result = IsExact<Actual, Expected>;
 
@@ -304,7 +304,7 @@ describe('PickCapSetting', () => {
       });
 
       it('should be the DefaultType if missing from the CapBrokerSet', () => {
-        type Actual = PickCapSetting<UseUnsafe<false>, UseOfType, boolean>;
+        type Actual = PickCap<UseUnsafe<false>, UseOfType, boolean>;
         type Expected = OfType<boolean>;
         type Result = IsExact<Actual, Expected>;
 
@@ -314,7 +314,7 @@ describe('PickCapSetting', () => {
 
     describe('UseThen', () => {
       it('should pick the setting from CapBrokerSet', () => {
-        type Actual = PickCapSetting<UseThen<string | number>, UseThen, 10>;
+        type Actual = PickCap<UseThen<string | number>, UseThen, 10>;
         type Expected = Then<string | number>;
         type Result = IsExact<Actual, Expected>;
 
@@ -322,7 +322,7 @@ describe('PickCapSetting', () => {
       });
 
       it('should be the DefaultType if missing from the CapBrokerSet', () => {
-        type Actual = PickCapSetting<UseUnsafe<false>, UseThen, boolean>;
+        type Actual = PickCap<UseUnsafe<false>, UseThen, boolean>;
         type Expected = Then<boolean>;
         type Result = IsExact<Actual, Expected>;
 
@@ -334,7 +334,7 @@ describe('PickCapSetting', () => {
   describe('Special consumers', () => {
     describe('ConditionOf', () => {
       it('should pick the setting from CapBrokerSet', () => {
-        type Actual = PickCapSetting<
+        type Actual = PickCap<
           ConditionOf<string, number>,
           UseThen,
           true
@@ -346,7 +346,7 @@ describe('PickCapSetting', () => {
       });
 
       it('should not work with UseCondition', () => {
-        type Actual = PickCapSetting<
+        type Actual = PickCap<
           UseAsync,
           UseCondition,
           never

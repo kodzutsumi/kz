@@ -7,19 +7,34 @@ import type { UseReversedKeyString } from './constant.ts';
  *
  * Use this capability consumer to indicate that a type supports both reversed or forward types, or results in a reversed or forward type based on the value of the capability setting.
  *
- * ## Difference between `UseReversed` and {@linkcode UseInverted}
- * `UseReversed` is for data flow and comparison direction, while {@linkcode UseInverted} is for behavior or type inversion.
- * `UseReversed` is for structural capabilities, while {@linkcode UseInverted} is for behavioral capabilities.
- * `UseReversed` is for type transformations (swap operands of comparison), while {@linkcode UseInverted} is for logic transformations (flip a bit or boolean).
- *
  * @template AsReversed - A boolean type parameter indicating whether the broker behavior is reversed (`true`) or forward (`false`).
  *
  * @see {@linkcode AsReversed} for the `true` broker behavior of this capability consumer.
  * @see {@linkcode AsForward} for the `false` (implied default) broker behavior of this capability consumer.
  */
+
+/**
+ * A capability consumer indicating support for reversed or forward behavior.
+ *
+ * Use this capability consumer to indicate that a type supports both reversed
+ * or forward behavior, or results in a reversed or forward type, based on the
+ * value of the capability setting.
+ * 
+ * ## Difference between `UseReversed` and {@linkcode UseInverted}
+ * //TODO(@ebntly): Explain the difference between these two capabilities, and
+ * //when to use each.
+ * 
+ * @see {@linkcode AsReversed} for the `true` broker behavior of this capability consumer.
+ * @see {@linkcode AsForward} for the `false` (implied default) broker behavior of this capability consumer.
+ * 
+ * @template AsReversed - The boolean setting for this capability consumer.
+ */
 export type UseReversed<AsReversed extends boolean = boolean> = {
   /**
-   * The capability setting key for the {@linkcode UseReversed} capability, with a boolean value indicating whether the broker behavior is reversed (`true`) or forward (`false`).
+   * The capability setting key for the `UseReversed` capability.
+   * 
+   * As `boolean`, it functions as a capability consumer. As a boolean literal,
+   * it functions as a capability broker indicating a desired behavior.
    */
   [UseReversedKeyString]: AsReversed;
 };
