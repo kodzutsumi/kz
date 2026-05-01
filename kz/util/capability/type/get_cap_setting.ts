@@ -17,7 +17,7 @@ export type GetCapSetting<
   Settings extends BaseCapSet,
   Cap extends BaseCapSet,
   Fallback extends Cap[keyof Cap],
-> = PickCap<Settings, Cap, Fallback> extends
-  infer PickedCap ? PickedCap[keyof PickedCap] extends never ? Fallback
+> = PickCap<Settings, Cap, Fallback> extends infer PickedCap
+  ? PickedCap[keyof PickedCap] extends never ? Fallback
   : PickedCap[keyof PickedCap]
   : Fallback;

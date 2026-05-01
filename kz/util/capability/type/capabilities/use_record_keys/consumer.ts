@@ -14,7 +14,7 @@ import type { UseKeys } from '../use_keys/mod.ts';
  * @template RecordTarget - The target of the record capability, which indicates whether the capability applies to the record itself, its values, or its keys.
  */
 export type UseRecordKeys<
-  Type extends Record<PropertyKey, unknown> = Record<PropertyKey, unknown>,  
+  Type extends Record<PropertyKey, unknown> = Record<PropertyKey, unknown>,
   Keys extends keyof Type = keyof Type,
   RecordTarget extends UseRecordTarget = UseRecordTarget,
-> = UseOfType<Type> | UseRecord<RecordTarget> | UseKeys<Keys>
+> = UseOfType<Type> | UseRecord<RecordTarget> | UseKeys<Keys>;

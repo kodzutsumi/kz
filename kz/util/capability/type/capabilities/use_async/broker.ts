@@ -14,10 +14,10 @@ export type AsAsync = UseAsync<true>;
 
 /**
  * The synchronous behavior broker of the {@linkcode UseAsync} capability.
- * 
+ *
  * Use this setting to invoke the synchronous behavior of a type that supports
  * the {@linkcode UseAsync} capability consumer.
- * 
+ *
  * > [!NOTE]
  * > This is the recommended default implied behavior of the
  * > {@linkcode UseAsync} capability when the setting is not explicitly set to

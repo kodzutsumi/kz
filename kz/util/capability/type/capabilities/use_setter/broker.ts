@@ -14,10 +14,10 @@ export type AsSetter = UseSetter<true>;
 
 /**
  * The getter broker behavior of the {@linkcode UseSetter} capability.
- * 
+ *
  * Use this setting to invoke the getter behavior of a type that supports the
  * {@linkcode UseSetter} capability consumer.
- * 
+ *
  * > [!NOTE]
  * > This is the recommended default implied behavior of the
  * > {@linkcode UseSetter} capability when the setting is not explicitly set to

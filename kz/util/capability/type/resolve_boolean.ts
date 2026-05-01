@@ -1,6 +1,11 @@
 // Copyright 2020 - present integereleven. All rights reserved. MIT license.
 
-import type { AsInverted, AsUnsafe, UseInverted, UseUnsafe } from '@kz/util/capability';
+import type {
+  AsInverted,
+  AsUnsafe,
+  UseInverted,
+  UseUnsafe,
+} from '@kz/util/capability';
 
 import type { BaseCapSet } from './type.ts';
 import type { AsInitial, AsSafe } from './capabilities/mod.ts';
@@ -15,7 +20,7 @@ type Defaults = AsSafe & AsInitial;
  * ## Capabilities
  * - {@linkcode UseUnsafe} - Determines whether the operand is cast to `true` when the operand is `boolean`.
  * - {@linkcode UseInverted} - Determines whether the operand's boolean value is inverted in the resolution.
- * 
+ *
  * ### Defaults
  * - {@linkcode UseUnsafe} : {@linkcode AsSafe} - The operand is not cast to `true` if it is `boolean`.
  * - {@linkcode UseInverted} : {@linkcode AsInitial} - The operand's boolean value is retained in the resolution.

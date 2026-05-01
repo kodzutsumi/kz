@@ -14,10 +14,10 @@ export type AsOptional = UseOptional<true>;
 
 /**
  * The required behavior broker of the {@linkcode UseOptional} capability.
- * 
+ *
  * Use this setting to invoke the required behavior of a type that supports the
  * {@linkcode UseOptional} capability consumer.
- * 
+ *
  * > [!NOTE]
  * > This is the recommended default implied behavior of the
  * > {@linkcode UseOptional} capability when the setting is not explicitly set

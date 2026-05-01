@@ -11,13 +11,13 @@ import type { UseOptionalKeyString } from './constant.ts';
  *
  * @see {@linkcode AsOptional} for the `true` broker behavior of this capability consumer.
  * @see {@linkcode AsRequired} for the `false` (implied default) broker behavior of this capability consumer.
- * 
+ *
  * @template AsOptional - The boolean setting for this capability consumer.
  */
 export type UseOptional<AsOptional extends boolean = boolean> = {
   /**
    * The capability setting key for the `UseOptional` capability.
-   * 
+   *
    * As `boolean`, it functions as a capability consumer. As a boolean literal,
    * it functions as a capability broker indicating a desired behavior.
    */

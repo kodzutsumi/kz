@@ -1,5 +1,6 @@
 // Copyright 2020 - present integereleven. All rights reserved. MIT license.
 
+
 const BASE_URL = import.meta.url;
 
 async function main(): Promise<void> {
@@ -29,7 +30,10 @@ async function main(): Promise<void> {
   }));
   const indexFile = new URL('./doc_index.html', BASE_URL);
   const indexTemplate = await Deno.readTextFile(indexFile);
-  const indexContent = indexTemplate.replace('<!-- MODULE_ITEMS_PLACEHOLDER -->', items.join('\n    '));
+  const indexContent = indexTemplate.replace(
+    '<!-- MODULE_ITEMS_PLACEHOLDER -->',
+    items.join('\n    '),
+  );
   const indexUrl = new URL('./docs/kz/index.html', root);
 
   await Deno.writeTextFile(indexUrl, indexContent);

@@ -11,13 +11,13 @@ import type { UseStrictKeyString } from './constant.ts';
  *
  * @see {@linkcode AsStrict} for the `true` broker behavior of this capability consumer.
  * @see {@linkcode AsLoose} for the `false` (implied default) broker behavior of this capability consumer.
- * 
+ *
  * @template AsStrict - The boolean setting for this capability consumer.
  */
 export type UseStrict<AsStrict extends boolean = boolean> = {
   /**
    * The capability setting key for the `UseStrict` capability.
-   * 
+   *
    * As `boolean`, it functions as a capability consumer. As a boolean literal,
    * it functions as a capability broker indicating a desired behavior.
    */

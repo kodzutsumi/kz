@@ -14,10 +14,10 @@ export type AsReadonly = UseReadonly<true>;
 
 /**
  * The writable behavior broker of the {@linkcode UseReadonly} capability.
- * 
+ *
  * Use this setting to invoke the writable behavior of a type that supports the
  * {@linkcode UseReadonly} capability consumer.
- * 
+ *
  * > [!NOTE]
  * > This is the recommended default implied behavior of the
  * > {@linkcode UseReadonly} capability when the setting is not explicitly set

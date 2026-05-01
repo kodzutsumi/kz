@@ -14,10 +14,10 @@ export type AsReversed = UseReversed<true>;
 
 /**
  * The forward behavior broker of the {@linkcode UseReversed} capability.
- * 
+ *
  * Use this setting to invoke the forward behavior of a type that supports the
  * {@linkcode UseReversed} capability consumer.
- * 
+ *
  * > [!NOTE]
  * > This is the recommended default implied behavior of the
  * > {@linkcode UseReversed} capability when the setting is not explicitly set

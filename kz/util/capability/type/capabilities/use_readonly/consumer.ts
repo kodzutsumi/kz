@@ -11,13 +11,13 @@ import type { UseReadonlyKeyString } from './constant.ts';
  *
  * @see {@linkcode AsReadonly} for the `true` broker behavior of this capability consumer.
  * @see {@linkcode AsWritable} for the `false` (implied default) broker behavior of this capability consumer.
- * 
+ *
  * @template AsReadonly - The boolean setting for this capability consumer.
  */
 export type UseReadonly<AsReadonly extends boolean = boolean> = {
   /**
    * The capability setting key for the `UseReadonly` capability.
-   * 
+   *
    * As `boolean`, it functions as a capability consumer. As a boolean literal,
    * it functions as a capability broker indicating a desired behavior.
    */

@@ -14,10 +14,10 @@ export type AsUnsafe = UseUnsafe<true>;
 
 /**
  * The safe behavior broker of the {@linkcode UseUnsafe} capability.
- * 
+ *
  * Use this setting to invoke the safe behavior of a type that supports the
  * {@linkcode UseUnsafe} capability consumer.
- * 
+ *
  * > [!NOTE]
  * > This is the recommended default implied behavior of the
  * > {@linkcode UseUnsafe} capability when the setting is not explicitly set to

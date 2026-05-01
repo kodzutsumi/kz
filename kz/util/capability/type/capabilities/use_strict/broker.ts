@@ -14,10 +14,10 @@ export type AsStrict = UseStrict<true>;
 
 /**
  * The loose behavior broker of the {@linkcode UseStrict} capability.
- * 
+ *
  * Use this setting to invoke the loose behavior of a type that supports the
  * {@linkcode UseStrict} capability consumer.
- * 
+ *
  * > [!NOTE]
  * > This is the recommended default implied behavior of the
  * > {@linkcode UseStrict} capability when the setting is not explicitly set to
