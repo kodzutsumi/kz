@@ -3,11 +3,15 @@
 import type { UseOfTypeKeyString } from './constant.ts';
 
 /**
- * A capability open consumer indicating support for specifying a working type.
+ * A capability consumer indicating support for a working type.
  *
- * Use this capability consumer to indicate that a type supports specifying a working type, or results in a type with a working type based on the value of the capability setting.
+ * Use this capability consumer to indicate that a type supports a working
+ * type, or results in a type with a working type, based on the value of the
+ * capability setting.
  *
- * @template Type - The type of the capability setting value for this capability consumer.
+ * @see {@linkcode OfType} for the broker behavior of this capability consumer.
+ *
+ * @template Type - The type setting for this capability consumer.
  */
 export type UseOfType<Type extends unknown = unknown> = {
   /**

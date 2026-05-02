@@ -8,11 +8,17 @@ type CapSet = UseStrict;
 type Defaults = AsLoose;
 
 /**
- * A special capability for the {@linkcode Then} and {@linkcode Else} capabilities that allows for conditional types based on the value of the capability setting.
+ * A special capability for the {@linkcode Then} and {@linkcode Else}
+ * capabilities that allows for conditional types.
  *
- * This capability is unique in that it can be used to create conditional types based on the value of the capability setting, allowing for more flexible and powerful type definitions.
+ * This capability is unique in that it can be used to create conditional types
+ * based on the value of the capability setting, allowing for more flexible and
+ * powerful type definitions.
  *
- * Using {@linkcode AsStrict} in the `Settings` will result in an intersection of {@linkcode UseThen} and {@linkcode UseElse}, while using {@linkcode AsLoose} (the default) will result in a union of {@linkcode UseThen} and {@linkcode UseElse}.
+ * Using {@linkcode AsStrict} in the `Settings` will result in an intersection
+ * of {@linkcode UseThen} and {@linkcode UseElse}, while using
+ * {@linkcode AsLoose} (the default) will result in a union of
+ * {@linkcode UseThen} and {@linkcode UseElse}.
  *
  * @template Settings - The capability settings, which can be either {@linkcode AsLoose} (the default) or {@linkcode AsStrict}.
  */

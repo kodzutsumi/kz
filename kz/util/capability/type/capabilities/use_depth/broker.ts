@@ -4,16 +4,45 @@ import type { UseDepthLevel } from './constant.ts';
 import type { UseDepth } from './consumer.ts';
 
 /**
- * A broker behavior of the {@linkcode UseDepth} capability operating on the max depth (10) of a record.
+ * The deep behavior broker of the {@linkcode UseDepth} capability
+ * operating on the values of a record.
+ *
+ * Use this setting to invoke the deep behavior of a type that supports the
+ * {@linkcode UseDepth} capability consumer, where the depth is maxed out (
+ * {@linkcode AsLevel} of 10).
+ *
+ * @see {@linkcode AsShallow} for the shallow behavior of this capability.
+ * @see {@linkcode AsLevel} for the level-specific behavior of this capability.
  */
 export type AsDeep = UseDepth<true>;
 
 /**
- * A broker behavior of the {@linkcode UseDepth} capability operating on the root level of a record.
+ * The shallow behavior broker of the {@linkcode UseDepth} capability.
+ *
+ * Use this setting to invoke the shallow behavior of a type that supports the
+ * {@linkcode UseDepth} capability consumer, where the depth is limited to the
+ * root level of the record.
+ *
+ * > [!NOTE]
+ * > This is the recommended default implied behavior of the
+ * > {@linkcode UseDepth} capability when the setting is not explicitly set to
+ * > {@linkcode AsDeep}, {@linkcode AsShallow}, or {@linkcode AsLevel}.
+ *
+ * @see {@linkcode AsDeep} for the deep behavior broker of this capability.
+ * @see {@linkcode AsLevel} for the level-specific behavior broker of this capability.
  */
 export type AsShallow = UseDepth<false>;
 
 /**
- * A broker behavior of the {@linkcode UseDepth} capability operating to a specified depth level of a record.
+ * The level-specific behavior broker of the {@linkcode UseDepth} capability.
+ *
+ * Use this setting to invoke the level-specific behavior of a type that supports
+ * the {@linkcode UseDepth} capability consumer, where the depth is limited to
+ * a specified level within a record.
+ *
+ * @template Level - The depth level to navigate within a record type, which can be any value from 1 to 10.
+ *
+ * @see {@linkcode AsDeep} for the deep behavior broker of this capability.
+ * @see {@linkcode AsShallow} for the shallow behavior broker of this capability.
  */
 export type AsLevel<Level extends UseDepthLevel> = UseDepth<Level>;

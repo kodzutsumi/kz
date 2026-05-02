@@ -3,11 +3,16 @@
 import type { UseThenKeyString } from './constant.ts';
 
 /**
- * A capability open consumer indicating support for specifying a then (`true`) type.
+ * A capability consumer indicating support for a then, or `true` type.
  *
- * Use this capability consumer to indicate that a type supports specifying a then (`true`) type, or results in a type with a then (`true`) type based on the value of the capability setting.
+ * Use this capability consumer to indicate that a type supports a then or
+ * `true` type, or results in a type with a then or `true` type, based on
+ * the value of the capability setting.
  *
- * @template Type - The type of the capability setting value for this capability consumer.
+ * @see {@linkcode Then} for the broker behavior of this capability consumer.
+ * @see {@linkcode UseElse} for the related capability consumer indicating support for an else (`false`) type.
+ *
+ * @template ThenType - The type setting for this capability consumer.
  */
 export type UseThen<ThenType extends unknown = unknown> = {
   /**

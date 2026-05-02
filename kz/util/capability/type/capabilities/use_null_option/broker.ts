@@ -3,6 +3,8 @@
 import type { UseNullOption } from './consumer.ts';
 
 /**
- * A special capability setting utility that defines the types for the {@linkcode Then} and {@linkcode Else} capabilities as `true` and `false`, respectively.
+ * The behavior broker of the {@linkcode UseNullOption} capability.
+ *
+ * Use this setting to specify an empty capability set.
  */
 export type AsNullOption = UseNullOption;

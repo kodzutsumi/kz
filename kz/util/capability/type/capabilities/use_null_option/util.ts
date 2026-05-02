@@ -10,7 +10,8 @@ type Capabilities = UseCondition;
 type Defaults = AsCondition;
 
 /**
- * A special utility type that checks if a capability broker set satisfies the {@linkcode UseNullOption} capability.
+ * A special utility type that checks if a capability broker set satisfies the
+ * {@linkcode UseNullOption} capability, or is an empty capability set.
  *
  * @template CapBrokerSet - The capability broker set to check.
  * @template Settings - The capability settings, which determines the type returned based on the result of the check.

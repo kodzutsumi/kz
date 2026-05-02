@@ -2,6 +2,7 @@
 
 import type { GetCapSetting } from '../../get_cap_setting.ts';
 import type { BaseCapSet } from '../../type.ts';
+
 import type { AsCondition, UseCondition } from '../use_condition/mod.ts';
 import type { UseElse } from '../use_else/mod.ts';
 import type { UseThen } from '../use_then/mod.ts';
@@ -15,7 +16,8 @@ import type {
 import type { UseDepth } from './consumer.ts';
 
 /**
- * A utility type that decrements the depth level of a {@linkcode UseDepth} capability within a capability set.
+ * A utility type that decrements the depth level of a {@linkcode UseDepth}
+ * capability within a capability set.
  *
  * @template CapSet - The capability set to decrement the depth level of.
  */
@@ -28,7 +30,8 @@ export type DecrementDepth<CapSet extends BaseCapSet> = CapSet extends
   : CapSet;
 
 /**
- * A utility type that checks if a capability set has a {@linkcode UseDepth} capability with a depth level of `true` or greater than `1`.
+ * A utility type that checks if a capability set has a {@linkcode UseDepth}
+ * capability with a depth level of `true` or greater than `1`.
  *
  * @template CapSet - The capability set to check for deep support.
  * @template Settings - The capabilities to check for when determining the result.

@@ -3,6 +3,7 @@
 // deno-lint-ignore-file no-empty-interface
 
 /**
- * A special capability that indicates that a type can accept no capability settings.
+ * A special capability that indicates that a type can accept an empty
+ * capability set.
  */
 export interface UseNullOption {}

@@ -3,11 +3,14 @@
 import type { UseRecordKeyString, UseRecordTarget } from './constant.ts';
 
 /**
- * A capability open consumer indicating support for operating on a record, its keys, or its values.
+ * A capability that allows for the specification of a record type, its keys,
+ * or its values as the target of a types capabilities.
  *
- * Use this capability consumer to indicate that a type supports specifying a record target for a capability that operates on records.
+ * Use this capability consumer to indicate that a type supports operations on
+ * a record type, its keys, or its values, based on the value of the capability
+ * setting.
  *
- * @template RecordTarget - The type of the capability setting value for this capability consumer.
+ * @template RecordTarget - The target of the record capability, which can be a record type, its keys, or its values.
  */
 export type UseRecord<RecordTarget extends UseRecordTarget = UseRecordTarget> =
   {

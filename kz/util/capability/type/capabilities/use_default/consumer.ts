@@ -3,15 +3,22 @@
 import type { UseDefaultKeyString } from './constant.ts';
 
 /**
- * A capability open consumer indicating support for specifying a default type.
+ * A capability consumer indicating support for a default type.
  *
- * Use this capability consumer to indicate that a type supports specifying a default type, or results in a type with a default type based on the value of the capability setting.
+ * Use this capability consumer to indicate that a type supports a default
+ * type, or results in a type with a default type, based on the value of the
+ * capability setting.
  *
- * @template DefaultType - The type of the capability setting value for this capability consumer.
+ * @see {@linkcode DefaultOf} for the broker behavior of this capability consumer.
+ *
+ * @template DefaultType - The type setting for this capability consumer.
  */
 export type UseDefault<DefaultType extends unknown = unknown> = {
   /**
-   * The capability setting key for the {@linkcode UseDefault} capability.
+   * The capability setting key for the `UseDefault` capability.
+   *
+   * As `unknown`, it functions as a capability consumer. As any other type, it
+   * functions as a capability broker indicating the desired default type.
    */
   [UseDefaultKeyString]: DefaultType;
 };
