@@ -2,6 +2,8 @@
   "name": "@kz/util",
   "version": "0.0.1",
   "exports": {
-    "./capability": "./capability/mod.ts"
+    "./capability": "./capability/mod.ts",
+    "./type": "./type/mod.ts",
+    "./logic": "./logic/mod.ts"
   }
 }

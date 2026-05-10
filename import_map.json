@@ -6,6 +6,8 @@
     "@std/testing/bdd": "jsr:@std/testing@^1.0.13/bdd",
     "@std/testing/types": "jsr:@std/testing@^1.0.13/types",
 
-    "@kz/util/capability": "jsr:@kz/util@^0.0.1/capability"
+    "@kz/util/capability": "jsr:@kz/util@^0.0.1/capability",
+    "@kz/util/type": "jsr:@kz/util@^0.0.1/type",
+    "@kz/util/logic": "jsr:@kz/util@^0.0.1/logic"
   }
 }

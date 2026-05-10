@@ -1,0 +1,65 @@
+"ID","`UseCondition` ","`UseReversed` ","`UseInversion` ","`UseStrict` ","`UseUnsafe` ","Description"
+"1 ","`AsCondition` (default) ","`UseForward` (default) ","`AsInitial` (default) ","`AsLoose` (default) ","`AsSafe` (default) ",return `true` if A extends B otherwise `false`.
+"2 ","`AsCondition` (default) ","`UseForward` (default) ","`AsInitial` (default) ","`AsLoose` (default) ","`AsUnsafe` ",return `true` if A extends B (converting `boolean` to `true`) otherwise `false`.
+"3 ","`AsCondition` (default) ","`UseForward` (default) ","`AsInitial` (default) ","`AsStrict` ","`AsSafe` (default) ",return `true` if A is B otherwise `false`.
+"4 ","`AsCondition` (default) ","`UseForward` (default) ","`AsInitial` (default) ","`AsStrict` ","`AsUnsafe` ",return `true` if A is B (converting `boolean` to `true`) otherwise `false`.
+"5 ","`AsCondition` (default) ","`UseForward` (default) ","`AsInverted` ","`AsLoose` (default) ","`AsSafe` (default) ",return `false` if A extends B otherwise `true`.
+"6 ","`AsCondition` (default) ","`UseForward` (default) ","`AsInverted` ","`AsLoose` (default) ","`AsUnsafe` ",return `false` if A extends B (converting `boolean` to `true`) otherwise `true`.
+"7 ","`AsCondition` (default) ","`UseForward` (default) ","`AsInverted` ","`AsStrict` ","`AsSafe` (default) ",return `false` if A is B otherwise `true`.
+"8 ","`AsCondition` (default) ","`UseForward` (default) ","`AsInverted` ","`AsStrict` ","`AsUnsafe` ",return `false` if A is B (converting `boolean` to `true`) otherwise `true`.
+"9 ","`AsCondition` (default) ","`UseReversed` ","`AsInitial` (default) ","`AsLoose` (default) ","`AsSafe` (default) ",return `true` if B extends A otherwise `false`.
+"10 ","`AsCondition` (default) ","`UseReversed` ","`AsInitial` (default) ","`AsLoose` (default) ","`AsUnsafe` ",return `true` if B extends A (converting `boolean` to `true`) otherwise `false`.
+"11 ","`AsCondition` (default) ","`UseReversed` ","`AsInitial` (default) ","`AsStrict` ","`AsSafe` (default) ",return `true` if B is A otherwise `false`.
+"12 ","`AsCondition` (default) ","`UseReversed` ","`AsInitial` (default) ","`AsStrict` ","`AsUnsafe` ",return `true` if B is A (converting `boolean` to `true`) otherwise `false`.
+"13 ","`AsCondition` (default) ","`UseReversed` ","`AsInverted` ","`AsLoose` (default) ","`AsSafe` (default) ",return `false` if B extends A otherwise `true`.
+"14 ","`AsCondition` (default) ","`UseReversed` ","`AsInverted` ","`AsLoose` (default) ","`AsUnsafe` ",return `false` if B extends A (converting `boolean` to `true`) otherwise `true`.
+"15 ","`AsCondition` (default) ","`UseReversed` ","`AsInverted` ","`AsStrict` ","`AsSafe` (default) ",return `false` if B is A otherwise `true`.
+"16 ","`AsCondition` (default) ","`UseReversed` ","`AsInverted` ","`AsStrict` ","`AsUnsafe` ",return `false` if B is A (converting `boolean` to `true`) otherwise `true`.
+"17 ","`Then<ThenType>` ","`UseForward` (default) ","`AsInitial` (default) ","`AsLoose` (default) ","`AsSafe` (default) ",return `ThenType` if A extends B otherwise `false`.
+"18 ","`Then<ThenType>` ","`UseForward` (default) ","`AsInitial` (default) ","`AsLoose` (default) ","`AsUnsafe` ",return `ThenType` if A extends B (converting `boolean` to `true`) otherwise `false`.
+"19 ","`Then<ThenType>` ","`UseForward` (default) ","`AsInitial` (default) ","`AsStrict` ","`AsSafe` (default) ",return `ThenType` if A is B otherwise `false`.
+"20 ","`Then<ThenType>` ","`UseForward` (default) ","`AsInitial` (default) ","`AsStrict` ","`AsUnsafe` ",return `ThenType` if A is B (converting `boolean` to `true`) otherwise `false`.
+"21 ","`Then<ThenType>` ","`UseForward` (default) ","`AsInverted` ","`AsLoose` (default) ","`AsSafe` (default) ",return `false` if A extends B otherwise `ThenType`.
+"22 ","`Then<ThenType>` ","`UseForward` (default) ","`AsInverted` ","`AsLoose` (default) ","`AsUnsafe` ",return `false` if A extends B (converting `boolean` to `true`) otherwise `ThenType`.
+"23 ","`Then<ThenType>` ","`UseForward` (default) ","`AsInverted` ","`AsStrict` ","`AsSafe` (default) ",return `false` if A is B otherwise `ThenType`.
+"24 ","`Then<ThenType>` ","`UseForward` (default) ","`AsInverted` ","`AsStrict` ","`AsUnsafe` ",return `false` if A is B (converting `boolean` to `true`) otherwise `ThenType`.
+"25 ","`Then<ThenType>` ","`UseReversed` ","`AsInitial` (default) ","`AsLoose` (default) ","`AsSafe` (default) ",return `ThenType` if B extends A otherwise `false`.
+"26 ","`Then<ThenType>` ","`UseReversed` ","`AsInitial` (default) ","`AsLoose` (default) ","`AsUnsafe` ",return `ThenType` if B extends A (converting `boolean` to `true`) otherwise `false`.
+"27 ","`Then<ThenType>` ","`UseReversed` ","`AsInitial` (default) ","`AsStrict` ","`AsSafe` (default) ",return `ThenType` if B is A otherwise `false`.
+"28 ","`Then<ThenType>` ","`UseReversed` ","`AsInitial` (default) ","`AsStrict` ","`AsUnsafe` ",return `ThenType` if B is A (converting `boolean` to `true`) otherwise `false`.
+"29 ","`Then<ThenType>` ","`UseReversed` ","`AsInverted` ","`AsLoose` (default) ","`AsSafe` (default) ",return `false` if B extends A otherwise `ThenType`.
+"30 ","`Then<ThenType>` ","`UseReversed` ","`AsInverted` ","`AsLoose` (default) ","`AsUnsafe` ",return `false` if B extends A (converting `boolean` to `ThenType`) otherwise `true`.
+"31 ","`Then<ThenType>` ","`UseReversed` ","`AsInverted` ","`AsStrict` ","`AsSafe` (default) ",return `false` if B is A otherwise `ThenType`.
+"32 ","`Then<ThenType>` ","`UseReversed` ","`AsInverted` ","`AsStrict` ","`AsUnsafe` ",return `false` if B is A (converting `boolean` to `true`) otherwise `ThenType`.
+"33 ","`Else<ElseType>` ","`UseForward` (default) ","`AsInitial` (default) ","`AsLoose` (default) ","`AsSafe` (default) ",return `true` if A extends B otherwise `ElseType`.
+"34 ","`Else<ElseType>` ","`UseForward` (default) ","`AsInitial` (default) ","`AsLoose` (default) ","`AsUnsafe` ",return `true` if A extends B (converting `boolean` to `true`) otherwise `ElseType`.
+"35 ","`Else<ElseType>` ","`UseForward` (default) ","`AsInitial` (default) ","`AsStrict` ","`AsSafe` (default) ",return `true` if A is B otherwise `ElseType`.
+"36 ","`Else<ElseType>` ","`UseForward` (default) ","`AsInitial` (default) ","`AsStrict` ","`AsUnsafe` ",return `true` if A is B (converting `boolean` to `true`) otherwise `ElseType`.
+"37 ","`Else<ElseType>` ","`UseForward` (default) ","`AsInverted` ","`AsLoose` (default) ","`AsSafe` (default) ",return `ElseType` if A extends B otherwise `true`.
+"38 ","`Else<ElseType>` ","`UseForward` (default) ","`AsInverted` ","`AsLoose` (default) ","`AsUnsafe` ",return `ElseType` if A extends B (converting `boolean` to `true`) otherwise `true`.
+"39 ","`Else<ElseType>` ","`UseForward` (default) ","`AsInverted` ","`AsStrict` ","`AsSafe` (default) ",return `ElseType` if A is B otherwise `true`.
+"40 ","`Else<ElseType>` ","`UseForward` (default) ","`AsInverted` ","`AsStrict` ","`AsUnsafe` ",return `ElseType` if A is B (converting `boolean` to `true`) otherwise `true`.
+"41 ","`Else<ElseType>` ","`UseReversed` ","`AsInitial` (default) ","`AsLoose` (default) ","`AsSafe` (default) ",return `true` if B extends A otherwise `ElseType`.
+"42 ","`Else<ElseType>` ","`UseReversed` ","`AsInitial` (default) ","`AsLoose` (default) ","`AsUnsafe` ",return `true` if B extends A (converting `boolean` to `true`) otherwise `ElseType`.
+"43 ","`Else<ElseType>` ","`UseReversed` ","`AsInitial` (default) ","`AsStrict` ","`AsSafe` (default) ",return `true` if B is A otherwise `ElseType`.
+"44 ","`Else<ElseType>` ","`UseReversed` ","`AsInitial` (default) ","`AsStrict` ","`AsUnsafe` ",return `true` if B is A (converting `boolean` to `true`) otherwise `ElseType`.
+"45 ","`Else<ElseType>` ","`UseReversed` ","`AsInverted` ","`AsLoose` (default) ","`AsSafe` (default) ",return `ElseType` if B extends A otherwise `true`.
+"46 ","`Else<ElseType>` ","`UseReversed` ","`AsInverted` ","`AsLoose` (default) ","`AsUnsafe` ",return `ElseType` if B extends A (converting `boolean` to `true`) otherwise `true`.
+"47 ","`Else<ElseType>` ","`UseReversed` ","`AsInverted` ","`AsStrict` ","`AsSafe` (default) ",return `ElseType` if B is A otherwise `true`.
+"48 ","`Else<ElseType>` ","`UseReversed` ","`AsInverted` ","`AsStrict` ","`AsUnsafe` ",return `ElseType` if B is A (converting `boolean` to `true`) otherwise `true`.
+"49 ","`ConditionOf<ThenType,ElseType>` ","`UseForward` (default) ","`AsInitial` (default) ","`AsLoose` (default) ","`AsSafe` (default) ",return `ThenType` if A extends B otherwise `ElseType`.
+"50 ","`ConditionOf<ThenType,ElseType>` ","`UseForward` (default) ","`AsInitial` (default) ","`AsLoose` (default) ","`AsUnsafe` ",return `ThenType` if A extends B (converting `boolean` to `true`) otherwise `ElseType`.
+"51 ","`ConditionOf<ThenType,ElseType>` ","`UseForward` (default) ","`AsInitial` (default) ","`AsStrict` ","`AsSafe` (default) ",return `ThenType` if A is B otherwise `ElseType`.
+"52 ","`ConditionOf<ThenType,ElseType>` ","`UseForward` (default) ","`AsInitial` (default) ","`AsStrict` ","`AsUnsafe` ",return `ThenType` if A is B (converting `boolean` to `true`) otherwise `ElseType`.
+"53 ","`ConditionOf<ThenType,ElseType>` ","`UseForward` (default) ","`AsInverted` ","`AsLoose` (default) ","`AsSafe` (default) ",return `ElseType` if A extends B otherwise `ThenType`.
+"54 ","`ConditionOf<ThenType,ElseType>` ","`UseForward` (default) ","`AsInverted` ","`AsLoose` (default) ","`AsUnsafe` ",return `ElseType` if A extends B (converting `boolean` to `true`) otherwise `ThenType`.
+"55 ","`ConditionOf<ThenType,ElseType>` ","`UseForward` (default) ","`AsInverted` ","`AsStrict` ","`AsSafe` (default) ",return `ElseType` if A is B otherwise `ThenType`.
+"56 ","`ConditionOf<ThenType,ElseType>` ","`UseForward` (default) ","`AsInverted` ","`AsStrict` ","`AsUnsafe` ",return `ElseType` if A is B (converting `boolean` to `true`) otherwise `ThenType`.
+"57 ","`ConditionOf<ThenType,ElseType>` ","`UseReversed` ","`AsInitial` (default) ","`AsLoose` (default) ","`AsSafe` (default) ",return `ThenType` if B extends A otherwise `ElseType`.
+"58 ","`ConditionOf<ThenType,ElseType>` ","`UseReversed` ","`AsInitial` (default) ","`AsLoose` (default) ","`AsUnsafe` ",return `ThenType` if B extends A (converting `boolean` to `true`) otherwise `ElseType`.
+"59 ","`ConditionOf<ThenType,ElseType>` ","`UseReversed` ","`AsInitial` (default) ","`AsStrict` ","`AsSafe` (default) ",return `ThenType` if B is A otherwise `ElseType`.
+"60 ","`ConditionOf<ThenType,ElseType>` ","`UseReversed` ","`AsInitial` (default) ","`AsStrict` ","`AsUnsafe` ",return `ThenType` if B is A (converting `boolean` to `true`) otherwise `ElseType`.
+"61 ","`ConditionOf<ThenType,ElseType>` ","`UseReversed` ","`AsInverted` ","`AsLoose` (default) ","`AsSafe` (default) ",return `ElseType` if B extends A otherwise `ThenType`.
+"62 ","`ConditionOf<ThenType,ElseType>` ","`UseReversed` ","`AsInverted` ","`AsLoose` (default) ","`AsUnsafe` ",return `ElseType` if B extends A (converting `boolean` to `ThenType`) otherwise `true`.
+"63 ","`ConditionOf<ThenType,ElseType>` ","`UseReversed` ","`AsInverted` ","`AsStrict` ","`AsSafe` (default) ",return `ElseType` if B is A otherwise `ThenType`.
+"64 ","`ConditionOf<ThenType,ElseType>` ","`UseReversed` ","`AsInverted` ","`AsStrict` ","`AsUnsafe` ",return `ElseType` if B is A (converting `boolean` to `true`) otherwise `ThenType`.

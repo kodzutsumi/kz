@@ -1,0 +1,49 @@
+ID ,`UseStream` ,`UseDefault` ,`UseReversed` ,`UseInversion` ,`UseStrict` ,`UseUnsafe` ,Description
+1,`AsFilter` ,None ,`AsForward` (default) ,`AsInitial` (default) ,`AsLoose` (default) ,`AsSafe` (default) ,return `unknown` if A extends B otherwise `never`.
+2,`AsFilter` ,None ,`AsForward` (default) ,`AsInitial` (default) ,`AsLoose` (default) ,`AsUnsafe` ,return `unknown` if A extends B (converting `boolean` to `true`) otherwise `never`.
+3,`AsFilter` ,None ,`AsForward` (default) ,`AsInitial` (default) ,`AsStrict` ,`AsSafe` (default) ,return `unknown` if A is B otherwise `never`.
+4,`AsFilter` ,None ,`AsForward` (default) ,`AsInitial` (default) ,`AsStrict` ,`AsUnsafe` ,return `unknown` if A is B (converting `boolean` to `true`) otherwise `never`.
+5,`AsFilter` ,None ,`AsForward` (default) ,`AsInverted` ,`AsLoose` (default) ,`AsSafe` (default) ,return `never` if A extends B otherwise `unknown`.
+6,`AsFilter` ,None ,`AsForward` (default) ,`AsInverted` ,`AsLoose` (default) ,`AsUnsafe` ,return `never` if A extends B (converting `boolean` to `true`) otherwise `unknown`.
+7,`AsFilter` ,None ,`AsForward` (default) ,`AsInverted` ,`AsStrict` ,`AsSafe` (default) ,return `never` if A is B otherwise `unknown`.
+8,`AsFilter` ,None ,`AsForward` (default) ,`AsInverted` ,`AsStrict` ,`AsUnsafe` ,return `never` if A is B (converting `boolean` to `true`) otherwise `unknown`.
+9,`AsFilter` ,None ,`AsReversed` ,`AsInitial` (default) ,`AsLoose` (default) ,`AsSafe` (default) ,return `unknown` if A extends B otherwise `never`.
+10,`AsFilter` ,None ,`AsReversed` ,`AsInitial` (default) ,`AsLoose` (default) ,`AsUnsafe` ,return `unknown` if B extends A (converting `boolean` to `true`) otherwise `never`.
+11,`AsFilter` ,None ,`AsReversed` ,`AsInitial` (default) ,`AsStrict` ,`AsSafe` (default) ,return `unknown` if B is A otherwise `never`.
+12,`AsFilter` ,None ,`AsReversed` ,`AsInitial` (default) ,`AsStrict` ,`AsUnsafe` ,return `unknown` if B is A (converting `boolean` to `true`) otherwise `never`.
+13,`AsFilter` ,None ,`AsReversed` ,`AsInverted` ,`AsLoose` (default) ,`AsSafe` (default) ,return `never` if B extends A otherwise `unknown`.
+14,`AsFilter` ,None ,`AsReversed` ,`AsInverted` ,`AsLoose` (default) ,`AsUnsafe` ,return `never` if B extends A (converting `boolean` to `true`) otherwise `unknown`.
+15,`AsFilter` ,None ,`AsReversed` ,`AsInverted` ,`AsStrict` ,`AsSafe` (default) ,return `never` if B is A otherwise `unknown`.
+16,`AsFilter` ,None ,`AsReversed` ,`AsInverted` ,`AsStrict` ,`AsUnsafe` ,return `never` if B is A (converting `boolean` to `true`) otherwise `unknown`.
+17,`AsFilter` ,`DefaultOf<DefaultType>` ,`AsForward` (default) ,`AsInitial` (default) ,`AsLoose` (default) ,`AsSafe` (default) ,return `DefaultType` if A extends B otherwise `never`.
+19,`AsFilter` ,`DefaultOf<DefaultType>` ,`AsForward` (default) ,`AsInitial` (default) ,`AsLoose` (default) ,`AsUnsafe` ,return `DefaultType` if A extends B (converting `boolean` to `true`) otherwise `never`.
+20,`AsFilter` ,`DefaultOf<DefaultType>` ,`AsForward` (default) ,`AsInitial` (default) ,`AsStrict` ,`AsSafe` (default) ,return `DefaultType` if A is B otherwise `never`.
+21,`AsFilter` ,`DefaultOf<DefaultType>` ,`AsForward` (default) ,`AsInitial` (default) ,`AsStrict` ,`AsUnsafe` ,return `DefaultType` if A is B (converting `boolean` to `true`) otherwise `never`.
+22,`AsFilter` ,`DefaultOf<DefaultType>` ,`AsForward` (default) ,`AsInverted` ,`AsLoose` (default) ,`AsSafe` (default) ,return `never` if A extends B otherwise `DefaultType`.
+23,`AsFilter` ,`DefaultOf<DefaultType>` ,`AsForward` (default) ,`AsInverted` ,`AsLoose` (default) ,`AsUnsafe` ,return `never` if A extends B (converting `boolean` to `true`) otherwise `DefaultType`.
+24,`AsFilter` ,`DefaultOf<DefaultType>` ,`AsForward` (default) ,`AsInverted` ,`AsStrict` ,`AsSafe` (default) ,return `never` if A is B otherwise `DefaultType`.
+25,`AsFilter` ,`DefaultOf<DefaultType>` ,`AsForward` (default) ,`AsInverted` ,`AsStrict` ,`AsUnsafe` ,return `never` if A is B (converting `boolean` to `true`) otherwise `DefaultType`.
+26,`AsFilter` ,`DefaultOf<DefaultType>` ,`AsReversed` ,`AsInitial` (default) ,`AsLoose` (default) ,`AsSafe` (default) ,return `DefaultType` if A extends B otherwise `never`.
+27,`AsFilter` ,`DefaultOf<DefaultType>` ,`AsReversed` ,`AsInitial` (default) ,`AsLoose` (default) ,`AsUnsafe` ,return `DefaultType` if B extends A (converting `boolean` to `true`) otherwise `never`.
+28,`AsFilter` ,`DefaultOf<DefaultType>` ,`AsReversed` ,`AsInitial` (default) ,`AsStrict` ,`AsSafe` (default) ,return `DefaultType` if B is A otherwise `never`.
+29,`AsFilter` ,`DefaultOf<DefaultType>` ,`AsReversed` ,`AsInitial` (default) ,`AsStrict` ,`AsUnsafe` ,return `DefaultType` if B is A (converting `boolean` to `true`) otherwise `never`.
+31,`AsFilter` ,`DefaultOf<DefaultType>` ,`AsReversed` ,`AsInverted` ,`AsLoose` (default) ,`AsSafe` (default) ,return `never` if B extends A otherwise `DefaultType`.
+32,`AsFilter` ,`DefaultOf<DefaultType>` ,`AsReversed` ,`AsInverted` ,`AsLoose` (default) ,`AsUnsafe` ,return `never` if B extends A (converting `boolean` to `true`) otherwise `DefaultType`.
+33,`AsFilter` ,`DefaultOf<DefaultType>` ,`AsReversed` ,`AsInverted` ,`AsStrict` ,`AsSafe` (default) ,return `never` if B is A otherwise `DefaultType`.
+34,`AsFilter` ,`DefaultOf<DefaultType>` ,`AsReversed` ,`AsInverted` ,`AsStrict` ,`AsUnsafe` ,return `never` if B is A (converting `boolean` to `true`) otherwise `DefaultType`.
+36,`AsPredicate` ,None ,`AsForward` (default) ,`AsInitial` (default) ,`AsLoose` (default) ,`AsSafe` (default) ,return `true` if A extends B otherwise `false`.
+37,`AsPredicate` ,None ,`AsForward` (default) ,`AsInitial` (default) ,`AsLoose` (default) ,`AsUnsafe` ,return `true` if A extends B (converting `boolean` to `true`) otherwise `false`.
+38,`AsPredicate` ,None ,`AsForward` (default) ,`AsInitial` (default) ,`AsStrict` ,`AsSafe` (default) ,return `true` if A is B otherwise `false`.
+39,`AsPredicate` ,None ,`AsForward` (default) ,`AsInitial` (default) ,`AsStrict` ,`AsUnsafe` ,return `true` if A is B (converting `boolean` to `true`) otherwise `false`.
+40,`AsPredicate` ,None ,`AsForward` (default) ,`AsInverted` ,`AsLoose` (default) ,`AsSafe` (default) ,return `false` if A extends B otherwise `true`.
+41,`AsPredicate` ,None ,`AsForward` (default) ,`AsInverted` ,`AsLoose` (default) ,`AsUnsafe` ,return `false` if A extends B (converting `boolean` to `true`) otherwise `true`.
+42,`AsPredicate` ,None ,`AsForward` (default) ,`AsInverted` ,`AsStrict` ,`AsSafe` (default) ,return `false` if A is B otherwise `true`.
+43,`AsPredicate` ,None ,`AsForward` (default) ,`AsInverted` ,`AsStrict` ,`AsUnsafe` ,return `false` if A is B (converting `boolean` to `true`) otherwise `true`.
+44,`AsPredicate` ,None ,`AsReversed` ,`AsInitial` (default) ,`AsLoose` (default) ,`AsSafe` (default) ,return `true` if B extends A otherwise `false`.
+45,`AsPredicate` ,None ,`AsReversed` ,`AsInitial` (default) ,`AsLoose` (default) ,`AsUnsafe` ,return `true` if B extends A (converting `boolean` to `true`) otherwise `false`.
+46,`AsPredicate` ,None ,`AsReversed` ,`AsInitial` (default) ,`AsStrict` ,`AsSafe` (default) ,return `true` if B is A otherwise `false`.
+47,`AsPredicate` ,None ,`AsReversed` ,`AsInitial` (default) ,`AsStrict` ,`AsUnsafe` ,return `true` if B is A (converting `boolean` to `true`) otherwise `false`.
+49,`AsPredicate` ,None ,`AsReversed` ,`AsInverted` ,`AsLoose` (default) ,`AsSafe` (default) ,return `false` if B extends A otherwise `true`.
+46 ,`AsPredicate` ,None ,`AsReversed` ,`AsInverted` ,`AsLoose` (default) ,`AsUnsafe` ,return `false` if B extends A (converting `boolean` to `true`) otherwise `true`.
+47 ,`AsPredicate` ,None ,`AsReversed` ,`AsInverted` ,`AsStrict` ,`AsSafe` (default) ,return `false` if B is A otherwise `true`.
+48 ,`AsPredicate` ,None ,`AsReversed` ,`AsInverted` ,`AsStrict` ,`AsUnsafe` ,return `false` if B is A (converting `boolean` to `true`) otherwise `true`.

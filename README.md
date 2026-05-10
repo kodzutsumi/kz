@@ -2,7 +2,7 @@
 
 <div align="center">
 <img alt="kz logo" src="https://docs.i11n.io/assets/img/logos/png/64/projects/kz/logo/stroked.v1.png" />
-<h1><span style="color:#2CBDEE">kod</span><span style="color:#C53156">zutsumi</span></h1>
+<h1><span style="color:#2CBDEE">kodzu</span><span style="color:#C53156">tsumi</span></h1>
 
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg?style=flat-square)][contributing]
 [![@kz JSR homepage](https://jsr.io/badges/@kz)][jsr]

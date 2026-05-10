@@ -1,0 +1,42 @@
+// Copyright 2020 - present integereleven. All rights reserved. MIT license.
+
+
+import { describe, it } from '@std/testing/bdd';
+import { assertType, type IsExact } from '@std/testing/types';
+import type { AsUnsafe } from '@kz/util/capability';
+
+import type { IsType } from './is_type.ts';
+
+// deno-lint-ignore no-explicit-any
+type AnyType = any;
+
+const IS_TRUE = true;
+
+describe('CheckType', () => {
+  describe('AsSafe (default)', () => {
+    it('should retain boolean result', () => {
+      type EffectiveResult = AnyType extends string ? true : false;
+      type Actual = IsType<string, AnyType>;
+      type Expected = boolean;
+      type Result = IsExact<Actual, Expected>;
+      type ValidatedResult = IsExact<EffectiveResult, Expected>;
+
+      assertType<ValidatedResult>(IS_TRUE);
+      assertType<Result>(IS_TRUE);
+    });
+  });
+
+  describe('AsUnsafe', () => {
+    it('should convert to boolean result', () => {
+      type EffectiveResult = boolean extends
+        (AnyType extends string ? true : false) ? true : false;
+      type Actual = IsType<string, AnyType, AsUnsafe>;
+      type Expected = true;
+      type Result = IsExact<Actual, Expected>;
+      type ValidatedResult = IsExact<EffectiveResult, Expected>;
+
+      assertType<ValidatedResult>(IS_TRUE);
+      assertType<Result>(IS_TRUE);
+    });
+  });
+});
