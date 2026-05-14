@@ -10,7 +10,7 @@ import type {
   UseNullOption,
   UseOfType,
   UseReversed,
-  UseStrict,
+  UseUnified,
   UseUnsafe,
 } from '@kz/util/capability';
 
@@ -22,7 +22,7 @@ describe('is_type types', () => {
   describe('IsTypeCapSet', () => {
     it('should be a union of capabilities', () => {
       type Expected =
-        | UseStrict
+        | UseUnified
         | UseUnsafe
         | UseReversed
         | UseOfType

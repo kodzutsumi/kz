@@ -8,32 +8,36 @@ import type { Or } from '@kz/util/logic';
 const IS_TRUE = true;
 
 describe('Or', () => {
-  type IsNumberLike<Type> = Or<
-    Type extends number ? true : false,
-    Type extends `${number}` ? true : false
-  >;
+  describe('examples', () => {
+    describe('IsNumberLike', () => {
+      type IsNumberLike<Type> = Or<
+        Type extends number ? true : false,
+        Type extends `${number}` ? true : false
+      >;
 
-  it('should return true', () => {
-    type Actual = IsNumberLike<30>;
-    type Expected = true;
-    type Result = IsExact<Actual, Expected>;
+      it('should return true', () => {
+        type Actual = IsNumberLike<30>;
+        type Expected = true;
+        type Result = IsExact<Actual, Expected>;
 
-    assertType<Result>(IS_TRUE);
-  });
+        assertType<Result>(IS_TRUE);
+      });
 
-  it('should return true', () => {
-    type Actual = IsNumberLike<'256'>;
-    type Expected = true;
-    type Result = IsExact<Actual, Expected>;
+      it('should return true', () => {
+        type Actual = IsNumberLike<'256'>;
+        type Expected = true;
+        type Result = IsExact<Actual, Expected>;
 
-    assertType<Result>(IS_TRUE);
-  });
+        assertType<Result>(IS_TRUE);
+      });
 
-  it('should return false', () => {
-    type Actual = IsNumberLike<'hello'>;
-    type Expected = false;
-    type Result = IsExact<Actual, Expected>;
+      it('should return false', () => {
+        type Actual = IsNumberLike<'hello'>;
+        type Expected = false;
+        type Result = IsExact<Actual, Expected>;
 
-    assertType<Result>(IS_TRUE);
+        assertType<Result>(IS_TRUE);
+      });
+    });
   });
 });

@@ -8,32 +8,28 @@ import type { And } from '@kz/util/logic';
 const IS_TRUE = true;
 
 describe('And', () => {
-  type IsStringLike<Type> = And<
-    Type extends { length: number } ? true : false,
-    Type extends { [index: number]: string } ? true : false
-  >;
+  describe('examples', () => {
+    describe('IsStringLiteral', () => {
+      type IsStringLiteral<Type> = And<
+        Type extends string ? true : false,
+        string extends Type ? false : true
+      >;
 
-  it('should return true', () => {
-    type Actual = IsStringLike<'hello world'>;
-    type Expected = true;
-    type Result = IsExact<Actual, Expected>;
+      it('should return true', () => {
+        type Actual = IsStringLiteral<'hello world'>;
+        type Expected = true;
+        type Result = IsExact<Actual, Expected>;
 
-    assertType<Result>(IS_TRUE);
-  });
+        assertType<Result>(IS_TRUE);
+      });
 
-  it('should return true', () => {
-    type Actual = IsStringLike<['hello', 'world']>;
-    type Expected = true;
-    type Result = IsExact<Actual, Expected>;
+      it('should return false', () => {
+        type Actual = IsStringLiteral<string>;
+        type Expected = false;
+        type Result = IsExact<Actual, Expected>;
 
-    assertType<Result>(IS_TRUE);
-  });
-
-  it('should return false', () => {
-    type Actual = IsStringLike<30>;
-    type Expected = false;
-    type Result = IsExact<Actual, Expected>;
-
-    assertType<Result>(IS_TRUE);
+        assertType<Result>(IS_TRUE);
+      });
+    });
   });
 });

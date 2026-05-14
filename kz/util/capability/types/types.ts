@@ -4,7 +4,6 @@ import type {
   UseAsync,
   UseDefault,
   UseDepth,
-  UseDistributed,
   UseElse,
   UseExcluded,
   UseInverted,
@@ -18,6 +17,7 @@ import type {
   UseStream,
   UseStrict,
   UseThen,
+  UseUnified,
   UseUnsafe,
 } from './capabilities/mod.ts';
 
@@ -31,7 +31,7 @@ export type BaseCapSet =
   | UseAsync
   | UseDefault
   | UseDepth
-  | UseDistributed
+  | UseUnified
   | UseElse
   | UseExcluded
   | UseStream

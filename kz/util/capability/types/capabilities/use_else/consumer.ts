@@ -1,5 +1,6 @@
 // Copyright 2020 - present integereleven. All rights reserved. MIT license.
 
+
 import type { UseElseKeyString } from './constant.ts';
 
 /**

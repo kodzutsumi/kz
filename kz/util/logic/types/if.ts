@@ -1,11 +1,11 @@
 // Copyright 2020 - present integereleven. All rights reserved. MIT license.
 
-import type { PickCap, ResolveBoolean, UseUnsafe } from '@kz/util/capability';
-import type { ApplyDefault, Resolve } from './_internal/mod.ts';
+import type { LogicHandler } from './_internal/mod.ts';
+
 import type { LogicCapSet, LogicDefaults } from './types.ts';
 
 /**
- * Type representing a conditional type that evaluates the boolean operand and returns a type based on the provided settings.
+ * Represents a conditional type that evaluates the boolean operand and returns a type based on the provided settings.
  *
  * ## Capabilities
  * - {@linkcode UseUnsafe}
@@ -13,20 +13,17 @@ import type { LogicCapSet, LogicDefaults } from './types.ts';
  * - {@linkcode UseCondition}
  *
  * ### Defaults
- * - {@linkcode UseUnsafe} : {@linkcode AsSafe} - The operand is not cast to `true` if it is `boolean`.
- * - {@linkcode UseInverted} : {@linkcode AsInitial} - The operand's boolean value is retained in the resolution.
- * - {@linkcode UseCondition} : No default
+ * - {@linkcode UseUnsafe} : {@linkcode AsSafe} (implied) - The operand is not cast to `true` if it is `boolean`.
+ * - {@linkcode UseInverted} : {@linkcode AsInitial} (implied) - The operand's boolean value is retained in the resolution.
+ * - {@linkcode UseCondition} : {@linkcode AsCondition} - The resulting {@linkcode Then} and {@linkcode Else} types are `true` or `false` accordingly.
  *
  * @template Operand - The boolean operand to evaluate.
  * @template Settings - The set of capabilities that modify the behavior of the conditional type.
  *
- * @see [If reference - Logic matrix](https://docs.i11n.io/kz/util/logic/ref/if/#logic-matrix) for logic resolution of the `If` type.
- * @see [If reference - Behavior matrix](https://docs.i11n.io/kz/util/logic/ref/if/#behavior-matrix) for detailed `If` behavior based on different capability combinations.
+ * @see [Logic reference - Logic matrix](https://docs.i11n.io/kz/util/logic/ref/logic/#logic-matrix) for logic resolution.
+ * @see [Logic reference - Behavior matrix](https://docs.i11n.io/kz/util/logic/ref/logic/#behavior-matrix) for detailed behavior based on different capability combinations.
  */
 export type If<
   Operand extends boolean,
   Settings extends LogicCapSet = LogicDefaults,
-> = Resolve<
-  ResolveBoolean<Operand, PickCap<Settings, UseUnsafe, false>>,
-  ApplyDefault<Settings>
->;
+> = LogicHandler<Operand, Settings>;

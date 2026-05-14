@@ -6,7 +6,6 @@ import type {
   UseAsync,
   UseDefault,
   UseDepth,
-  UseDistributed,
   UseElse,
   UseExcluded,
   UseInverted,
@@ -20,6 +19,7 @@ import type {
   UseStream,
   UseStrict,
   UseThen,
+  UseUnified,
   UseUnsafe,
 } from '@kz/util/capability';
 
@@ -34,7 +34,7 @@ describe('capability types', () => {
         | UseAsync
         | UseDefault
         | UseDepth
-        | UseDistributed
+        | UseUnified
         | UseElse
         | UseExcluded
         | UseStream

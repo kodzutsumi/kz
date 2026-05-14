@@ -8,12 +8,12 @@ import type {
   UseNullOption,
   UseOfType,
   UseReversed,
-  UseStrict,
+  UseUnified,
   UseUnsafe,
 } from '@kz/util/capability';
 
 export type IsTypeCapSet =
-  | UseStrict
+  | UseUnified
   | UseUnsafe
   | UseReversed
   | UseOfType

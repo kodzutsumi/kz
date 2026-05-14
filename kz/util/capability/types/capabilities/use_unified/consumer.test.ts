@@ -4,49 +4,49 @@ import { describe, it } from '@std/testing/bdd';
 import { assertType, type IsExact } from '@std/testing/types';
 import type {
   AsDistributed,
-  AsUnion,
-  UseDistributed,
-  UseDistributedKeyString,
+  AsUnified,
+  UseUnified,
+  UseUnifiedKeyString,
 } from '@kz/util/capability';
 
 const IS_TRUE = true;
 
-describe('UseDistributed - consumer', () => {
-  describe('UseDistributed', () => {
+describe('UseUnified - consumer', () => {
+  describe('UseUnified', () => {
     it('should be a capability flag consumer', () => {
       // @ts-expect-error - should only accept boolean values
-      type _TS_EXPECT_ERROR = UseDistributed<string>;
+      type _TS_EXPECT_ERROR = UseUnified<string>;
     });
 
-    it('should be keyed by the UseDistributedKeyString', () => {
-      type Actual = keyof UseDistributed;
-      type Expected = typeof UseDistributedKeyString;
+    it('should be keyed by the UseUnifiedKeyString', () => {
+      type Actual = keyof UseUnified;
+      type Expected = typeof UseUnifiedKeyString;
       type Result = IsExact<Actual, Expected>;
 
       assertType<Result>(IS_TRUE);
     });
 
     it('should have boolean setting by default', () => {
-      type Actual = UseDistributed;
+      type Actual = UseUnified;
       type Expected = {
-        [UseDistributedKeyString]: boolean;
+        [UseUnifiedKeyString]: boolean;
       };
       type Result = IsExact<Actual, Expected>;
 
       assertType<Result>(IS_TRUE);
     });
 
-    it('should be AsUnion (default implied) with the false variant', () => {
-      type Actual = UseDistributed<false>;
-      type Expected = AsUnion;
+    it('should be AsDistributed (default implied) with the false variant', () => {
+      type Actual = UseUnified<false>;
+      type Expected = AsDistributed;
       type Result = IsExact<Actual, Expected>;
 
       assertType<Result>(IS_TRUE);
     });
 
-    it('should be AsDistributed with the true variant', () => {
-      type Actual = UseDistributed<true>;
-      type Expected = AsDistributed;
+    it('should be AsUnified with the true variant', () => {
+      type Actual = UseUnified<true>;
+      type Expected = AsUnified;
       type Result = IsExact<Actual, Expected>;
 
       assertType<Result>(IS_TRUE);

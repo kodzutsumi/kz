@@ -25,7 +25,7 @@ import type {
   AsShallow,
   AsStrict,
   AsSync,
-  AsUnion,
+  AsUnified,
   AsUnsafe,
   AsWritable,
   ConditionOf,
@@ -38,7 +38,6 @@ import type {
   UseCondition,
   UseDefault,
   UseDepth,
-  UseDistributed,
   UseElse,
   UseExcluded,
   UseInverted,
@@ -51,6 +50,7 @@ import type {
   UseStream,
   UseStrict,
   UseThen,
+  UseUnified,
   UseUnsafe,
 } from '@kz/util/capability';
 
@@ -76,18 +76,18 @@ describe('PickCap', () => {
       });
     });
 
-    describe('UseDistributed', () => {
+    describe('UseUnified', () => {
       it('should pick the setting from CapBrokerSet', () => {
-        type Actual = PickCap<UseDistributed<true>, UseDistributed, false>;
-        type Expected = AsDistributed;
+        type Actual = PickCap<UseUnified<true>, UseUnified, false>;
+        type Expected = AsUnified;
         type Result = IsExact<Actual, Expected>;
 
         assertType<Result>(IS_TRUE);
       });
 
       it('should be the DefaultType if missing from the CapBrokerSet', () => {
-        type Actual = PickCap<UseUnsafe<false>, UseDistributed, false>;
-        type Expected = AsUnion;
+        type Actual = PickCap<UseUnsafe<false>, UseUnified, false>;
+        type Expected = AsDistributed;
         type Result = IsExact<Actual, Expected>;
 
         assertType<Result>(IS_TRUE);

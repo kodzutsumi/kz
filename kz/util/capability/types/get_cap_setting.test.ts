@@ -9,7 +9,6 @@ import type {
   UseCondition,
   UseDefault,
   UseDepth,
-  UseDistributed,
   UseElse,
   UseExcluded,
   UseInverted,
@@ -22,6 +21,7 @@ import type {
   UseStream,
   UseStrict,
   UseThen,
+  UseUnified,
   UseUnsafe,
 } from '@kz/util/capability';
 
@@ -47,11 +47,11 @@ describe('GetCapSetting', () => {
       });
     });
 
-    describe('UseDistributed', () => {
+    describe('UseUnified', () => {
       it('should pick the setting from CapBrokerSet', () => {
         type Actual = GetCapSetting<
-          UseDistributed<true>,
-          UseDistributed,
+          UseUnified<true>,
+          UseUnified,
           false
         >;
         type Expected = true;
@@ -61,7 +61,7 @@ describe('GetCapSetting', () => {
       });
 
       it('should be the DefaultType if missing from the CapBrokerSet', () => {
-        type Actual = GetCapSetting<UseUnsafe<false>, UseDistributed, false>;
+        type Actual = GetCapSetting<UseUnsafe<false>, UseUnified, false>;
         type Expected = false;
         type Result = IsExact<Actual, Expected>;
 

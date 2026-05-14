@@ -16,7 +16,7 @@ describe('CheckType', () => {
   describe('AsSafe (default)', () => {
     it('should retain boolean result', () => {
       type EffectiveResult = AnyType extends string ? true : false;
-      type Actual = IsType<string, AnyType>;
+      type Actual = IsType<AnyType, string>;
       type Expected = boolean;
       type Result = IsExact<Actual, Expected>;
       type ValidatedResult = IsExact<EffectiveResult, Expected>;
@@ -30,7 +30,7 @@ describe('CheckType', () => {
     it('should convert to boolean result', () => {
       type EffectiveResult = boolean extends
         (AnyType extends string ? true : false) ? true : false;
-      type Actual = IsType<string, AnyType, AsUnsafe>;
+      type Actual = IsType<AnyType, string, AsUnsafe>;
       type Expected = true;
       type Result = IsExact<Actual, Expected>;
       type ValidatedResult = IsExact<EffectiveResult, Expected>;

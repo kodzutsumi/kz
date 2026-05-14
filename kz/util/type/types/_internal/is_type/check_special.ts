@@ -9,8 +9,8 @@ import type { IsTypeCapSet, IsTypeDefaults } from './types.ts';
 import type { CheckOrdinary } from './check_ordinary.ts';
 
 export type CheckSpecial<
-  TargetType,
   OfType,
+  TargetType,
   Settings extends IsTypeCapSet = IsTypeDefaults,
 > = IsSpecial<OfType> extends true
   ? [TargetType, OfType] extends [OfType, TargetType] ? true
@@ -19,4 +19,4 @@ export type CheckSpecial<
     : [OfType] extends [TargetType] ? true
     : false
   : false
-  : CheckOrdinary<TargetType, OfType, Settings>;
+  : CheckOrdinary<OfType, TargetType, Settings>;

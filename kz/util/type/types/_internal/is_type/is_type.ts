@@ -6,7 +6,7 @@ import type { CheckType } from './check_type.ts';
 import type { IsTypeCapSet, IsTypeDefaults } from './types.ts';
 
 export type IsType<
-  TargetType,
   OfType,
+  TargetType,
   Settings extends IsTypeCapSet = IsTypeDefaults,
-> = ApplySafety<CheckType<TargetType, OfType, Settings>, Settings>;
+> = ApplySafety<CheckType<OfType, TargetType, Settings>, Settings>;

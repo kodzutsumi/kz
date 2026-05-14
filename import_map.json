@@ -8,6 +8,7 @@
 
     "@kz/util/capability": "jsr:@kz/util@^0.0.1/capability",
     "@kz/util/type": "jsr:@kz/util@^0.0.1/type",
-    "@kz/util/logic": "jsr:@kz/util@^0.0.1/logic"
+    "@kz/util/logic": "jsr:@kz/util@^0.0.1/logic",
+    "@kz/util/lint": "jsr:@kz/util@^0.0.1/lint"
   }
 }

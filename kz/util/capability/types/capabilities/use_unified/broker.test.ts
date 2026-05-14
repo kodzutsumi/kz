@@ -2,27 +2,23 @@
 
 import { describe, it } from '@std/testing/bdd';
 import { assertType, type Has, type IsExact } from '@std/testing/types';
-import type {
-  AsDistributed,
-  AsUnion,
-  UseDistributed,
-} from '@kz/util/capability';
+import type { AsDistributed, AsUnified, UseUnified } from '@kz/util/capability';
 
 const IS_TRUE = true;
 
-describe('UseDistributed - broker', () => {
-  describe('AsUnion (implied default)', () => {
+describe('UseUnified - broker', () => {
+  describe('AsUnified (implied default)', () => {
     it('should be the false (default) variant', () => {
-      type Actual = AsUnion;
-      type Expected = UseDistributed<false>;
+      type Actual = AsDistributed;
+      type Expected = UseUnified<false>;
       type Result = IsExact<Actual, Expected>;
 
       assertType<Result>(IS_TRUE);
     });
 
-    it('should be assignable to UseDistributed', () => {
-      type Actual = AsUnion;
-      type Expected = UseDistributed;
+    it('should be assignable to UseUnified', () => {
+      type Actual = AsDistributed;
+      type Expected = UseUnified;
       type Result = Has<Actual, Expected>;
 
       assertType<Result>(IS_TRUE);
@@ -31,16 +27,16 @@ describe('UseDistributed - broker', () => {
 
   describe('AsDistributed', () => {
     it('should be the true variant', () => {
-      type Actual = AsDistributed;
-      type Expected = UseDistributed<true>;
+      type Actual = AsUnified;
+      type Expected = UseUnified<true>;
       type Result = IsExact<Actual, Expected>;
 
       assertType<Result>(IS_TRUE);
     });
 
-    it('should be assignable to UseDistributed', () => {
-      type Actual = AsDistributed;
-      type Expected = UseDistributed;
+    it('should be assignable to UseUnified', () => {
+      type Actual = AsUnified;
+      type Expected = UseUnified;
       type Result = Has<Actual, Expected>;
 
       assertType<Result>(IS_TRUE);

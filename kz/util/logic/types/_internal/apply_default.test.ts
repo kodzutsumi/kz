@@ -2,9 +2,9 @@
 
 import { describe, it } from '@std/testing/bdd';
 import { assertType, type IsExact } from '@std/testing/types';
+import type { AsInverted, DefaultOf } from '@kz/util/capability';
 
 import type { ApplyDefault } from './mod.ts';
-import type { AsInverted, DefaultOf } from '@kz/util/capability';
 
 const IS_TRUE = true;
 

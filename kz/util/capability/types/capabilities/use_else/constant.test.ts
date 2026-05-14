@@ -1,5 +1,6 @@
 // Copyright 2020 - present integereleven. All rights reserved. MIT license.
 
+
 import { describe, it } from '@std/testing/bdd';
 import { assertType, type IsExact } from '@std/testing/types';
 import type { UseElseKey, UseElseKeyString } from '@kz/util/capability';

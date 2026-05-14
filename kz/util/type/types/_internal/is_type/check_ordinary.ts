@@ -1,15 +1,15 @@
 // Copyright 2020 - present integereleven. All rights reserved. MIT license.
 
 
-import type { AsReversed, AsStrict } from '@kz/util/capability';
+import type { AsReversed, AsUnified } from '@kz/util/capability';
 
 import type { IsTypeCapSet, IsTypeDefaults } from './types.ts';
 
 export type CheckOrdinary<
-  TargetType,
   OfType,
+  TargetType,
   Settings extends IsTypeCapSet = IsTypeDefaults,
-> = Settings extends AsStrict
+> = Settings extends AsUnified
   ? Settings extends AsReversed
     ? ([TargetType] extends [OfType] ? true : false) extends true ? true
     : false

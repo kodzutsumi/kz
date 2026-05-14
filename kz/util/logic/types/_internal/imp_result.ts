@@ -1,5 +1,3 @@
-// Copyright 2020 - present integereleven. All rights reserved. MIT license.
-
 /**
  * Type representing the result of an implication logical operation based on the operands.
  *
