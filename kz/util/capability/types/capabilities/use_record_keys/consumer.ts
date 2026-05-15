@@ -1,6 +1,5 @@
 // Copyright 2020 - present integereleven. All rights reserved. MIT license.
 
-
 import type { UseRecord, UseRecordTarget } from '../use_record/mod.ts';
 import type { UseOfType } from '../use_of_type/mod.ts';
 import type { UseKeys } from '../use_keys/mod.ts';

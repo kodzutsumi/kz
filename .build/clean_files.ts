@@ -1,6 +1,5 @@
 // Copyright 2020 - present integereleven. All rights reserved. MIT license.
 
-
 // deno-lint-ignore-file no-external-import
 
 import { walk, type WalkOptions } from 'jsr:@std/fs@^1.0.6';
@@ -29,10 +28,10 @@ async function main(): Promise<void> {
   const paths = walk(root, options);
 
   for await (const { path } of paths) {
-    const text = await Deno.readTextFile(path);
-    const content = text.replace(/(\n\s*){3,}/g, '\n\n');
+    // const text = await Deno.readTextFile(path);
+    // const content = text.replace(/(\n\s*){3,}/g, '\n\n');
 
-    await Deno.writeTextFile(path, content);
+    // await Deno.writeTextFile(path, content);
 
     console.info(`Cleaned file: ${path}`);
   }

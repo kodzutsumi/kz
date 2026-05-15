@@ -1,6 +1,5 @@
 // Copyright 2020 - present integereleven. All rights reserved. MIT license.
 
-
 import type { IsAny } from '@std/testing/types';
 
 import type { IsSpecial } from '../simple_is_special.ts';
@@ -15,6 +14,5 @@ export type CheckType<
   Settings extends IsTypeCapSet = IsTypeDefaults,
 > = IsAny<OfType> extends true ? IsAny<Type> extends true ? true
   : false
-  : IsSpecial<OfType> extends true
-    ? CheckSpecial<Type, OfType, Settings>
+  : IsSpecial<OfType> extends true ? CheckSpecial<Type, OfType, Settings>
   : CheckOrdinary<Type, OfType, Settings>;

@@ -1,6 +1,5 @@
 // Copyright 2020 - present integereleven. All rights reserved. MIT license.
 
-
 /**
  * Capabilities are a collection of type indicate the capabilities of a type.
  * They include a collection of capability settings that provide input to these

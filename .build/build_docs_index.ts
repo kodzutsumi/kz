@@ -1,6 +1,5 @@
 // Copyright 2020 - present integereleven. All rights reserved. MIT license.
 
-
 const BASE_URL = import.meta.url;
 
 async function main(): Promise<void> {

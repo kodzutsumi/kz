@@ -1,6 +1,5 @@
 // Copyright 2020 - present integereleven. All rights reserved. MIT license.
 
-
 import type { AsUnsafe } from '@kz/util/capability';
 
 import type { IsTypeCapSet } from './types.ts';

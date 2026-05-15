@@ -1,6 +1,5 @@
 // Copyright 2020 - present integereleven. All rights reserved. MIT license.
 
-
 import type { UseAsync } from './consumer.ts';
 
 /**

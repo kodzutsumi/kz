@@ -1,6 +1,5 @@
 // Copyright 2020 - present integereleven. All rights reserved. MIT license.
 
-
 import type { UseAsyncKeyString } from './constant.ts';
 
 /**

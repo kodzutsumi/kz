@@ -1,5 +1,4 @@
 // Copyright 2020 - present integereleven. All rights reserved. MIT license.
 
-
 export type SimpleIsVoid<Type> = [Type, void] extends [void, Type] ? true
   : false;
