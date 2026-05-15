@@ -8,7 +8,7 @@ import type {
 } from './_internal/mod.ts';
 
 export type IsType<
-  TargetType,
+  Type,
   OfType,
   Settings extends IsTypeCapSet = IsTypeDefaults,
-> = InternalIsType<TargetType, OfType, Settings>;
+> = InternalIsType<Type, OfType, Settings>;

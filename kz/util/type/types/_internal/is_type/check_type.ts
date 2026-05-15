@@ -10,11 +10,11 @@ import type { CheckSpecial } from './check_special.ts';
 import type { IsTypeCapSet, IsTypeDefaults } from './types.ts';
 
 export type CheckType<
+  Type,
   OfType,
-  TargetType,
   Settings extends IsTypeCapSet = IsTypeDefaults,
-> = IsAny<TargetType> extends true ? IsAny<OfType> extends true ? true
+> = IsAny<OfType> extends true ? IsAny<Type> extends true ? true
   : false
-  : IsSpecial<TargetType> extends true
-    ? CheckSpecial<OfType, TargetType, Settings>
-  : CheckOrdinary<OfType, TargetType, Settings>;
+  : IsSpecial<OfType> extends true
+    ? CheckSpecial<Type, OfType, Settings>
+  : CheckOrdinary<Type, OfType, Settings>;

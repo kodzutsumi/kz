@@ -15,13 +15,13 @@ const IS_TRUE = true;
 
 describe('CheckOrdinary', () => {
   describe('string', () => {
-    type TypeToCheck = string;
+    type OfType = string;
 
     describe('AsForward (default)', () => {
       describe('AsDistributed (default)', () => {
         it('should return boolean for any type', () => {
-          type EffectiveResult = AnyType extends TypeToCheck ? true : false;
-          type Actual = CheckOrdinary<AnyType, TypeToCheck>;
+          type EffectiveResult = AnyType extends OfType ? true : false;
+          type Actual = CheckOrdinary<AnyType, OfType>;
           type Expected = boolean;
           type Result = IsExact<Actual, Expected>;
           type ValidatedResult = IsExact<EffectiveResult, Expected>;
@@ -31,8 +31,8 @@ describe('CheckOrdinary', () => {
         });
 
         it('should return true for never type', () => {
-          type EffectiveResult = never extends TypeToCheck ? true : false;
-          type Actual = CheckOrdinary<never, TypeToCheck>;
+          type EffectiveResult = never extends OfType ? true : false;
+          type Actual = CheckOrdinary<never, OfType>;
           type Expected = true;
           type Result = IsExact<Actual, Expected>;
           type ValidatedResult = IsExact<EffectiveResult, Expected>;
@@ -42,8 +42,8 @@ describe('CheckOrdinary', () => {
         });
 
         it('should return false for void type', () => {
-          type EffectiveResult = void extends TypeToCheck ? true : false;
-          type Actual = CheckOrdinary<void, TypeToCheck>;
+          type EffectiveResult = void extends OfType ? true : false;
+          type Actual = CheckOrdinary<void, OfType>;
           type Expected = false;
           type Result = IsExact<Actual, Expected>;
           type ValidatedResult = IsExact<EffectiveResult, Expected>;
@@ -53,8 +53,8 @@ describe('CheckOrdinary', () => {
         });
 
         it('should return false for unknown type', () => {
-          type EffectiveResult = unknown extends TypeToCheck ? true : false;
-          type Actual = CheckOrdinary<unknown, TypeToCheck>;
+          type EffectiveResult = unknown extends OfType ? true : false;
+          type Actual = CheckOrdinary<unknown, OfType>;
           type Expected = false;
           type Result = IsExact<Actual, Expected>;
           type ValidatedResult = IsExact<EffectiveResult, Expected>;
@@ -64,8 +64,8 @@ describe('CheckOrdinary', () => {
         });
 
         it('should return true for string type', () => {
-          type EffectiveResult = string extends TypeToCheck ? true : false;
-          type Actual = CheckOrdinary<string, TypeToCheck>;
+          type EffectiveResult = string extends OfType ? true : false;
+          type Actual = CheckOrdinary<string, OfType>;
           type Expected = true;
           type Result = IsExact<Actual, Expected>;
           type ValidatedResult = IsExact<EffectiveResult, Expected>;
@@ -77,10 +77,10 @@ describe('CheckOrdinary', () => {
 
       describe('AsUnified', () => {
         it('should return true for any type', () => {
-          type EffectiveResult = [AnyType] extends [TypeToCheck] ? true : false;
+          type EffectiveResult = [AnyType] extends [OfType] ? true : false;
           type Actual = CheckOrdinary<
             AnyType,
-            TypeToCheck,
+            OfType,
             AsUnified
           >;
           type Expected = true;
@@ -92,8 +92,8 @@ describe('CheckOrdinary', () => {
         });
 
         it('should return true for never type', () => {
-          type EffectiveResult = [never] extends [TypeToCheck] ? true : false;
-          type Actual = CheckOrdinary<never, TypeToCheck, AsUnified>;
+          type EffectiveResult = [never] extends [OfType] ? true : false;
+          type Actual = CheckOrdinary<never, OfType, AsUnified>;
           type Expected = true;
           type Result = IsExact<Actual, Expected>;
           type ValidatedResult = IsExact<EffectiveResult, Expected>;
@@ -103,8 +103,8 @@ describe('CheckOrdinary', () => {
         });
 
         it('should return false for void type', () => {
-          type EffectiveResult = [void] extends [TypeToCheck] ? true : false;
-          type Actual = CheckOrdinary<void, TypeToCheck, AsUnified>;
+          type EffectiveResult = [void] extends [OfType] ? true : false;
+          type Actual = CheckOrdinary<void, OfType, AsUnified>;
           type Expected = false;
           type Result = IsExact<Actual, Expected>;
           type ValidatedResult = IsExact<EffectiveResult, Expected>;
@@ -114,8 +114,8 @@ describe('CheckOrdinary', () => {
         });
 
         it('should return false for unknown type', () => {
-          type EffectiveResult = [unknown] extends [TypeToCheck] ? true : false;
-          type Actual = CheckOrdinary<unknown, TypeToCheck, AsUnified>;
+          type EffectiveResult = [unknown] extends [OfType] ? true : false;
+          type Actual = CheckOrdinary<unknown, OfType, AsUnified>;
           type Expected = false;
           type Result = IsExact<Actual, Expected>;
           type ValidatedResult = IsExact<EffectiveResult, Expected>;
@@ -125,8 +125,8 @@ describe('CheckOrdinary', () => {
         });
 
         it('should return true for string type', () => {
-          type EffectiveResult = [string] extends [TypeToCheck] ? true : false;
-          type Actual = CheckOrdinary<string, TypeToCheck, AsUnified>;
+          type EffectiveResult = [string] extends [OfType] ? true : false;
+          type Actual = CheckOrdinary<string, OfType, AsUnified>;
           type Expected = true;
           type Result = IsExact<Actual, Expected>;
           type ValidatedResult = IsExact<EffectiveResult, Expected>;
@@ -140,8 +140,8 @@ describe('CheckOrdinary', () => {
     describe('AsReversed', () => {
       describe('AsDistributed (default)', () => {
         it('should return true for any type', () => {
-          type EffectiveResult = TypeToCheck extends AnyType ? true : false;
-          type Actual = CheckOrdinary<AnyType, TypeToCheck, AsReversed>;
+          type EffectiveResult = OfType extends AnyType ? true : false;
+          type Actual = CheckOrdinary<AnyType, OfType, AsReversed>;
           type Expected = true;
           type Result = IsExact<Actual, Expected>;
           type ValidatedResult = IsExact<EffectiveResult, Expected>;
@@ -151,8 +151,8 @@ describe('CheckOrdinary', () => {
         });
 
         it('should return false for never type', () => {
-          type EffectiveResult = TypeToCheck extends never ? true : false;
-          type Actual = CheckOrdinary<never, TypeToCheck, AsReversed>;
+          type EffectiveResult = OfType extends never ? true : false;
+          type Actual = CheckOrdinary<never, OfType, AsReversed>;
           type Expected = false;
           type Result = IsExact<Actual, Expected>;
           type ValidatedResult = IsExact<EffectiveResult, Expected>;
@@ -162,8 +162,8 @@ describe('CheckOrdinary', () => {
         });
 
         it('should return false for void type', () => {
-          type EffectiveResult = TypeToCheck extends void ? true : false;
-          type Actual = CheckOrdinary<void, TypeToCheck, AsReversed>;
+          type EffectiveResult = OfType extends void ? true : false;
+          type Actual = CheckOrdinary<void, OfType, AsReversed>;
           type Expected = false;
           type Result = IsExact<Actual, Expected>;
           type ValidatedResult = IsExact<EffectiveResult, Expected>;
@@ -173,8 +173,8 @@ describe('CheckOrdinary', () => {
         });
 
         it('should return true for unknown type', () => {
-          type EffectiveResult = TypeToCheck extends unknown ? true : false;
-          type Actual = CheckOrdinary<unknown, TypeToCheck, AsReversed>;
+          type EffectiveResult = OfType extends unknown ? true : false;
+          type Actual = CheckOrdinary<unknown, OfType, AsReversed>;
           type Expected = true;
           type Result = IsExact<Actual, Expected>;
           type ValidatedResult = IsExact<EffectiveResult, Expected>;
@@ -184,8 +184,8 @@ describe('CheckOrdinary', () => {
         });
 
         it('should return true for string type', () => {
-          type EffectiveResult = TypeToCheck extends string ? true : false;
-          type Actual = CheckOrdinary<string, TypeToCheck, AsReversed>;
+          type EffectiveResult = OfType extends string ? true : false;
+          type Actual = CheckOrdinary<string, OfType, AsReversed>;
           type Expected = true;
           type Result = IsExact<Actual, Expected>;
           type ValidatedResult = IsExact<EffectiveResult, Expected>;
@@ -197,9 +197,9 @@ describe('CheckOrdinary', () => {
 
       describe('AsUnified', () => {
         it('should return true for any type', () => {
-          type EffectiveResult = [TypeToCheck] extends [AnyType] ? true : false;
+          type EffectiveResult = [OfType] extends [AnyType] ? true : false;
           type Actual = CheckOrdinary<
-            TypeToCheck,
+            OfType,
             AnyType,
             AsUnified & AsReversed
           >;
@@ -212,10 +212,10 @@ describe('CheckOrdinary', () => {
         });
 
         it('should return false for never type', () => {
-          type EffectiveResult = [TypeToCheck] extends [never] ? true : false;
+          type EffectiveResult = [OfType] extends [never] ? true : false;
           type Actual = CheckOrdinary<
             never,
-            TypeToCheck,
+            OfType,
             AsUnified & AsReversed
           >;
           type Expected = false;
@@ -227,9 +227,9 @@ describe('CheckOrdinary', () => {
         });
 
         it('should return false for void type', () => {
-          type EffectiveResult = [TypeToCheck] extends [void] ? true : false;
+          type EffectiveResult = [OfType] extends [void] ? true : false;
           type Actual = CheckOrdinary<
-            TypeToCheck,
+            OfType,
             void,
             AsUnified & AsReversed
           >;
@@ -242,10 +242,10 @@ describe('CheckOrdinary', () => {
         });
 
         it('should return true for unknown type', () => {
-          type EffectiveResult = [TypeToCheck] extends [unknown] ? true : false;
+          type EffectiveResult = [OfType] extends [unknown] ? true : false;
           type Actual = CheckOrdinary<
             unknown,
-            TypeToCheck,
+            OfType,
             AsUnified & AsReversed
           >;
           type Expected = true;
@@ -257,9 +257,9 @@ describe('CheckOrdinary', () => {
         });
 
         it('should return true for string type', () => {
-          type EffectiveResult = [TypeToCheck] extends [string] ? true : false;
+          type EffectiveResult = [OfType] extends [string] ? true : false;
           type Actual = CheckOrdinary<
-            TypeToCheck,
+            OfType,
             string,
             AsUnified & AsReversed
           >;
@@ -275,13 +275,13 @@ describe('CheckOrdinary', () => {
   });
 
   describe('Nil', () => {
-    type TypeToCheck = Nil;
+    type OfType = Nil;
 
     describe('AsForward (default)', () => {
       describe('AsDistributed (default)', () => {
         it('should return boolean for any type', () => {
           type EffectiveResult = AnyType extends Nil ? true : false;
-          type Actual = CheckOrdinary<AnyType, TypeToCheck>;
+          type Actual = CheckOrdinary<AnyType, OfType>;
           type Expected = boolean;
           type Result = IsExact<Actual, Expected>;
           type ValidatedResult = IsExact<EffectiveResult, Expected>;
@@ -292,7 +292,7 @@ describe('CheckOrdinary', () => {
 
         it('should return true for never type', () => {
           type EffectiveResult = never extends Nil ? true : false;
-          type Actual = CheckOrdinary<never, TypeToCheck>;
+          type Actual = CheckOrdinary<never, OfType>;
           type Expected = true;
           type Result = IsExact<Actual, Expected>;
           type ValidatedResult = IsExact<EffectiveResult, Expected>;
@@ -303,7 +303,7 @@ describe('CheckOrdinary', () => {
 
         it('should return false for void type', () => {
           type EffectiveResult = void extends Nil ? true : false;
-          type Actual = CheckOrdinary<void, TypeToCheck>;
+          type Actual = CheckOrdinary<void, OfType>;
           type Expected = false;
           type Result = IsExact<Actual, Expected>;
           type ValidatedResult = IsExact<EffectiveResult, Expected>;
@@ -314,7 +314,7 @@ describe('CheckOrdinary', () => {
 
         it('should return false for unknown type', () => {
           type EffectiveResult = unknown extends Nil ? true : false;
-          type Actual = CheckOrdinary<unknown, TypeToCheck>;
+          type Actual = CheckOrdinary<unknown, OfType>;
           type Expected = false;
           type Result = IsExact<Actual, Expected>;
           type ValidatedResult = IsExact<EffectiveResult, Expected>;
@@ -325,7 +325,7 @@ describe('CheckOrdinary', () => {
 
         it('should return false for string type', () => {
           type EffectiveResult = string extends Nil ? true : false;
-          type Actual = CheckOrdinary<string, TypeToCheck>;
+          type Actual = CheckOrdinary<string, OfType>;
           type Expected = false;
           type Result = IsExact<Actual, Expected>;
           type ValidatedResult = IsExact<EffectiveResult, Expected>;
@@ -337,9 +337,9 @@ describe('CheckOrdinary', () => {
 
       describe('AsUnified', () => {
         it('should return true for any type', () => {
-          type EffectiveResult = [AnyType] extends [TypeToCheck] ? true : false;
+          type EffectiveResult = [AnyType] extends [OfType] ? true : false;
           type Actual = CheckOrdinary<
-            TypeToCheck,
+            OfType,
             AnyType,
             AsUnified
           >;
@@ -352,8 +352,8 @@ describe('CheckOrdinary', () => {
         });
 
         it('should return true for never type', () => {
-          type EffectiveResult = [never] extends [Nil] ? true : false;
-          type Actual = CheckOrdinary<never, TypeToCheck, AsUnified>;
+          type EffectiveResult = [never] extends [OfType] ? true : false;
+          type Actual = CheckOrdinary<never, OfType, AsUnified>;
           type Expected = true;
           type Result = IsExact<Actual, Expected>;
           type ValidatedResult = IsExact<EffectiveResult, Expected>;
@@ -364,7 +364,7 @@ describe('CheckOrdinary', () => {
 
         it('should return false for void type', () => {
           type EffectiveResult = [void] extends [Nil] ? true : false;
-          type Actual = CheckOrdinary<void, TypeToCheck, AsUnified>;
+          type Actual = CheckOrdinary<void, OfType, AsUnified>;
           type Expected = false;
           type Result = IsExact<Actual, Expected>;
           type ValidatedResult = IsExact<EffectiveResult, Expected>;
@@ -375,7 +375,7 @@ describe('CheckOrdinary', () => {
 
         it('should return false for unknown type', () => {
           type EffectiveResult = [unknown] extends [Nil] ? true : false;
-          type Actual = CheckOrdinary<unknown, TypeToCheck, AsUnified>;
+          type Actual = CheckOrdinary<unknown, OfType, AsUnified>;
           type Expected = false;
           type Result = IsExact<Actual, Expected>;
           type ValidatedResult = IsExact<EffectiveResult, Expected>;
@@ -386,7 +386,7 @@ describe('CheckOrdinary', () => {
 
         it('should return false for string type', () => {
           type EffectiveResult = [string] extends [Nil] ? true : false;
-          type Actual = CheckOrdinary<string, TypeToCheck, AsUnified>;
+          type Actual = CheckOrdinary<string, OfType, AsUnified>;
           type Expected = false;
           type Result = IsExact<Actual, Expected>;
           type ValidatedResult = IsExact<EffectiveResult, Expected>;
@@ -400,8 +400,8 @@ describe('CheckOrdinary', () => {
     describe('AsReversed', () => {
       describe('AsDistributed (default)', () => {
         it('should return true for any type', () => {
-          type EffectiveResult = TypeToCheck extends AnyType ? true : false;
-          type Actual = CheckOrdinary<AnyType, TypeToCheck, AsReversed>;
+          type EffectiveResult = OfType extends AnyType ? true : false;
+          type Actual = CheckOrdinary<AnyType, OfType, AsReversed>;
           type Expected = true;
           type Result = IsExact<Actual, Expected>;
           type ValidatedResult = IsExact<EffectiveResult, Expected>;
@@ -412,7 +412,7 @@ describe('CheckOrdinary', () => {
 
         it('should return false for never type', () => {
           type EffectiveResult = Nil extends never ? true : false;
-          type Actual = CheckOrdinary<never, TypeToCheck, AsReversed>;
+          type Actual = CheckOrdinary<never, OfType, AsReversed>;
           type Expected = false;
           type Result = IsExact<Actual, Expected>;
           type ValidatedResult = IsExact<EffectiveResult, Expected>;
@@ -423,7 +423,7 @@ describe('CheckOrdinary', () => {
 
         it('should return false for void type', () => {
           type EffectiveResult = Nil extends void ? true : false;
-          type Actual = CheckOrdinary<void, TypeToCheck, AsReversed>;
+          type Actual = CheckOrdinary<void, OfType, AsReversed>;
           type Expected = false;
           type Result = IsExact<Actual, Expected>;
           type ValidatedResult = IsExact<EffectiveResult, Expected>;
@@ -434,7 +434,7 @@ describe('CheckOrdinary', () => {
 
         it('should return true for unknown type', () => {
           type EffectiveResult = Nil extends unknown ? true : false;
-          type Actual = CheckOrdinary<unknown, TypeToCheck, AsReversed>;
+          type Actual = CheckOrdinary<unknown, OfType, AsReversed>;
           type Expected = true;
           type Result = IsExact<Actual, Expected>;
           type ValidatedResult = IsExact<EffectiveResult, Expected>;
@@ -445,7 +445,7 @@ describe('CheckOrdinary', () => {
 
         it('should return false for string type', () => {
           type EffectiveResult = Nil extends string ? true : false;
-          type Actual = CheckOrdinary<string, TypeToCheck, AsReversed>;
+          type Actual = CheckOrdinary<string, OfType, AsReversed>;
           type Expected = false;
           type Result = IsExact<Actual, Expected>;
           type ValidatedResult = IsExact<EffectiveResult, Expected>;
@@ -457,9 +457,9 @@ describe('CheckOrdinary', () => {
 
       describe('AsUnified', () => {
         it('should return true for any type', () => {
-          type EffectiveResult = [TypeToCheck] extends [AnyType] ? true : false;
+          type EffectiveResult = [OfType] extends [AnyType] ? true : false;
           type Actual = CheckOrdinary<
-            TypeToCheck,
+            OfType,
             AnyType,
             AsUnified & AsReversed
           >;
@@ -475,7 +475,7 @@ describe('CheckOrdinary', () => {
           type EffectiveResult = [Nil] extends [never] ? true : false;
           type Actual = CheckOrdinary<
             never,
-            TypeToCheck,
+            OfType,
             AsUnified & AsReversed
           >;
           type Expected = false;
@@ -489,7 +489,7 @@ describe('CheckOrdinary', () => {
         it('should return false for void type', () => {
           type EffectiveResult = [Nil] extends [void] ? true : false;
           type Actual = CheckOrdinary<
-            TypeToCheck,
+            OfType,
             void,
             AsUnified & AsReversed
           >;
@@ -505,7 +505,7 @@ describe('CheckOrdinary', () => {
           type EffectiveResult = [Nil] extends [unknown] ? true : false;
           type Actual = CheckOrdinary<
             unknown,
-            TypeToCheck,
+            OfType,
             AsUnified & AsReversed
           >;
           type Expected = true;
@@ -519,7 +519,7 @@ describe('CheckOrdinary', () => {
         it('should return false for string type', () => {
           type EffectiveResult = [Nil] extends [string] ? true : false;
           type Actual = CheckOrdinary<
-            TypeToCheck,
+            OfType,
             string,
             AsUnified & AsReversed
           >;
@@ -535,14 +535,14 @@ describe('CheckOrdinary', () => {
   });
 
   describe('Object', () => {
-    type TypeToCheck = {
+    type OfType = {
       a: number;
       b: string;
       c: boolean;
     };
 
     type Subtype =
-      & TypeToCheck
+      & OfType
       & {
         d: symbol;
       };
@@ -550,8 +550,8 @@ describe('CheckOrdinary', () => {
     describe('AsForward (default)', () => {
       describe('AsDistributed (default)', () => {
         it('should return boolean for any type', () => {
-          type EffectiveResult = AnyType extends TypeToCheck ? true : false;
-          type Actual = CheckOrdinary<AnyType, TypeToCheck>;
+          type EffectiveResult = AnyType extends OfType ? true : false;
+          type Actual = CheckOrdinary<AnyType, OfType>;
           type Expected = boolean;
           type Result = IsExact<Actual, Expected>;
           type ValidatedResult = IsExact<EffectiveResult, Expected>;
@@ -561,8 +561,8 @@ describe('CheckOrdinary', () => {
         });
 
         it('should return true for never type', () => {
-          type EffectiveResult = never extends TypeToCheck ? true : false;
-          type Actual = CheckOrdinary<never, TypeToCheck>;
+          type EffectiveResult = never extends OfType ? true : false;
+          type Actual = CheckOrdinary<never, OfType>;
           type Expected = true;
           type Result = IsExact<Actual, Expected>;
           type ValidatedResult = IsExact<EffectiveResult, Expected>;
@@ -572,8 +572,8 @@ describe('CheckOrdinary', () => {
         });
 
         it('should return false for void type', () => {
-          type EffectiveResult = void extends TypeToCheck ? true : false;
-          type Actual = CheckOrdinary<void, TypeToCheck>;
+          type EffectiveResult = void extends OfType ? true : false;
+          type Actual = CheckOrdinary<void, OfType>;
           type Expected = false;
           type Result = IsExact<Actual, Expected>;
           type ValidatedResult = IsExact<EffectiveResult, Expected>;
@@ -583,8 +583,8 @@ describe('CheckOrdinary', () => {
         });
 
         it('should return false for unknown type', () => {
-          type EffectiveResult = unknown extends TypeToCheck ? true : false;
-          type Actual = CheckOrdinary<unknown, TypeToCheck>;
+          type EffectiveResult = unknown extends OfType ? true : false;
+          type Actual = CheckOrdinary<unknown, OfType>;
           type Expected = false;
           type Result = IsExact<Actual, Expected>;
           type ValidatedResult = IsExact<EffectiveResult, Expected>;
@@ -594,8 +594,8 @@ describe('CheckOrdinary', () => {
         });
 
         it('should return false for string type', () => {
-          type EffectiveResult = string extends TypeToCheck ? true : false;
-          type Actual = CheckOrdinary<string, TypeToCheck>;
+          type EffectiveResult = string extends OfType ? true : false;
+          type Actual = CheckOrdinary<string, OfType>;
           type Expected = false;
           type Result = IsExact<Actual, Expected>;
           type ValidatedResult = IsExact<EffectiveResult, Expected>;
@@ -605,8 +605,8 @@ describe('CheckOrdinary', () => {
         });
 
         it('should return true for Subtype', () => {
-          type EffectiveResult = Subtype extends TypeToCheck ? true : false;
-          type Actual = CheckOrdinary<Subtype, TypeToCheck>;
+          type EffectiveResult = Subtype extends OfType ? true : false;
+          type Actual = CheckOrdinary<Subtype, OfType>;
           type Expected = true;
           type Result = IsExact<Actual, Expected>;
           type ValidatedResult = IsExact<EffectiveResult, Expected>;
@@ -618,10 +618,10 @@ describe('CheckOrdinary', () => {
 
       describe('AsUnified', () => {
         it('should return true for any type', () => {
-          type EffectiveResult = [AnyType] extends [TypeToCheck] ? true : false;
+          type EffectiveResult = [AnyType] extends [OfType] ? true : false;
           type Actual = CheckOrdinary<
-            TypeToCheck,
-            TypeToCheck,
+            OfType,
+            OfType,
             AsUnified
           >;
           type Expected = true;
@@ -633,8 +633,8 @@ describe('CheckOrdinary', () => {
         });
 
         it('should return true for never type', () => {
-          type EffectiveResult = [never] extends [TypeToCheck] ? true : false;
-          type Actual = CheckOrdinary<never, TypeToCheck, AsUnified>;
+          type EffectiveResult = [never] extends [OfType] ? true : false;
+          type Actual = CheckOrdinary<never, OfType, AsUnified>;
           type Expected = true;
           type Result = IsExact<Actual, Expected>;
           type ValidatedResult = IsExact<EffectiveResult, Expected>;
@@ -644,8 +644,8 @@ describe('CheckOrdinary', () => {
         });
 
         it('should return false for void type', () => {
-          type EffectiveResult = [void] extends [TypeToCheck] ? true : false;
-          type Actual = CheckOrdinary<void, TypeToCheck, AsUnified>;
+          type EffectiveResult = [void] extends [OfType] ? true : false;
+          type Actual = CheckOrdinary<void, OfType, AsUnified>;
           type Expected = false;
           type Result = IsExact<Actual, Expected>;
           type ValidatedResult = IsExact<EffectiveResult, Expected>;
@@ -655,8 +655,8 @@ describe('CheckOrdinary', () => {
         });
 
         it('should return false for unknown type', () => {
-          type EffectiveResult = [unknown] extends [TypeToCheck] ? true : false;
-          type Actual = CheckOrdinary<unknown, TypeToCheck, AsUnified>;
+          type EffectiveResult = [unknown] extends [OfType] ? true : false;
+          type Actual = CheckOrdinary<unknown, OfType, AsUnified>;
           type Expected = false;
           type Result = IsExact<Actual, Expected>;
           type ValidatedResult = IsExact<EffectiveResult, Expected>;
@@ -666,8 +666,8 @@ describe('CheckOrdinary', () => {
         });
 
         it('should return false for string type', () => {
-          type EffectiveResult = [string] extends [TypeToCheck] ? true : false;
-          type Actual = CheckOrdinary<string, TypeToCheck, AsUnified>;
+          type EffectiveResult = [string] extends [OfType] ? true : false;
+          type Actual = CheckOrdinary<string, OfType, AsUnified>;
           type Expected = false;
           type Result = IsExact<Actual, Expected>;
           type ValidatedResult = IsExact<EffectiveResult, Expected>;
@@ -677,8 +677,8 @@ describe('CheckOrdinary', () => {
         });
 
         it('should return true for Subtype', () => {
-          type EffectiveResult = [Subtype] extends [TypeToCheck] ? true : false;
-          type Actual = CheckOrdinary<Subtype, TypeToCheck, AsUnified>;
+          type EffectiveResult = [Subtype] extends [OfType] ? true : false;
+          type Actual = CheckOrdinary<Subtype, OfType, AsUnified>;
           type Expected = true;
           type Result = IsExact<Actual, Expected>;
           type ValidatedResult = IsExact<EffectiveResult, Expected>;
@@ -692,8 +692,8 @@ describe('CheckOrdinary', () => {
     describe('AsReversed', () => {
       describe('AsDistributed (default)', () => {
         it('should return true for any type', () => {
-          type EffectiveResult = [TypeToCheck] extends [AnyType] ? true : false;
-          type Actual = CheckOrdinary<AnyType, TypeToCheck, AsReversed>;
+          type EffectiveResult = [OfType] extends [AnyType] ? true : false;
+          type Actual = CheckOrdinary<AnyType, OfType, AsReversed>;
           type Expected = true;
           type Result = IsExact<Actual, Expected>;
           type ValidatedResult = IsExact<EffectiveResult, Expected>;
@@ -703,8 +703,8 @@ describe('CheckOrdinary', () => {
         });
 
         it('should return false for never type', () => {
-          type EffectiveResult = [TypeToCheck] extends [never] ? true : false;
-          type Actual = CheckOrdinary<never, TypeToCheck, AsReversed>;
+          type EffectiveResult = [OfType] extends [never] ? true : false;
+          type Actual = CheckOrdinary<never, OfType, AsReversed>;
           type Expected = false;
           type Result = IsExact<Actual, Expected>;
           type ValidatedResult = IsExact<EffectiveResult, Expected>;
@@ -714,8 +714,8 @@ describe('CheckOrdinary', () => {
         });
 
         it('should return false for void type', () => {
-          type EffectiveResult = [TypeToCheck] extends [void] ? true : false;
-          type Actual = CheckOrdinary<void, TypeToCheck, AsReversed>;
+          type EffectiveResult = [OfType] extends [void] ? true : false;
+          type Actual = CheckOrdinary<void, OfType, AsReversed>;
           type Expected = false;
           type Result = IsExact<Actual, Expected>;
           type ValidatedResult = IsExact<EffectiveResult, Expected>;
@@ -725,8 +725,8 @@ describe('CheckOrdinary', () => {
         });
 
         it('should return true for unknown type', () => {
-          type EffectiveResult = [TypeToCheck] extends [unknown] ? true : false;
-          type Actual = CheckOrdinary<unknown, TypeToCheck, AsReversed>;
+          type EffectiveResult = [OfType] extends [unknown] ? true : false;
+          type Actual = CheckOrdinary<unknown, OfType, AsReversed>;
           type Expected = true;
           type Result = IsExact<Actual, Expected>;
           type ValidatedResult = IsExact<EffectiveResult, Expected>;
@@ -736,8 +736,8 @@ describe('CheckOrdinary', () => {
         });
 
         it('should return false for string type', () => {
-          type EffectiveResult = [TypeToCheck] extends [string] ? true : false;
-          type Actual = CheckOrdinary<string, TypeToCheck, AsReversed>;
+          type EffectiveResult = [OfType] extends [string] ? true : false;
+          type Actual = CheckOrdinary<string, OfType, AsReversed>;
           type Expected = false;
           type Result = IsExact<Actual, Expected>;
           type ValidatedResult = IsExact<EffectiveResult, Expected>;
@@ -747,10 +747,10 @@ describe('CheckOrdinary', () => {
         });
 
         it('should return false for Subtype', () => {
-          type EffectiveResult = [TypeToCheck] extends [Subtype] ? true : false;
+          type EffectiveResult = [OfType] extends [Subtype] ? true : false;
           type Actual = CheckOrdinary<
             Subtype,
-            TypeToCheck,
+            OfType,
             AsReversed
           >;
           type Expected = false;
@@ -764,10 +764,10 @@ describe('CheckOrdinary', () => {
 
       describe('AsUnified', () => {
         it('should return true for any type', () => {
-          type EffectiveResult = [TypeToCheck] extends [AnyType] ? true : false;
+          type EffectiveResult = [OfType] extends [AnyType] ? true : false;
           type Actual = CheckOrdinary<
             AnyType,
-            TypeToCheck,
+            OfType,
             AsUnified & AsReversed
           >;
           type Expected = true;
@@ -779,10 +779,10 @@ describe('CheckOrdinary', () => {
         });
 
         it('should return false for never type', () => {
-          type EffectiveResult = [TypeToCheck] extends [never] ? true : false;
+          type EffectiveResult = [OfType] extends [never] ? true : false;
           type Actual = CheckOrdinary<
             never,
-            TypeToCheck,
+            OfType,
             AsUnified & AsReversed
           >;
           type Expected = false;
@@ -794,9 +794,9 @@ describe('CheckOrdinary', () => {
         });
 
         it('should return false for void type', () => {
-          type EffectiveResult = [TypeToCheck] extends [void] ? true : false;
+          type EffectiveResult = [OfType] extends [void] ? true : false;
           type Actual = CheckOrdinary<
-            TypeToCheck,
+            OfType,
             void,
             AsUnified & AsReversed
           >;
@@ -809,10 +809,10 @@ describe('CheckOrdinary', () => {
         });
 
         it('should return true for unknown type', () => {
-          type EffectiveResult = [TypeToCheck] extends [unknown] ? true : false;
+          type EffectiveResult = [OfType] extends [unknown] ? true : false;
           type Actual = CheckOrdinary<
             unknown,
-            TypeToCheck,
+            OfType,
             AsUnified & AsReversed
           >;
           type Expected = true;
@@ -824,9 +824,9 @@ describe('CheckOrdinary', () => {
         });
 
         it('should return false for string type', () => {
-          type EffectiveResult = [TypeToCheck] extends [string] ? true : false;
+          type EffectiveResult = [OfType] extends [string] ? true : false;
           type Actual = CheckOrdinary<
-            TypeToCheck,
+            OfType,
             string,
             AsUnified & AsReversed
           >;
@@ -839,10 +839,10 @@ describe('CheckOrdinary', () => {
         });
 
         it('should return false for Subtype', () => {
-          type EffectiveResult = [TypeToCheck] extends [Subtype] ? true : false;
+          type EffectiveResult = [OfType] extends [Subtype] ? true : false;
           type Actual = CheckOrdinary<
             Subtype,
-            TypeToCheck,
+            OfType,
             AsUnified & AsReversed
           >;
           type Expected = false;
