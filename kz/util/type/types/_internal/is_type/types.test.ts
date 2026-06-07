@@ -4,8 +4,10 @@ import { describe, it } from '@std/testing/bdd';
 import { assertType, type IsExact } from '@std/testing/types';
 import type {
   AsForward,
+  AsInitial,
   AsLoose,
   AsSafe,
+  UseInverted,
   UseNullOption,
   UseOfType,
   UseReversed,
@@ -23,8 +25,8 @@ describe('is_type types', () => {
       type Expected =
         | UseUnified
         | UseUnsafe
+        | UseInverted
         | UseReversed
-        | UseOfType
         | UseNullOption;
       type Result = IsExact<IsTypeCapSet, Expected>;
 
@@ -35,6 +37,7 @@ describe('is_type types', () => {
   describe('IsTypeDefaults', () => {
     it('should be an intersection of capability brokers', () => {
       type Expected =
+        & AsInitial
         & AsLoose
         & AsSafe
         & AsForward;

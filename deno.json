@@ -52,10 +52,15 @@
       "description": "Generate documentation for all packages",
       "dependencies": [
         "x-docs:util",
+        "x-docs:core",
         "x-docs:x"
       ]
     },
     "x-docs:util": {
+      "description": "DEPENDENCY! Generate documentation for core package",
+      "command": "deno doc --html --output=docs/kz/core --name='@kz/core' ./kz/core/mod.ts ./kz/core/*/mod.ts"
+    },
+    "x-docs:core": {
       "description": "DEPENDENCY! Generate documentation for util package",
       "command": "deno doc --html --output=docs/kz/util --name='@kz/util' ./kz/util/mod.ts ./kz/util/*/mod.ts"
     },

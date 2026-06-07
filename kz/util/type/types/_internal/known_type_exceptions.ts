@@ -1,5 +1,11 @@
 // Copyright 2020 - present integereleven. All rights reserved. MIT license.
 
+/**
+ * Defines a set of known exceptions that can occur during type checks, with
+ * specific error codes and messages for each exception.
+ * 
+ * @internal
+ */
 export type KnownTypeExceptions = {
   '0x1': 'Missing `Of<Type>` capability for `CheckType`';
   '0x2': 'Cannot retrieve collection from array or array-like type';

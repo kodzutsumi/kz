@@ -5,7 +5,7 @@ import type { PickCap, ResolveBoolean, UseUnsafe } from '@kz/util/capability';
 import type { LogicCapSet, LogicDefaults } from '../types.ts';
 
 import type { Resolve } from './resolve.ts';
-import type { ApplyDefault } from './apply_default.ts';
+import type { _Vote } from './_vote.ts';
 
 /**
  * Represents the core logic handler type that processes a boolean operand based on the provided settings and capabilities.
@@ -19,6 +19,6 @@ export type LogicHandler<
   Operand extends boolean,
   Settings extends LogicCapSet = LogicDefaults,
 > = Resolve<
-  ResolveBoolean<Operand, PickCap<Settings, UseUnsafe, false>>,
-  ApplyDefault<Settings>
+  _Vote<ResolveBoolean<Operand, PickCap<Settings, UseUnsafe, false>>, Settings>,
+  Settings
 >;

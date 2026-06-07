@@ -8,6 +8,7 @@ import type {
   UseInverted,
   UseThen,
   UseUnsafe,
+  UseVote,
 } from '@kz/util/capability';
 
 import type { LogicCapSet, LogicDefaults } from './types.ts';
@@ -21,7 +22,8 @@ describe('capability types', () => {
         | UseElse
         | UseInverted
         | UseThen
-        | UseUnsafe;
+        | UseUnsafe
+        | UseVote;
       type Result = IsExact<LogicCapSet, Expected>;
 
       assertType<Result>(IS_TRUE);

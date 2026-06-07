@@ -1,0 +1,8 @@
+{
+  "name": "@kz/core",
+  "version": "0.0.1",
+  "exports": {
+    "./exception": "./exception/mod.ts",
+    "./type": "./type/mod.ts"
+  }
+}

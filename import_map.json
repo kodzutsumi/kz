@@ -9,6 +9,10 @@
     "@kz/util/capability": "jsr:@kz/util@^0.0.1/capability",
     "@kz/util/type": "jsr:@kz/util@^0.0.1/type",
     "@kz/util/logic": "jsr:@kz/util@^0.0.1/logic",
-    "@kz/util/lint": "jsr:@kz/util@^0.0.1/lint"
+    "@kz/util/lint": "jsr:@kz/util@^0.0.1/lint",
+
+    "@kz/core": "jsr:@kz/core@^0.0.1",
+    "@kz/core/exception": "jsr:@kz/core@^0.0.1/exception",
+    "@kz/core/type": "jsr:@kz/core@^0.0.1/type"
   }
 }

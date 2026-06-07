@@ -6,6 +6,7 @@ import type {
   UseDepth,
   UseElse,
   UseExcluded,
+  UseForType,
   UseInverted,
   UseNullOption,
   UseOfType,
@@ -19,6 +20,7 @@ import type {
   UseThen,
   UseUnified,
   UseUnsafe,
+  UseVote,
 } from './capabilities/mod.ts';
 
 /**
@@ -31,10 +33,9 @@ export type BaseCapSet =
   | UseAsync
   | UseDefault
   | UseDepth
-  | UseUnified
   | UseElse
   | UseExcluded
-  | UseStream
+  | UseForType
   | UseInverted
   | UseNullOption
   | UseOfType
@@ -43,6 +44,9 @@ export type BaseCapSet =
   | UseRecord
   | UseReversed
   | UseSetter
+  | UseStream
   | UseStrict
   | UseThen
-  | UseUnsafe;
+  | UseUnified
+  | UseUnsafe
+  | UseVote;

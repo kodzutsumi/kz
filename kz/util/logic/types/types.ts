@@ -5,6 +5,7 @@ import type {
   UseCondition,
   UseInverted,
   UseUnsafe,
+  UseVote,
 } from '@kz/util/capability';
 
 /**
@@ -13,7 +14,8 @@ import type {
 export type LogicCapSet =
   | UseCondition
   | UseInverted
-  | UseUnsafe;
+  | UseUnsafe
+  | UseVote;
 
 /**
  * The default capabilities for logic types. This type is used when no specific capabilities are provided in the settings of logic types.

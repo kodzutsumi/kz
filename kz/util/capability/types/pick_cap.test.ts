@@ -14,12 +14,14 @@ import type {
   AsInverted,
   AsLevel,
   AsLoose,
+  AsMajority,
   AsOptional,
   AsPredicate,
   AsReadonly,
   AsRecord,
   AsRequired,
   AsReversed,
+  AsRunoff,
   AsSafe,
   AsSetter,
   AsShallow,
@@ -31,6 +33,7 @@ import type {
   ConditionOf,
   DefaultOf,
   Else,
+  ForType,
   OfType,
   PickCap,
   Then,
@@ -40,6 +43,7 @@ import type {
   UseDepth,
   UseElse,
   UseExcluded,
+  UseForType,
   UseInverted,
   UseOfType,
   UseOptional,
@@ -52,6 +56,7 @@ import type {
   UseThen,
   UseUnified,
   UseUnsafe,
+  UseVote,
 } from '@kz/util/capability';
 
 const IS_TRUE = true;
@@ -70,24 +75,6 @@ describe('PickCap', () => {
       it('should be the DefaultType if missing from the CapBrokerSet', () => {
         type Actual = PickCap<UseUnsafe<false>, UseAsync, false>;
         type Expected = AsSync;
-        type Result = IsExact<Actual, Expected>;
-
-        assertType<Result>(IS_TRUE);
-      });
-    });
-
-    describe('UseUnified', () => {
-      it('should pick the setting from CapBrokerSet', () => {
-        type Actual = PickCap<UseUnified<true>, UseUnified, false>;
-        type Expected = AsUnified;
-        type Result = IsExact<Actual, Expected>;
-
-        assertType<Result>(IS_TRUE);
-      });
-
-      it('should be the DefaultType if missing from the CapBrokerSet', () => {
-        type Actual = PickCap<UseUnsafe<false>, UseUnified, false>;
-        type Expected = AsDistributed;
         type Result = IsExact<Actual, Expected>;
 
         assertType<Result>(IS_TRUE);
@@ -238,6 +225,24 @@ describe('PickCap', () => {
       });
     });
 
+    describe('UseUnified', () => {
+      it('should pick the setting from CapBrokerSet', () => {
+        type Actual = PickCap<UseUnified<true>, UseUnified, false>;
+        type Expected = AsUnified;
+        type Result = IsExact<Actual, Expected>;
+
+        assertType<Result>(IS_TRUE);
+      });
+
+      it('should be the DefaultType if missing from the CapBrokerSet', () => {
+        type Actual = PickCap<UseUnsafe<false>, UseUnified, false>;
+        type Expected = AsDistributed;
+        type Result = IsExact<Actual, Expected>;
+
+        assertType<Result>(IS_TRUE);
+      });
+    });
+
     describe('UseUnsafe', () => {
       it('should pick the setting from CapBrokerSet', () => {
         type Actual = PickCap<UseUnsafe<true>, UseUnsafe, false>;
@@ -250,6 +255,24 @@ describe('PickCap', () => {
       it('should be the DefaultType if missing from the CapBrokerSet', () => {
         type Actual = PickCap<UseAsync<false>, UseUnsafe, false>;
         type Expected = AsSafe;
+        type Result = IsExact<Actual, Expected>;
+
+        assertType<Result>(IS_TRUE);
+      });
+    });
+
+    describe('UseVote', () => {
+      it('should pick the setting from CapBrokerSet', () => {
+        type Actual = PickCap<UseVote<true>, UseVote, false>;
+        type Expected = AsMajority;
+        type Result = IsExact<Actual, Expected>;
+
+        assertType<Result>(IS_TRUE);
+      });
+
+      it('should be the DefaultType if missing from the CapBrokerSet', () => {
+        type Actual = PickCap<UseAsync<false>, UseVote, false>;
+        type Expected = AsRunoff;
         type Result = IsExact<Actual, Expected>;
 
         assertType<Result>(IS_TRUE);
@@ -348,6 +371,24 @@ describe('PickCap', () => {
       it('should be the DefaultType if missing from the CapBrokerSet', () => {
         type Actual = PickCap<UseUnsafe<false>, UseOfType, boolean>;
         type Expected = OfType<boolean>;
+        type Result = IsExact<Actual, Expected>;
+
+        assertType<Result>(IS_TRUE);
+      });
+    });
+
+    describe('UseForType', () => {
+      it('should pick the setting from CapBrokerSet', () => {
+        type Actual = PickCap<UseForType<string | number>, UseForType, 10>;
+        type Expected = ForType<string | number>;
+        type Result = IsExact<Actual, Expected>;
+
+        assertType<Result>(IS_TRUE);
+      });
+
+      it('should be the DefaultType if missing from the CapBrokerSet', () => {
+        type Actual = PickCap<UseUnsafe<false>, UseForType, boolean>;
+        type Expected = ForType<boolean>;
         type Result = IsExact<Actual, Expected>;
 
         assertType<Result>(IS_TRUE);

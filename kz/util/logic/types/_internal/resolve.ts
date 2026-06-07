@@ -1,7 +1,8 @@
 // Copyright 2020 - present integereleven. All rights reserved. MIT license.
 
-import type { _Condition } from './_condition.ts';
 import type { LogicCapSet, LogicDefaults } from '../types.ts';
+
+import type { _Condition } from './_condition.ts';
 
 type Capabilities = LogicCapSet;
 type Defaults = LogicDefaults;

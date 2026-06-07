@@ -8,6 +8,7 @@ import type {
   UseDepth,
   UseElse,
   UseExcluded,
+  UseForType,
   UseInverted,
   UseNullOption,
   UseOfType,
@@ -21,6 +22,7 @@ import type {
   UseThen,
   UseUnified,
   UseUnsafe,
+  UseVote,
 } from '@kz/util/capability';
 
 import type { BaseCapSet } from './types.ts';
@@ -34,10 +36,9 @@ describe('capability types', () => {
         | UseAsync
         | UseDefault
         | UseDepth
-        | UseUnified
         | UseElse
         | UseExcluded
-        | UseStream
+        | UseForType
         | UseInverted
         | UseNullOption
         | UseOfType
@@ -46,9 +47,12 @@ describe('capability types', () => {
         | UseRecord
         | UseReversed
         | UseSetter
+        | UseStream
         | UseStrict
         | UseThen
-        | UseUnsafe;
+        | UseUnified
+        | UseUnsafe
+        | UseVote;
       type Result = IsExact<BaseCapSet, Expected>;
 
       assertType<Result>(IS_TRUE);

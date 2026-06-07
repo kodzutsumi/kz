@@ -1,5 +1,7 @@
 // Copyright 2020 - present integereleven. All rights reserved. MIT license.
 
+import type { _Majority } from './_majority.ts';
+
 /**
  * Type representing the result of a logical OR operation based on the operands.
  *
@@ -15,9 +17,9 @@ export type OrResult<
   'true/false': true;
   'false/true': true;
   'false/false': false;
-  'boolean/boolean': true;
-  'boolean/true': true;
-  'boolean/false': true;
-  'true/boolean': true;
+  'boolean/boolean': _Majority<true>;
+  'boolean/true': _Majority<true>;
+  'boolean/false': _Majority<true>;
+  'true/boolean': _Majority<true>;
   'false/boolean': boolean;
 }[`${OperandA}/${OperandB}`];

@@ -5,6 +5,7 @@
     "./capability": "./capability/mod.ts",
     "./type": "./type/mod.ts",
     "./logic": "./logic/mod.ts",
-    "./lint": "./lint/mod.ts"
+    "./lint": "./lint/mod.ts",
+    "./tuple": "./tuple/mod.ts"
   }
 }

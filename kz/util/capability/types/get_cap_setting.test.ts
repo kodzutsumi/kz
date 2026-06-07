@@ -11,6 +11,7 @@ import type {
   UseDepth,
   UseElse,
   UseExcluded,
+  UseForType,
   UseInverted,
   UseOfType,
   UseOptional,
@@ -23,6 +24,7 @@ import type {
   UseThen,
   UseUnified,
   UseUnsafe,
+  UseVote,
 } from '@kz/util/capability';
 
 const IS_TRUE = true;
@@ -40,28 +42,6 @@ describe('GetCapSetting', () => {
 
       it('should be the DefaultType if missing from the CapBrokerSet', () => {
         type Actual = GetCapSetting<UseUnsafe<false>, UseAsync, false>;
-        type Expected = false;
-        type Result = IsExact<Actual, Expected>;
-
-        assertType<Result>(IS_TRUE);
-      });
-    });
-
-    describe('UseUnified', () => {
-      it('should pick the setting from CapBrokerSet', () => {
-        type Actual = GetCapSetting<
-          UseUnified<true>,
-          UseUnified,
-          false
-        >;
-        type Expected = true;
-        type Result = IsExact<Actual, Expected>;
-
-        assertType<Result>(IS_TRUE);
-      });
-
-      it('should be the DefaultType if missing from the CapBrokerSet', () => {
-        type Actual = GetCapSetting<UseUnsafe<false>, UseUnified, false>;
         type Expected = false;
         type Result = IsExact<Actual, Expected>;
 
@@ -213,6 +193,28 @@ describe('GetCapSetting', () => {
       });
     });
 
+    describe('UseUnified', () => {
+      it('should pick the setting from CapBrokerSet', () => {
+        type Actual = GetCapSetting<
+          UseUnified<true>,
+          UseUnified,
+          false
+        >;
+        type Expected = true;
+        type Result = IsExact<Actual, Expected>;
+
+        assertType<Result>(IS_TRUE);
+      });
+
+      it('should be the DefaultType if missing from the CapBrokerSet', () => {
+        type Actual = GetCapSetting<UseUnsafe<false>, UseUnified, false>;
+        type Expected = false;
+        type Result = IsExact<Actual, Expected>;
+
+        assertType<Result>(IS_TRUE);
+      });
+    });
+
     describe('UseUnsafe', () => {
       it('should pick the setting from CapBrokerSet', () => {
         type Actual = GetCapSetting<UseUnsafe<true>, UseUnsafe, false>;
@@ -224,6 +226,24 @@ describe('GetCapSetting', () => {
 
       it('should be the DefaultType if missing from the CapBrokerSet', () => {
         type Actual = GetCapSetting<UseAsync<false>, UseUnsafe, false>;
+        type Expected = false;
+        type Result = IsExact<Actual, Expected>;
+
+        assertType<Result>(IS_TRUE);
+      });
+    });
+
+    describe('UseVote', () => {
+      it('should pick the setting from CapBrokerSet', () => {
+        type Actual = GetCapSetting<UseVote<true>, UseVote, false>;
+        type Expected = true;
+        type Result = IsExact<Actual, Expected>;
+
+        assertType<Result>(IS_TRUE);
+      });
+
+      it('should be the DefaultType if missing from the CapBrokerSet', () => {
+        type Actual = GetCapSetting<UseAsync<false>, UseVote, false>;
         type Expected = false;
         type Result = IsExact<Actual, Expected>;
 
@@ -322,6 +342,24 @@ describe('GetCapSetting', () => {
 
       it('should be the DefaultType if missing from the CapBrokerSet', () => {
         type Actual = GetCapSetting<UseUnsafe<false>, UseOfType, boolean>;
+        type Expected = boolean;
+        type Result = IsExact<Actual, Expected>;
+
+        assertType<Result>(IS_TRUE);
+      });
+    });
+
+    describe('UseForType', () => {
+      it('should pick the setting from CapBrokerSet', () => {
+        type Actual = GetCapSetting<UseForType<string | number>, UseForType, 10>;
+        type Expected = string | number;
+        type Result = IsExact<Actual, Expected>;
+
+        assertType<Result>(IS_TRUE);
+      });
+
+      it('should be the DefaultType if missing from the CapBrokerSet', () => {
+        type Actual = GetCapSetting<UseUnsafe<false>, UseForType, boolean>;
         type Expected = boolean;
         type Result = IsExact<Actual, Expected>;
 
