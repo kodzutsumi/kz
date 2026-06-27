@@ -1,0 +1,12 @@
+
+/**
+ * Defines a set of known type exceptions that can occur, with specific error
+ * codes and messages for each exception.
+ * 
+ * @internal
+ */
+export type KnownTypeExceptions = {
+  '0x1': 'Missing `Of<Type>` capability for `CheckType`';
+  '0x2': 'Cannot retrieve collection from array or array-like type';
+  '0x3': 'Cannot retrieve collection from non-object type';
+};

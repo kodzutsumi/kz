@@ -1,0 +1,90 @@
+{
+  "workspace":[
+    "./core",
+    "./util",
+    "./internal",
+    "./scratch"
+  ],
+  "importMap": "./import_map.json",
+  "tasks": {
+    "test:source": {
+      "description": "Run tests for all packages",
+      "command": "deno test --allow-all --coverage=coverage --trace-leaks --clean"
+    },
+    "test": {
+      "description": "Run tests for all packages and documentation examples",
+      "command": "deno test --allow-all --coverage=coverage --trace-leaks --clean --doc"
+    },
+    "docs": {
+      "description": "Generate documentation for all packages",
+      "command": "deno task \"docs:*\""
+    },
+    "lint": {
+      "description": "Run all linting tasks for all packages",
+      "command": "deno task \"lint:*\""
+    },
+    
+    "docs:util": "deno doc --html --output=docs/util --name='@kz/util' ./util/*/mod.ts",
+    "docs:core": "deno doc --html --output=docs/core --name='@kz/core' ./core/*/mod.ts",
+    "docs:index": "deno run --allow-read --allow-write ./.build/build_docs_index.ts",
+    
+    "lint:code": "deno lint --config ./deno.json"
+  },
+  "lint": {
+    "rules": {
+      "tags": [
+        "recommended"
+      ],
+      "include": [
+        "ban-untagged-todo",
+        "camelcase",
+        "default-param-last",
+        "eqeqeq",
+        "explicit-function-return-type",
+        "no-throw-literal",
+        "verbatim-module-syntax",
+        "prefer-ascii",
+        "no-undef",
+        "no-sync-fn-in-async-fn",
+        "no-sparse-arrays",
+        "no-self-compare",
+        "no-non-null-assertion",
+        "no-non-null-asserted-optional-chain",
+        "no-external-import",
+        "no-eval",
+        "no-const-assign",
+        "no-boolean-literal-for-arguments",
+        "no-await-in-loop",
+        "guard-for-in",
+        "explicit-module-boundary-types"
+      ]
+    }
+  },
+  "fmt": {
+    "indentWidth": 2,
+    "lineWidth": 80,
+    "proseWrap": "preserve",
+    "useTabs": false,
+    "singleQuote": true,
+    "semiColons": true
+  },
+  "exclude": [
+    ".git",
+    "cov",
+    "coverage",
+    "docs"
+  ],
+  "publish": {
+    "include": [
+      "README.md",
+      "LICENSE",
+      "deno.json",
+      "deno.lock",
+      "**/*.ts",
+      "**/*.json"
+    ],
+    "exclude": [
+      "**/*.test.ts"
+    ]
+  }
+}

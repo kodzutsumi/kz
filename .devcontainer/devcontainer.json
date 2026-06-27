@@ -1,0 +1,23 @@
+{
+  "image": "mcr.microsoft.com/devcontainers/universal:2",
+  "features": {
+    "ghcr.io/devcontainers-extra/features/deno-asdf:2": {}
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "github.copilot",
+        "denoland.vscode-deno",
+        "ms-vscode.live-server",
+        "streetsidesoftware.code-spell-checker-cspell-bundled-dictionaries"
+      ],
+      "settings": {
+        "files.exclude": {
+          "**/CODE_OF_CONDUCT.md": true,
+          "**/CONTRIBUTING.md": true,
+          "**/LICENSE": false
+        }
+      }
+    }
+  }
+}

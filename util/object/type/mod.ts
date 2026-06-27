@@ -1,0 +1,1 @@
+export type { $Object } from './$object/mod.ts';

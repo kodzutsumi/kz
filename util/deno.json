@@ -1,0 +1,14 @@
+{
+  "name": "@kz/util",
+  "version": "0.0.1",
+  "exports": {
+    "./boolean": "./boolean/mod.ts",
+    "./capability": "./capability/mod.ts",
+    "./lint": "./lint/mod.ts",
+    "./list": "./list/mod.ts",
+    "./logic": "./logic/mod.ts",
+    "./nominal": "./nominal/mod.ts",
+    "./object": "./object/mod.ts",
+    "./type": "./type/mod.ts"
+  }
+}

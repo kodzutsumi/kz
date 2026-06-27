@@ -1,0 +1,11 @@
+/**
+ * @internal
+ * @since 0.0.1
+ */
+export const I11N_DOCS_HOST = 'https://docs.i11n.io';
+
+/**
+ * @internal
+ * @since 0.0.1
+ */
+export const I11N_EX2_PATH = 'ex2';

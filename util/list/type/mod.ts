@@ -1,0 +1,16 @@
+export type {
+  Couple,
+  Decuple,
+  Duodecuple,
+  Empty,
+  Nonuple,
+  Octuple,
+  Quadruple,
+  Quintuple,
+  Septuple,
+  Sextuple,
+  Single,
+  Triple,
+  Tuple,
+  Undecuple,
+} from './tuple.ts';
