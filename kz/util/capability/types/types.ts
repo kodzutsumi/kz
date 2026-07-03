@@ -1,26 +1,26 @@
-// Copyright 2020 - present integereleven. All rights reserved. MIT license.
+//$ Copyright 2020 - present integereleven. All rights reserved. MIT license.
 
 import type {
-  UseAsync,
-  UseDefault,
-  UseDepth,
-  UseElse,
-  UseExcluded,
-  UseForType,
-  UseInverted,
-  UseNullOption,
-  UseOfType,
-  UseOptional,
-  UseReadonly,
-  UseRecord,
-  UseReversed,
-  UseSetter,
-  UseStream,
-  UseStrict,
-  UseThen,
-  UseUnified,
-  UseUnsafe,
-  UseVote,
+  $UseAsync,
+  // $UseDefault,
+  // $UseDepth,
+  $UseElse,
+  // $UseExcluded,
+  // $UseForType,
+  $UseInverted,
+  $UseNullSetting,
+  // $UseOfType,
+  // $UseOptional,
+  // $UseReadonly,
+  // $UseRecord,
+  // $UseReversed,
+  // $UseSetter,
+  // $UseStream,
+  $UseStrict,
+  $UseThen,
+  // $UseUnified,
+  $UseUnsafe,
+  $UseVote,
 } from './capabilities/mod.ts';
 
 /**
@@ -30,23 +30,23 @@ import type {
  * @see {@linkcode FullBaseCapSet} for the full intersection of all capabilities, which represents a type that __requires__ all capabilities.
  */
 export type BaseCapSet =
-  | UseAsync
-  | UseDefault
-  | UseDepth
-  | UseElse
-  | UseExcluded
-  | UseForType
-  | UseInverted
-  | UseNullOption
-  | UseOfType
-  | UseOptional
-  | UseReadonly
-  | UseRecord
-  | UseReversed
-  | UseSetter
-  | UseStream
-  | UseStrict
-  | UseThen
-  | UseUnified
-  | UseUnsafe
-  | UseVote;
+  | $UseAsync
+  // | $UseDefault
+  // | $UseDepth
+  | $UseElse
+  // | $UseExcluded
+  // | $UseForType
+  | $UseInverted
+  | $UseNullSetting
+  // | $UseOfType
+  // | $UseOptional
+  // | $UseReadonly
+  // | $UseRecord
+  // | $UseReversed
+  // | $UseSetter
+  // | $UseStream
+  | $UseStrict
+  | $UseThen
+  // | $UseUnified
+  | $UseUnsafe
+  | $UseVote;

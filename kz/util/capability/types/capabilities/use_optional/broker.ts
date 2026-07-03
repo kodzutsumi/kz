@@ -1,28 +1,28 @@
 // Copyright 2020 - present integereleven. All rights reserved. MIT license.
 
-import type { UseOptional } from './consumer.ts';
+import type { $UseOptional } from './consumer.ts';
 
 /**
- * The optional behavior broker of the {@linkcode UseOptional} capability.
+ * The optional behavior broker of the {@linkcode $UseOptional} capability.
  *
  * Use this setting to invoke the optional behavior of a type that supports
- * the {@linkcode UseOptional} capability consumer.
+ * the {@linkcode $UseOptional} capability consumer.
  *
- * @see {@linkcode AsRequired} for the required (default implied) behavior broker of this capability.
+ * @see {@linkcode $AsRequired} for the required (default implied) behavior broker of this capability.
  */
-export type AsOptional = UseOptional<true>;
+export type $AsOptional = $UseOptional<true>;
 
 /**
- * The required behavior broker of the {@linkcode UseOptional} capability.
+ * The required behavior broker of the {@linkcode $UseOptional} capability.
  *
  * Use this setting to invoke the required behavior of a type that supports the
- * {@linkcode UseOptional} capability consumer.
+ * {@linkcode $UseOptional} capability consumer.
  *
  * > [!NOTE]
  * > This is the recommended default implied behavior of the
- * > {@linkcode UseOptional} capability when the setting is not explicitly set
+ * > {@linkcode $UseOptional} capability when the setting is not explicitly set
  * > to `true` or `false`.
  *
- * @see {@linkcode AsOptional} for the optional behavior broker of this capability.
+ * @see {@linkcode $AsOptional} for the optional behavior broker of this capability.
  */
-export type AsRequired = UseOptional<false>;
+export type $AsRequired = $UseOptional<false>;

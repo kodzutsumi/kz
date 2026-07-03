@@ -2,41 +2,41 @@
 
 import { describe, it } from '@std/testing/bdd';
 import { assertType, type Has, type IsExact } from '@std/testing/types';
-import type { AsLoose, AsStrict, UseStrict } from '@kz/util/capability';
+import type { $AsLoose, $AsStrict, $UseStrict } from '@kz/util/capability';
 
 const IS_TRUE = true;
 
-describe('UseStrict - broker', () => {
-  describe('AsLoose (implied default)', () => {
+describe('$UseStrict - broker', () => {
+  describe('$AsLoose (implied default)', () => {
     it('should be the false (default) variant', () => {
-      type Actual = AsLoose;
-      type Expected = UseStrict<false>;
+      type Expected = $UseStrict<false>;
+      type Actual = $AsLoose;
       type Result = IsExact<Actual, Expected>;
 
       assertType<Result>(IS_TRUE);
     });
 
-    it('should be assignable to UseStrict', () => {
-      type Actual = AsLoose;
-      type Expected = UseStrict;
+    it('should be assignable to $UseStrict', () => {
+      type Expected = $UseStrict;
+      type Actual = $AsLoose;
       type Result = Has<Actual, Expected>;
 
       assertType<Result>(IS_TRUE);
     });
   });
 
-  describe('AsStrict', () => {
+  describe('$AsStrict', () => {
     it('should be the true variant', () => {
-      type Actual = AsStrict;
-      type Expected = UseStrict<true>;
+      type Expected = $UseStrict<true>;
+      type Actual = $AsStrict;
       type Result = IsExact<Actual, Expected>;
 
       assertType<Result>(IS_TRUE);
     });
 
-    it('should be assignable to UseStrict', () => {
-      type Actual = AsStrict;
-      type Expected = UseStrict;
+    it('should be assignable to $UseStrict', () => {
+      type Expected = $UseStrict;
+      type Actual = $AsStrict;
       type Result = Has<Actual, Expected>;
 
       assertType<Result>(IS_TRUE);

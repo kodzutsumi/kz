@@ -1,11 +1,11 @@
 // Copyright 2020 - present integereleven. All rights reserved. MIT license.
 
 /**
- * The capability setting key for the {@linkcode UseReversed} capability.
+ * The capability setting key for the {@linkcode $UseReversed} capability.
  */
-export declare const UseReversedKeyString = 'kz.i11n:use_reversed';
+export declare const $UseReversedKeyString = 'kz.i11n:use_reversed';
 
 /**
- * The type of the capability setting key for the {@linkcode UseReversed} capability.
+ * The type of the capability setting key for the {@linkcode $UseReversed} capability.
  */
-export type UseReversedKey = typeof UseReversedKeyString;
+export type $UseReversedKey = typeof $UseReversedKeyString;

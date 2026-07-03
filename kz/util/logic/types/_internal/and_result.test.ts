@@ -1,7 +1,6 @@
-// Copyright 2020 - present integereleven. All rights reserved. MIT license.
-
 import { describe, it } from '@std/testing/bdd';
 import { assertType, type IsExact } from '@std/testing/types';
+import type { $UseVote } from '@kz/util/capability';
 
 import type { AndResult } from './mod.ts';
 
@@ -10,9 +9,9 @@ const IS_TRUE = true;
 describe('AndResult', () => {
   describe('with true/true', () => {
     it('should return true', () => {
-      type Actual = AndResult<true, true>;
       type Expected = true;
-      type Result = IsExact<Actual, Expected>;
+      type Actual = AndResult<true, true>;
+      type Result = IsExact<Expected, Actual>;
 
       assertType<Result>(IS_TRUE);
     });
@@ -20,9 +19,9 @@ describe('AndResult', () => {
 
   describe('with true/false', () => {
     it('should return false', () => {
-      type Actual = AndResult<true, false>;
       type Expected = false;
-      type Result = IsExact<Actual, Expected>;
+      type Actual = AndResult<true, false>;
+      type Result = IsExact<Expected, Actual>;
 
       assertType<Result>(IS_TRUE);
     });
@@ -30,9 +29,9 @@ describe('AndResult', () => {
 
   describe('with false/true', () => {
     it('should return false', () => {
-      type Actual = AndResult<false, true>;
       type Expected = false;
-      type Result = IsExact<Actual, Expected>;
+      type Actual = AndResult<false, true>;
+      type Result = IsExact<Expected, Actual>;
 
       assertType<Result>(IS_TRUE);
     });
@@ -40,19 +39,19 @@ describe('AndResult', () => {
 
   describe('with false/false', () => {
     it('should return false', () => {
-      type Actual = AndResult<false, false>;
       type Expected = false;
-      type Result = IsExact<Actual, Expected>;
+      type Actual = AndResult<false, false>;
+      type Result = IsExact<Expected, Actual>;
 
       assertType<Result>(IS_TRUE);
     });
   });
 
   describe('with boolean/boolean', () => {
-    it('should return boolean', () => {
+    it('should return a majority vote of false', () => {
+      type Expected = $UseVote<false>;
       type Actual = AndResult<boolean, boolean>;
-      type Expected = boolean;
-      type Result = IsExact<Actual, Expected>;
+      type Result = IsExact<Expected, Actual>;
 
       assertType<Result>(IS_TRUE);
     });
@@ -60,19 +59,19 @@ describe('AndResult', () => {
 
   describe('with boolean/true', () => {
     it('should return boolean', () => {
-      type Actual = AndResult<boolean, true>;
       type Expected = boolean;
-      type Result = IsExact<Actual, Expected>;
+      type Actual = AndResult<boolean, true>;
+      type Result = IsExact<Expected, Actual>;
 
       assertType<Result>(IS_TRUE);
     });
   });
 
   describe('with boolean/false', () => {
-    it('should return false', () => {
+    it('should return majority vote of false', () => {
+      type Expected = $UseVote<false>;
       type Actual = AndResult<boolean, false>;
-      type Expected = false;
-      type Result = IsExact<Actual, Expected>;
+      type Result = IsExact<Expected, Actual>;
 
       assertType<Result>(IS_TRUE);
     });
@@ -80,9 +79,9 @@ describe('AndResult', () => {
 
   describe('with true/boolean', () => {
     it('should return boolean', () => {
-      type Actual = AndResult<true, boolean>;
       type Expected = boolean;
-      type Result = IsExact<Actual, Expected>;
+      type Actual = AndResult<true, boolean>;
+      type Result = IsExact<Expected, Actual>;
 
       assertType<Result>(IS_TRUE);
     });
@@ -90,9 +89,9 @@ describe('AndResult', () => {
 
   describe('with false/boolean', () => {
     it('should return false', () => {
-      type Actual = AndResult<false, boolean>;
       type Expected = false;
-      type Result = IsExact<Actual, Expected>;
+      type Actual = AndResult<false, boolean>;
+      type Result = IsExact<Expected, Actual>;
 
       assertType<Result>(IS_TRUE);
     });

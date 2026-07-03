@@ -1,8 +1,9 @@
 // Copyright 2020 - present integereleven. All rights reserved. MIT license.
 
-import type { AsReversed, AsStrict, AsUnified } from '@kz/util/capability';
+import type { $AsReversed, $AsStrict, $AsUnified } from '@kz/util/capability';
 
-import type { IsTypeCapSet, IsTypeDefaults } from './types.ts';
+import type { IsTypeCapabilities } from './is_type_capabilities.ts';
+import type { IsTypeDefaults } from './is_type_defaults.ts';
 
 /**
  * Checks if the type is of the specified type, with support for unified and
@@ -17,20 +18,20 @@ import type { IsTypeCapSet, IsTypeDefaults } from './types.ts';
 export type CheckOrdinary<
   Type,
   OfType,
-  Settings extends IsTypeCapSet = IsTypeDefaults,
-> = Settings extends AsStrict
+  Settings extends IsTypeCapabilities = IsTypeDefaults,
+> = Settings extends $AsStrict
   ? ([Type, OfType] extends [OfType, Type] ? true : false) extends true
       ? true
       : false
-  : Settings extends AsUnified
-    ? Settings extends AsReversed
+  : Settings extends $AsUnified
+    ? Settings extends $AsReversed
       ? ([OfType] extends [Type] ? true : false) extends true
         ? true
         : false
       : ([Type] extends [OfType] ? true : false) extends true
         ? true
         : false
-    : Settings extends AsReversed
+    : Settings extends $AsReversed
       ? (OfType extends Type ? true : false) extends never
         ? true
         : OfType extends Type

@@ -1,11 +1,11 @@
 // Copyright 2020 - present integereleven. All rights reserved. MIT license.
 
 /**
- * The capability setting key for the {@linkcode UseAsync} capability.
+ * The capability setting key for the {@linkcode $UseAsync} capability.
  */
-export declare const UseAsyncKeyString = 'kz.i11n:use_async';
+export declare const $UseAsyncKeyString = 'kz.i11n:use_async';
 
 /**
- * The type of the capability setting key for the {@linkcode UseAsync} capability.
+ * The type of the capability setting key for the {@linkcode $UseAsync} capability.
  */
-export type UseAsyncKey = typeof UseAsyncKeyString;
+export type $UseAsyncKey = typeof $UseAsyncKeyString;

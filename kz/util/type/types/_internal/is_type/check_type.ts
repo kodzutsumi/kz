@@ -1,10 +1,11 @@
 // Copyright 2020 - present integereleven. All rights reserved. MIT license.
 
 import type { IsAny } from '@std/testing/types';
-import type { AsStrict } from '@kz/util/capability';
+import type { $AsStrict } from '@kz/util/capability';
 
 import type { CheckOrdinary } from './check_ordinary.ts';
-import type { IsTypeCapSet, IsTypeDefaults } from './types.ts';
+import type { IsTypeCapabilities } from './is_type_capabilities.ts';
+import type { IsTypeDefaults } from './is_type_defaults.ts';
 
 /**
  * Checks if the type is of the specified type, with special handling for any
@@ -19,13 +20,9 @@ import type { IsTypeCapSet, IsTypeDefaults } from './types.ts';
 export type CheckType<
   Type,
   OfType,
-  Settings extends IsTypeCapSet = IsTypeDefaults,
+  Settings extends IsTypeCapabilities = IsTypeDefaults,
 > = IsAny<OfType> extends true ? IsAny<Type> extends true ? true
-  : Settings extends AsStrict
+  : Settings extends $AsStrict
     ? false
     : CheckOrdinary<Type, OfType, Settings>
   : CheckOrdinary<Type, OfType, Settings>;
-
-// - AsDistributed & AsLoose A extends B
-// - AsUnified & AsLoose [A] extends [B]
-// - AsStrict [A, B] extends [B, A]

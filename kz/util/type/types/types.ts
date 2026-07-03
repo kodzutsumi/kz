@@ -1,9 +1,9 @@
 
 import type { UseOfType } from '@kz/util/capability';
 import type {
-  IsTypeCapSet as InternalIsTypeCapSet,
+  IsTypeCapabilities as InternalIsTypeCapabilities,
   IsTypeDefaults as InternalIsTypeDefaults,
 } from './_internal/mod.ts';
 
-export type IsTypeCapSet = InternalIsTypeCapSet | UseOfType;
+export type IsTypeCapabilities = InternalIsTypeCapabilities | UseOfType;
 export type IsTypeDefaults = InternalIsTypeDefaults;

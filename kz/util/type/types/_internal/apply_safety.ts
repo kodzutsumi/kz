@@ -1,8 +1,8 @@
 // Copyright 2020 - present integereleven. All rights reserved. MIT license.
 
-import type { AsUnsafe } from '@kz/util/capability';
+import type { $AsUnsafe } from '@kz/util/capability';
 
-import type { IsTypeCapSet } from './is_type/mod.ts';
+import type { IsTypeCapabilities } from './is_type/mod.ts';
 
 /**
  * Applies the safety capability to the result if the unsafe capability is not
@@ -15,8 +15,8 @@ import type { IsTypeCapSet } from './is_type/mod.ts';
  */
 export type ApplySafety<
   Result extends boolean,
-  Settings extends IsTypeCapSet,
-> = Settings extends AsUnsafe ? [Result] extends [true] ? true
+  Settings extends IsTypeCapabilities,
+> = Settings extends $AsUnsafe ? [Result] extends [true] ? true
   : [Result] extends [false] ? false
   : true
   : Result;

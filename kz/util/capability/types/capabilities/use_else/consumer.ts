@@ -1,6 +1,6 @@
 // Copyright 2020 - present integereleven. All rights reserved. MIT license.
 
-import type { UseElseKeyString } from './constant.ts';
+import type { $UseElseKeyString } from './constant.ts';
 
 /**
  * A capability consumer indicating support for an else, or `false` type.
@@ -14,9 +14,9 @@ import type { UseElseKeyString } from './constant.ts';
  *
  * @template ElseType - The type setting for this capability consumer.
  */
-export type UseElse<ElseType extends unknown = unknown> = {
+export type $UseElse<ElseType extends unknown = unknown> = {
   /**
-   * The capability setting key for the {@linkcode UseElse} capability.
+   * The capability setting key for the {@linkcode $UseElse} capability.
    */
-  [UseElseKeyString]: ElseType;
+  [$UseElseKeyString]: ElseType;
 };

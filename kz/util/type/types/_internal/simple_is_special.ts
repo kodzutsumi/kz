@@ -1,5 +1,3 @@
-// Copyright 2020 - present integereleven. All rights reserved. MIT license.
-
 import type { SimpleIsVoid } from './simple_is_void.ts';
 import type { IsAny, IsNever, IsUnknown } from '@std/testing/types';
 

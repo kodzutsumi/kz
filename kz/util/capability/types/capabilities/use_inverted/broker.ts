@@ -1,29 +1,29 @@
 // Copyright 2020 - present integereleven. All rights reserved. MIT license.
 
-import type { UseInverted } from './consumer.ts';
+import type { $UseInverted } from './consumer.ts';
 
 /**
- * The inverted behavior broker of the {@linkcode UseInverted} capability.
+ * The inverted behavior broker of the {@linkcode $UseInverted} capability.
  *
  * Use this setting to invoke the inverted behavior of a type that supports
- * the {@linkcode UseInverted} capability consumer.
+ * the {@linkcode $UseInverted} capability consumer.
  *
- * @see {@linkcode AsInitial} for the initial (default implied) behavior broker of this capability.
+ * @see {@linkcode $AsInitial} for the initial (default implied) behavior broker of this capability.
  */
-export type AsInverted = UseInverted<true>;
+export type $AsInverted = $UseInverted<true>;
 
 /**
- * The initial (non-inverted) behavior broker of the {@linkcode UseInverted}
+ * The initial (non-inverted) behavior broker of the {@linkcode $UseInverted}
  * capability.
  *
  * Use this setting to invoke the initial (non-inverted) behavior of a type
- * that supports the {@linkcode UseInverted} capability consumer.
+ * that supports the {@linkcode $UseInverted} capability consumer.
  *
  * > [!NOTE]
  * > This is the recommended default implied behavior of the
- * > {@linkcode UseInverted} capability when the setting is not explicitly set
+ * > {@linkcode $UseInverted} capability when the setting is not explicitly set
  * > to `true` or `false`.
  *
- * @see {@linkcode AsInverted} for the inverted behavior broker of this capability.
+ * @see {@linkcode $AsInverted} for the inverted behavior broker of this capability.
  */
-export type AsInitial = UseInverted<false>;
+export type $AsInitial = $UseInverted<false>;

@@ -27,70 +27,70 @@
  * - __Setting__ - Can refer to any capability broker.
  * - __Settings__ - A capability broker set.
  * ```ts
- * const UseCollapsedKeyString = 'testing:use_collapsed';
+ * const $UseCollapsedKeyString = 'testing:use_collapsed';
  *
- * type UseCollapsed<AsCollapsed extends boolean = boolean> = {
- *   [UseCollapsedKeyString]: AsCollapsed;
+ * type $UseCollapsed<AsCollapsed extends boolean = boolean> = {
+ *   [$UseCollapsedKeyString]: AsCollapsed;
  * };
  * ```
  * > An example of a capability consumer, specifically a capability flag consumer.
  * ```ts
- * const UsePositionKeyString = 'testing:use_position';
+ * const $UsePositionKeyString = 'testing:use_position';
  *
- * type Positions = 'first' | 'last' | 'middle' | 'outside';
+ * type $Positions = 'first' | 'last' | 'middle' | 'outside';
  *
- * type UsePosition<Position extends Positions = Positions > = {
- *   [UsePositionKeyString]: Position;
+ * type $UsePosition<Position extends $Positions = $Positions > = {
+ *   [$UsePositionKeyString]: Position;
  * };
  * ```
  * > An example of an capability option consumer.
  * ```ts
- * const UseKeyKeyString = 'testing:use_key';
+ * const $UseKeyKeyString = 'testing:use_key';
  *
- * type UseKey<KeyName extends PropertyKey = PropertyKey > = {
- *   [UseKeyKeyString]: KeyName;
+ * type $UseKey<KeyName extends PropertyKey = PropertyKey > = {
+ *   [$UseKeyKeyString]: KeyName;
  * };
  * ```
  * > An example of a capability constrained consumer.
  * ```ts
- * const UseTypeKeyString = 'testing:use_type';
+ * const $UseTypeKeyString = 'testing:use_type';
  *
- * type UseType<Type extends unknown = unknown> = {
- * 	[UseTypeKeyString]: Type;
+ * type $UseType<Type extends unknown = unknown> = {
+ * 	[$UseTypeKeyString]: Type;
  * };
  * ```
  * > An example of an capability open consumer.
  * > Notice that is all of the capabilities, the default input type is the input type accepted by the capability.
  * ```ts
  * import type {
- *   UseStrict,
- *   UseUnsafe,
- *   UseInverted,
+ *   $UseStrict,
+ *   $UseUnsafe,
+ *   $UseInverted,
  * } from '@kz/util/capability';
  *
- * type CustomCapSet = UseStrict | UseUnsafe | UseInverted;
+ * type CustomCapSet = $UseStrict | $UseUnsafe | $UseInverted;
  * ```
  * > An example of a capability consumer set. It is recommended that a capability consumer set always be a ___union___ of capability consumers.
  * ```ts
- * const UsePositionKeyString = 'testing:use_position';
+ * const $UsePositionKeyString = 'testing:use_position';
  *
- * type Positions = 'first' | 'last' | 'middle' | 'outside';
+ * type $Positions = 'first' | 'last' | 'middle' | 'outside';
  *
- * type UsePosition<Position extends Positions = Positions > = {
- *   [UsePositionKeyString]: Position;
+ * type $UsePosition<Position extends $Positions = $Positions > = {
+ *   [$UsePositionKeyString]: Position;
  * };
  *
- * type AsFirst = UsePosition<'first'>;
+ * type AsFirst = $UsePosition<'first'>;
  * ```
- * > An example of a capability broker that would satisfy the `UsePosition` capability option consumer. The capability input of the `UsePosition` capability option consumer would be `'first'`.
+ * > An example of a capability broker that would satisfy the `$UsePosition` capability option consumer. The capability input of the `$UsePosition` capability option consumer would be `'first'`.
  * ```ts
  * import type {
- *   AsStrict,
- *   AsUnsafe,
- *   AsInitial,
+ *   $AsStrict,
+ *   $AsUnsafe,
+ *   $AsInitial,
  * } from '@kz/util/capability';
  *
- * type MyBrokerSet = AsStrict & AsUnsafe & AsInitial;
+ * type MyBrokerSet = $AsStrict & $AsUnsafe & $AsInitial;
  * ```
  * > An example of a capability broker set that would satisfy the `CustomCapSet` capability consumer set. It is recommended that a capability broker set always be an ___intersection___ of capability brokers.
  *

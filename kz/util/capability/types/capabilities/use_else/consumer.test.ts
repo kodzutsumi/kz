@@ -3,36 +3,36 @@
 import { describe, it } from '@std/testing/bdd';
 import { assertType, type IsExact } from '@std/testing/types';
 import type {
-  OfType,
-  UseOfType,
-  UseOfTypeKeyString,
+  $Else,
+  $UseElse,
+  $UseElseKeyString,
 } from '@kz/util/capability';
 
 const IS_TRUE = true;
 
-describe('UseOfType - consumer', () => {
-  describe('UseOfType', () => {
-    it('should be keyed by the UseOfTypeKeyString', () => {
-      type Actual = keyof UseOfType;
-      type Expected = typeof UseOfTypeKeyString;
+describe('$UseElse - consumer', () => {
+  describe('$UseElse', () => {
+    it('should be keyed by the $UseElseKeyString', () => {
+      type Expected = typeof $UseElseKeyString;
+      type Actual = keyof $UseElse;
       type Result = IsExact<Actual, Expected>;
 
       assertType<Result>(IS_TRUE);
     });
 
     it('should have an unknown setting by default', () => {
-      type Actual = UseOfType;
       type Expected = {
-        [UseOfTypeKeyString]: unknown;
+        [$UseElseKeyString]: unknown;
       };
+      type Actual = $UseElse;
       type Result = IsExact<Actual, Expected>;
 
       assertType<Result>(IS_TRUE);
     });
 
     it('should be a capability open consumer', () => {
-      type Actual = UseOfType<string>;
-      type Expected = OfType<string>;
+      type Expected = $Else<string>;
+      type Actual = $UseElse<string>;
       type Result = IsExact<Actual, Expected>;
 
       assertType<Result>(IS_TRUE);

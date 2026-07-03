@@ -1,10 +1,12 @@
 // Copyright 2020 - present integereleven. All rights reserved. MIT license.
 
-import type { ApplySafety } from '../apply_safety.ts';
-import type { IsTypeCapSet, IsTypeDefaults } from './types.ts';
-
-import type { CheckType } from './check_type.ts';
 import type { ApplyInverted } from '../apply_inverted.ts';
+import type { ApplySafety } from '../apply_safety.ts';
+
+import type { IsTypeCapabilities } from './is_type_capabilities.ts';
+import type { IsTypeDefaults } from './is_type_defaults.ts';
+import type { CheckType } from './check_type.ts';
+
 
 /**
  * Determines if a type is of a specified type, with configurable capabilities
@@ -19,7 +21,7 @@ import type { ApplyInverted } from '../apply_inverted.ts';
 export type IsType<
   Type,
   OfType,
-  Settings extends IsTypeCapSet = IsTypeDefaults,
+  Settings extends IsTypeCapabilities = IsTypeDefaults,
 > = ApplyInverted<
   ApplySafety<CheckType<Type, OfType, Settings>, Settings>,
   Settings

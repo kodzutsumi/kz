@@ -1,6 +1,6 @@
 // Copyright 2020 - present integereleven. All rights reserved. MIT license.
 
-import type { UseReversedKeyString } from './constant.ts';
+import type { $UseReversedKeyString } from './constant.ts';
 
 /**
  * A capability consumer indicating support for reversed or forward behavior.
@@ -9,17 +9,17 @@ import type { UseReversedKeyString } from './constant.ts';
  * or forward behavior, or results in a reversed or forward type, based on the
  * value of the capability setting.
  *
- * ## Difference between `UseReversed` and {@linkcode UseInverted}
- * `UseReversed` and {@linkcode UseInverted} are similar capabilities that both
+ * ## Difference between `$UseReversed` and {@linkcode UseInverted}
+ * `$UseReversed` and {@linkcode UseInverted} are similar capabilities that both
  * indicate support for an inverted or reversed behavior. However, they differ
  * in the specific behavior they indicate and the contexts in which they are
- * used. `UseReversed` is generally east-west oriented, while
+ * used. `$UseReversed` is generally east-west oriented, while
  * {@linkcode UseInverted} is generally north-south oriented. The specific
  * differences between these capabilities depend on the context of their use
  * and the specific behaviors they indicate.
  *
- * - Use `UseReversed` to reverse the processing order of a tuple or array.
- * - Use `UseReversed` to change the direction of a comparison.
+ * - Use `$UseReversed` to reverse the processing order of a tuple or array.
+ * - Use `$UseReversed` to change the direction of a comparison.
  * - Use {@linkcode UseInverted} to flip a bit or boolean value.
  * - Use {@linkcode UseInverted} to invert a stack of operations.
  *
@@ -28,12 +28,12 @@ import type { UseReversedKeyString } from './constant.ts';
  *
  * @template AsReversed - The boolean setting for this capability consumer.
  */
-export type UseReversed<AsReversed extends boolean = boolean> = {
+export type $UseReversed<AsReversed extends boolean = boolean> = {
   /**
-   * The capability setting key for the `UseReversed` capability.
+   * The capability setting key for the `$UseReversed` capability.
    *
    * As `boolean`, it functions as a capability consumer. As a boolean literal,
    * it functions as a capability broker indicating a desired behavior.
    */
-  [UseReversedKeyString]: AsReversed;
+  [$UseReversedKeyString]: AsReversed;
 };

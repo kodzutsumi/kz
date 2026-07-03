@@ -2,10 +2,12 @@
   "name": "@kz/util",
   "version": "0.0.1",
   "exports": {
+    "./boolean": "./boolean/mod.ts",
     "./capability": "./capability/mod.ts",
     "./type": "./type/mod.ts",
     "./logic": "./logic/mod.ts",
     "./lint": "./lint/mod.ts",
+    "./nominal": "./nominal/mod.ts",
     "./tuple": "./tuple/mod.ts"
   }
 }

@@ -1,0 +1,1 @@
+export type { _IsUnion } from './_is_union.ts';

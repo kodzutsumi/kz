@@ -1,6 +1,6 @@
 // Copyright 2020 - present integereleven. All rights reserved. MIT license.
 
-import type { UseThenKeyString } from './constant.ts';
+import type { $UseThenKeyString } from './constant.ts';
 
 /**
  * A capability consumer indicating support for a then, or `true` type.
@@ -14,9 +14,9 @@ import type { UseThenKeyString } from './constant.ts';
  *
  * @template ThenType - The type setting for this capability consumer.
  */
-export type UseThen<ThenType extends unknown = unknown> = {
+export type $UseThen<ThenType extends unknown = unknown> = {
   /**
-   * The capability setting key for the {@linkcode UseThen} capability.
+   * The capability setting key for the {@linkcode $UseThen} capability.
    */
-  [UseThenKeyString]: ThenType;
+  [$UseThenKeyString]: ThenType;
 };

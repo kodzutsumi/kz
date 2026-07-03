@@ -1,5 +1,3 @@
-// Copyright 2020 - present integereleven. All rights reserved. MIT license.
-
 /**
  * Determines if a type is `void` by checking if it can be assigned to and from
  * `void`.

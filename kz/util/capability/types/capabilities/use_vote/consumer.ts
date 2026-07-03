@@ -1,6 +1,6 @@
 // Copyright 2020 - present integereleven. All rights reserved. MIT license.
 
-import type { UseVoteKeyString } from './constant.ts';
+import type { $UseVoteKeyString } from './constant.ts';
 
 /**
  * A capability consumer indicating support for boolean vote behavior.
@@ -21,17 +21,17 @@ import type { UseVoteKeyString } from './constant.ts';
  *
  * Use this capability consumer to indicate that a type supports boolean vote behavior.
  *
- * @see {@linkcode AsMajority} for the `true` broker behavior of this capability consumer.
- * @see {@linkcode AsRunoff} for the `false` (implied default) broker behavior of this capability consumer.
+ * @see {@linkcode $AsMajority} for the `true` broker behavior of this capability consumer.
+ * @see {@linkcode $AsRunoff} for the `false` (implied default) broker behavior of this capability consumer.
  *
  * @template AsMajority - The boolean setting for this capability consumer.
  */
-export type UseVote<AsMajority extends boolean = boolean> = {
+export type $UseVote<AsMajority extends boolean = boolean> = {
   /**
-   * The capability setting key for the `UseVote` capability.
+   * The capability setting key for the `$UseVote` capability.
    *
    * As `boolean`, it functions as a capability consumer. As a boolean literal,
    * it functions as a capability broker indicating a desired behavior.
    */
-  [UseVoteKeyString]: AsMajority;
+  [$UseVoteKeyString]: AsMajority;
 };

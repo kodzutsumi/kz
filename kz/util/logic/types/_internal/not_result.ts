@@ -1,20 +1,21 @@
-// Copyright 2020 - present integereleven. All rights reserved. MIT license.
+import type { ToBoolean } from '@kz/util/boolean';
+import type { $AsInverted } from '@kz/util/capability';
 
-import type { AsInverted, ResolveBoolean } from '@kz/util/capability';
+import type { LogicCapabilities } from '../logic_capabilities.ts';
+import type { LogicDefaults } from '../logic_defaults.ts';
 
-import type { LogicCapSet, LogicDefaults } from '../types.ts';
+type Capabilities = LogicCapabilities;
+type Defaults = LogicDefaults;
 
 /**
- * Type representing the result of a logical NOT operation based on the operand and settings.
- *
- * ## Capabilities
- * - {@linkcode AsInverted}
- *
- * @template Operand - The boolean operand to evaluate.
- * @template Settings - The set of capabilities that modify the behavior of the NOT operation.
+ * Computes the result of a logical NOT operation on a boolean operand.
+ * 
+ * @template Operand - The boolean operand to negate.
+ * @template Settings - The logic capabilities and settings to apply during the operation
+ * @returns The negated boolean value of the operand, considering the provided settings.
  * @internal
  */
 export type NotResult<
   Operand extends boolean,
-  Settings extends LogicCapSet = LogicDefaults,
-> = ResolveBoolean<Operand, Settings & AsInverted>;
+  Settings extends Capabilities = Defaults,
+> = ToBoolean<Operand, Settings & $AsInverted>;

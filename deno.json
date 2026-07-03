@@ -1,6 +1,7 @@
 {
   "workspace": [
-    "./kz/util"
+    "./kz/util",
+    "./kz/internal"
   ],
   "importMap": "./import_map.json",
   "tasks": {

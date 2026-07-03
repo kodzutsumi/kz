@@ -1,24 +1,29 @@
-// Copyright 2020 - present integereleven. All rights reserved. MIT license.
+import type { ToBoolean } from '@kz/util/boolean';
+import type { $PickInverted, $PickVote, $UseVote, $Vote } from '@kz/util/capability';
 
-import type { PickCap, ResolveBoolean, UseUnsafe } from '@kz/util/capability';
+import type { LogicCapabilities } from '../logic_capabilities.ts';
+import type { LogicDefaults } from '../logic_defaults.ts';
 
-import type { LogicCapSet, LogicDefaults } from '../types.ts';
+import type { _Condition } from './_condition.ts';
 
-import type { Resolve } from './resolve.ts';
-import type { _Vote } from './_vote.ts';
+type Capabilities = LogicCapabilities;
+type Defaults = LogicDefaults;
 
 /**
- * Represents the core logic handler type that processes a boolean operand based on the provided settings and capabilities.
- * This type is used internally by various logic types such as `If`, `Not`, `And`, `Or`, etc., to determine their resulting types based on the operand and settings.
- *
- * @template Operand - The boolean operand to evaluate.
- * @template Settings - The set of capabilities that modify the behavior of the logic handler.
+ * Computes the result of a logical operation based on the provided operand and settings.
+ * 
+ * @template Operand - The boolean operand or a vote type.
+ * @template Settings - The logic capabilities settings.
+ * @returns The result of the logical operation based on the operand and settings.
  * @internal
  */
 export type LogicHandler<
-  Operand extends boolean,
-  Settings extends LogicCapSet = LogicDefaults,
-> = Resolve<
-  _Vote<ResolveBoolean<Operand, PickCap<Settings, UseUnsafe, false>>, Settings>,
+  Operand extends boolean | $UseVote,
+  Settings extends Capabilities = Defaults,
+> = _Condition<
+ToBoolean<
+  $Vote<Operand,
+    $PickVote<Settings>
+  >, Settings & $PickInverted<Settings>>,
   Settings
 >;

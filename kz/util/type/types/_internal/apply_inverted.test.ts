@@ -2,7 +2,7 @@
 
 import { describe, it } from '@std/testing/bdd';
 import { assertType, type IsExact } from '@std/testing/types';
-import type { AsStrict, AsInverted } from '@kz/util/capability';
+import type { $AsStrict, $AsInverted } from '@kz/util/capability';
 
 import type { ApplyInverted } from './apply_inverted.ts';
 
@@ -11,7 +11,7 @@ const IS_TRUE = true;
 describe('ApplyInverted', () => {
   describe('AsSafe (default)', () => {
     it('should retain boolean', () => {
-      type Actual = ApplyInverted<boolean, AsStrict>;
+      type Actual = ApplyInverted<boolean, $AsStrict>;
       type Expected = boolean;
       type Result = IsExact<Actual, Expected>;
 
@@ -19,7 +19,7 @@ describe('ApplyInverted', () => {
     });
 
     it('should retain true', () => {
-      type Actual = ApplyInverted<true, AsStrict>;
+      type Actual = ApplyInverted<true, $AsStrict>;
       type Expected = true;
       type Result = IsExact<Actual, Expected>;
 
@@ -27,7 +27,7 @@ describe('ApplyInverted', () => {
     });
 
     it('should retain false', () => {
-      type Actual = ApplyInverted<false, AsStrict>;
+      type Actual = ApplyInverted<false, $AsStrict>;
       type Expected = false;
       type Result = IsExact<Actual, Expected>;
 
@@ -35,9 +35,9 @@ describe('ApplyInverted', () => {
     });
   });
 
-  describe('AsInverted', () => {
+  describe('$AsInverted', () => {
     it('should retain boolean', () => {
-      type Actual = ApplyInverted<boolean, AsStrict & AsInverted>;
+      type Actual = ApplyInverted<boolean, $AsStrict & $AsInverted>;
       type Expected = boolean;
       type Result = IsExact<Actual, Expected>;
 
@@ -45,7 +45,7 @@ describe('ApplyInverted', () => {
     });
 
     it('should change true to false', () => {
-      type Actual = ApplyInverted<true, AsStrict & AsInverted>;
+      type Actual = ApplyInverted<true, $AsStrict & $AsInverted>;
       type Expected = false;
       type Result = IsExact<Actual, Expected>;
 
@@ -53,7 +53,7 @@ describe('ApplyInverted', () => {
     });
 
     it('should change false to true', () => {
-      type Actual = ApplyInverted<false, AsStrict & AsInverted>;
+      type Actual = ApplyInverted<false, $AsStrict & $AsInverted>;
       type Expected = true;
       type Result = IsExact<Actual, Expected>;
 
