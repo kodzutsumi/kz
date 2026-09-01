@@ -1,0 +1,1 @@
+export type { ElementType } from './element_type.ts';

@@ -1,0 +1,15 @@
+{
+  "deno.codeLens.implementations": true,
+  "deno.codeLens.references": true,
+  "deno.codeLens.referencesAllFunctions": true,
+  "deno.codeLens.test": true,
+  "deno.enable": true,
+  "deno.lint": true,
+  "deno.path": "/home/codespace/.asdf/shims/deno",
+  "deno.documentPreloadLimit": 1000,
+  "js/ts.suggest.autoImports": true,
+  "deno.importMap": "./import_map.json",
+  "livePreview.openPreviewTarget": "External Browser",
+  "livePreview.serverRoot": "./docs/kz",
+  "csv.columnColorMode": "type"
+}

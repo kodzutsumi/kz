@@ -1,0 +1,1 @@
+export type Scalar = PropertyKey | bigint | boolean;

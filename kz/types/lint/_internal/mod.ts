@@ -1,0 +1,1 @@
+;export type { PermitBannedType } from './permit_banned_type.ts'

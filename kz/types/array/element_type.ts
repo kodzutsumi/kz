@@ -1,0 +1,1 @@
+export type ElementType<Type extends Array<unknown>> = Type extends Array<infer ElementType> ? ElementType : unknown;

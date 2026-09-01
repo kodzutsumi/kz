@@ -1,0 +1,1 @@
+export type { WidenShallow } from './widen_shallow.ts';

@@ -1,0 +1,7 @@
+{
+  "name": "@kz/testing",
+  "version": "0.0.1",
+  "exports": {
+    "./fw": "./fw/mod.ts"
+  }
+}

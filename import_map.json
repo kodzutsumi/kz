@@ -1,0 +1,13 @@
+{
+  "imports": {
+    "@std/assert": "jsr:@std/assert@^1.0.13",
+    "@std/testing/mock": "jsr:@std/testing@^1.0.13/mock",
+    "@std/testing/time": "jsr:@std/testing@^1.0.13/time",
+    "@std/testing/types": "jsr:@std/testing@^1.0.13/types",
+    "@std/fmt/colors": "jsr:@std/fmt@^1.0.10/colors",
+
+    "@kz/internal/constants": "jsr:@kz/internal@^0.0.1/constants",
+    "@kz/types/capabilities": "jsr:@kz/types@^0.0.1/capabilities",
+    "@kz/testing/fw": "jsr:@kz/testing@^0.0.1/fw"
+  }
+}
